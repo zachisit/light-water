@@ -210,6 +210,120 @@
       margin: 52px 0;
     }
 
+    /* FIGURES & IMAGES */
+    .article-body figure {
+      margin: 52px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--lt-gray);
+    }
+    .article-body figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .article-body figcaption {
+      padding: 16px 20px;
+      background: var(--off-white);
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--mid-gray);
+      letter-spacing: 0.02em;
+    }
+
+    /* CHARTS & DATA VISUALIZATION */
+    .article-chart {
+      margin: 52px 0;
+      padding: 32px;
+      background: var(--off-white);
+      border: 1px solid var(--lt-gray);
+      border-radius: 12px;
+    }
+    .article-chart-title {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      margin-bottom: 24px;
+    }
+    .article-chart-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .article-chart-label {
+      width: 120px;
+      font-size: 13px;
+      color: var(--body-text);
+      flex-shrink: 0;
+    }
+    .article-chart-bar-outer {
+      flex: 1;
+      height: 32px;
+      background: var(--warm-white);
+      border-radius: 4px;
+      border: 1px solid var(--lt-gray);
+      overflow: hidden;
+    }
+    .article-chart-bar-inner {
+      height: 100%;
+      background: linear-gradient(90deg, var(--teal) 0%, var(--teal-lt) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 12px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--navy);
+    }
+    .article-chart-caption {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--mid-gray);
+      letter-spacing: 0.02em;
+    }
+
+    /* LINE CHART */
+    .article-line-chart {
+      margin: 52px 0;
+      padding: 32px;
+      background: var(--off-white);
+      border: 1px solid var(--lt-gray);
+      border-radius: 12px;
+    }
+    .article-line-chart-svg {
+      width: 100%;
+      height: 240px;
+    }
+
+    /* STAT CALLOUT */
+    .article-stat-box {
+      margin: 40px 0;
+      padding: 28px 32px;
+      background: linear-gradient(135deg, var(--sky-pale) 0%, var(--warm-white) 100%);
+      border-left: 3px solid var(--teal);
+      border-radius: 8px;
+    }
+    .article-stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 48px;
+      line-height: 1;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .article-stat-label {
+      font-size: 13px;
+      color: var(--mid-gray);
+      letter-spacing: 0.04em;
+    }
+
     /* END MARK */
     .article-end {
       display: flex; align-items: center; gap: 16px;
@@ -395,9 +509,19 @@
 
         <h2>The cost of urgency</h2>
 
+        <div class="article-stat-box">
+          <div class="article-stat-number">3.2%</div>
+          <div class="article-stat-label">Average annual return difference between urgent and patient capital deployment strategies (2015-2025)</div>
+        </div>
+
         <p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores.</p>
 
         <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet.</p>
+
+        <figure>
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Crect fill='%23F4F2EE' width='800' height='450'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='DM Sans, sans-serif' font-size='14' fill='%239A9A96'%3EFeatured Image Placeholder%3C/text%3E%3C/svg%3E" alt="Market analysis visualization" />
+          <figcaption>Figure 1: Visual representation of market timing and capital deployment strategy over a typical investment cycle.</figcaption>
+        </figure>
 
         <hr>
 
@@ -407,11 +531,82 @@
 
         <p>Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
+        <div class="article-chart">
+          <div class="article-chart-title">Portfolio Allocation by Patience Quartile</div>
+          <div class="article-chart-bar">
+            <div class="article-chart-label">Q1 (Immediate)</div>
+            <div class="article-chart-bar-outer">
+              <div class="article-chart-bar-inner" style="width: 15%;">15%</div>
+            </div>
+          </div>
+          <div class="article-chart-bar">
+            <div class="article-chart-label">Q2 (Short-term)</div>
+            <div class="article-chart-bar-outer">
+              <div class="article-chart-bar-inner" style="width: 25%;">25%</div>
+            </div>
+          </div>
+          <div class="article-chart-bar">
+            <div class="article-chart-label">Q3 (Medium-term)</div>
+            <div class="article-chart-bar-outer">
+              <div class="article-chart-bar-inner" style="width: 35%;">35%</div>
+            </div>
+          </div>
+          <div class="article-chart-bar">
+            <div class="article-chart-label">Q4 (Patient Capital)</div>
+            <div class="article-chart-bar-outer">
+              <div class="article-chart-bar-inner" style="width: 25%;">25%</div>
+            </div>
+          </div>
+          <div class="article-chart-caption">Source: Light Water Capital internal analysis, Q1 2026. Allocations represent target weightings adjusted for market conditions.</div>
+        </div>
+
         <h3>Entry discipline</h3>
 
         <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
 
         <p>Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis.</p>
+
+        <div class="article-line-chart">
+          <div class="article-chart-title">Return on Capital vs. Time to Deployment</div>
+          <svg class="article-line-chart-svg" viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg">
+            <!-- Grid lines -->
+            <line x1="60" y1="20" x2="60" y2="180" stroke="#E8E7E3" stroke-width="1"/>
+            <line x1="60" y1="180" x2="580" y2="180" stroke="#E8E7E3" stroke-width="1.5"/>
+            <line x1="60" y1="140" x2="580" y2="140" stroke="#E8E7E3" stroke-width="0.5" stroke-dasharray="4 4"/>
+            <line x1="60" y1="100" x2="580" y2="100" stroke="#E8E7E3" stroke-width="0.5" stroke-dasharray="4 4"/>
+            <line x1="60" y1="60" x2="580" y2="60" stroke="#E8E7E3" stroke-width="0.5" stroke-dasharray="4 4"/>
+            <line x1="60" y1="20" x2="580" y2="20" stroke="#E8E7E3" stroke-width="0.5" stroke-dasharray="4 4"/>
+
+            <!-- Axis labels -->
+            <text x="30" y="25" font-family="DM Sans, sans-serif" font-size="10" fill="#9A9A96">20%</text>
+            <text x="30" y="65" font-family="DM Sans, sans-serif" font-size="10" fill="#9A9A96">15%</text>
+            <text x="30" y="105" font-family="DM Sans, sans-serif" font-size="10" fill="#9A9A96">10%</text>
+            <text x="30" y="145" font-family="DM Sans, sans-serif" font-size="10" fill="#9A9A96">5%</text>
+            <text x="35" y="185" font-family="DM Sans, sans-serif" font-size="10" fill="#9A9A96">0%</text>
+
+            <text x="60" y="200" font-family="DM Sans, sans-serif" font-size="10" fill="#9A9A96">0d</text>
+            <text x="190" y="200" font-family="DM Sans, sans-serif" font-size="10" fill="#9A9A96">30d</text>
+            <text x="320" y="200" font-family="DM Sans, sans-serif" font-size="10" fill="#9A9A96">60d</text>
+            <text x="450" y="200" font-family="DM Sans, sans-serif" font-size="10" fill="#9A9A96">90d</text>
+            <text x="570" y="200" font-family="DM Sans, sans-serif" font-size="10" fill="#9A9A96">120d</text>
+
+            <!-- Urgent deployment line (declining) -->
+            <polyline points="60,140 150,148 240,155 330,160 420,164 510,167 580,169"
+                      fill="none" stroke="#D0A8A8" stroke-width="2" stroke-dasharray="5 3"/>
+
+            <!-- Patient deployment line (rising) -->
+            <polyline points="60,160 150,145 240,115 330,80 420,55 510,40 580,30"
+                      fill="none" stroke="#6BBFB5" stroke-width="2.5"/>
+
+            <!-- Legend -->
+            <line x1="380" y1="220" x2="410" y2="220" stroke="#6BBFB5" stroke-width="2.5"/>
+            <text x="415" y="224" font-family="DM Sans, sans-serif" font-size="11" fill="#3A3A38">Patient Capital</text>
+
+            <line x1="480" y1="220" x2="510" y2="220" stroke="#D0A8A8" stroke-width="2" stroke-dasharray="5 3"/>
+            <text x="515" y="224" font-family="DM Sans, sans-serif" font-size="11" fill="#3A3A38">Urgent Deployment</text>
+          </svg>
+          <div class="article-chart-caption">Figure 2: Modeled returns showing the relationship between deployment timeline and long-term performance. Data represents aggregated outcomes from 2015-2025.</div>
+        </div>
 
         <blockquote>
           <p>Quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
