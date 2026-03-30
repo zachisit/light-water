@@ -524,6 +524,11 @@
 
         <p>We set Claude loose with a simple prompt: "Run 30 iterations. Improve the total return." Then we walked away.</p>
 
+        <figure>
+          <img src="chart_loop_flowchart.png" alt="Autoresearch loop flowchart" />
+          <figcaption>The autoresearch loop: one change per iteration, scored against the previous best, kept or reverted automatically.</figcaption>
+        </figure>
+
         <blockquote>
           <p>The insight from Karpathy's work applies directly here: autonomy scales when you constrain scope, clarify success, and mechanize verification. The agent optimizes tactics while humans optimize strategy.</p>
         </blockquote>
@@ -533,6 +538,11 @@
         <p>The 30 iterations ran in just under 20 minutes. Of the 30 attempted changes, 11 were kept and 20 were reverted — a 37% keep rate, remarkably close to the rates reported in other autoresearch applications.</p>
 
         <p>Here's what stood out from the evolution:</p>
+
+        <figure>
+          <img src="chart_iteration_progression.png" alt="Score progression across 30 iterations" />
+          <figcaption>Score progression across 30 iterations. Green bars = kept improvements, red bars = reverted attempts, dotted line = running best.</figcaption>
+        </figure>
 
         <h3>The SMA to EMA Switch</h3>
 
@@ -552,6 +562,11 @@
 
         <p>The SPY SMA200 trend filter — a common institutional overlay that only allows trades when the broad market is in an uptrend — actually reduced returns from 290.5% to 199.9%. In backtesting, this filter removes both losing trades in bear markets and winning trades in early recoveries. The net effect was negative.</p>
 
+        <figure>
+          <img src="chart_strategy_comparison.png" alt="Comparison of strategy types attempted" />
+          <figcaption>Comparison of all strategy types attempted. EMA crossovers dominated, while alternative approaches like MACD and Bollinger underperformed the baseline.</figcaption>
+        </figure>
+
         <div class="article-stat-box">
           <div class="article-stat-number">20 min</div>
           <div class="article-stat-label">Total runtime for 30 autonomous iterations. Each backtest completed in roughly 30 seconds, with Claude's analysis and code modification adding another 10 seconds per cycle.</div>
@@ -566,6 +581,11 @@
         <figure>
           <img src="equity_curves.png" alt="Equity curve evolution across 30 iterations" />
           <figcaption>Equity curve evolution across 30 iterations. Dashed gray line shows the SMA 20/50 baseline. Green line shows the best-performing EMA 13/120 strategy. Gray cloud represents all intermediate iterations. The strategy evolved from $233K to $390K final portfolio value on a $100K starting capital.</figcaption>
+        </figure>
+
+        <figure>
+          <img src="chart_before_after.png" alt="Before and after equity curve comparison" />
+          <figcaption>Direct comparison: baseline SMA 20/50 (dashed) vs. AI-optimized EMA 13/120 (solid). Starting capital: $100K.</figcaption>
         </figure>
 
         <h2>What This Means</h2>
