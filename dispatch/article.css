@@ -437,9 +437,9 @@
     .footer-links { list-style: none; display: flex; gap: 32px; }
     .footer-links a {
       font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
-      color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s;
+      color: #F2D978; text-decoration: none; transition: opacity 0.2s; opacity: 0.8;
     }
-    .footer-links a:hover { color: rgba(255,255,255,0.8); }
+    .footer-links a:hover { opacity: 1; }
     .footer-bottom {
       display: flex; align-items: flex-end;
       justify-content: space-between; gap: 32px;
@@ -447,7 +447,7 @@
     }
     .footer-legal {
       font-size: 11px; line-height: 1.7;
-      color: rgba(255,255,255,0.2); max-width: 560px;
+      color: rgba(255,255,255,0.5); max-width: 560px;
     }
     .footer-location {
       font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
