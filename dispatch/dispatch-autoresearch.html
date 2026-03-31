@@ -141,7 +141,7 @@
     <div class="article-body-wrap">
       <article class="article-body" aria-label="Article content">
 
-        <p>In early March 2026, Andrej Karpathy released autoresearch - a framework that lets AI agents run experiments autonomously overnight. The idea is elegant: give an agent a codebase, a measurable metric, and a simple rule - if the change improves the metric, keep it; if not, revert it. Within days, the repo had over 28,000 GitHub stars. Shopify's CEO ran it on an internal model and reported a 19% performance gain from 37 experiments run while he slept.</p>
+        <p>In early March 2026, Andrej Karpathy released <a href="https://github.com/karpathy/autoresearch" target="_blank" rel="noopener noreferrer">autoresearch</a> - a framework that lets AI agents run experiments autonomously overnight. The idea is elegant: give an agent a codebase, a measurable metric, and a simple rule - if the change improves the metric, keep it; if not, revert it. Within days, the repo had over 28,000 GitHub stars. Shopify's CEO ran it on an internal model and reported a 19% performance gain from 37 experiments run while he slept.</p>
 
         <p>The original autoresearch was built for machine learning - optimizing training code for a small language model. But the core pattern is domain-agnostic: constrain the scope, define success as a number, mechanize the verification, and let the agent iterate. We wanted to see what happens when you point this loop at a different problem entirely: trading strategy development.</p>
 
@@ -154,7 +154,7 @@
 
         <p>We started with the simplest possible trading strategy: a Simple Moving Average (SMA) crossover. When the 20-day moving average crosses above the 50-day moving average, buy. When it crosses below, sell. It's the "hello world" of quantitative trading - easy to understand, easy to measure, and easy to improve.</p>
 
-        <p>The strategy was backtested on a small portfolio of three liquid securities - SPY, QQQ, and AAPL - using daily data from 2004 through March 2026. The backtester, Light Water's open-source engine, runs a full portfolio simulation with realistic trading costs: slippage, commissions, and position sizing constraints.</p>
+        <p>The strategy was backtested on a small portfolio of three liquid securities - SPY, QQQ, and AAPL - using daily data from 2004 through March 2026. The <a href="/dispatch/dispatch-july-backtester.html">backtester</a>, Light Water's open-source engine, runs a full portfolio simulation with realistic trading costs: slippage, commissions, and position sizing constraints.</p>
 
         <p>The metric we chose was total return percentage. Not Sharpe ratio, not risk-adjusted anything - just raw portfolio growth from $100,000 starting capital. We wanted the most tangible, visual metric possible: did the equity curve go up or down?</p>
 
@@ -162,7 +162,7 @@
 
         <h2>The Autoresearch Loop</h2>
 
-        <p>We built a Claude Code skill that implements the autoresearch pattern for our backtester. The loop works like this: Claude reads the current strategy file, makes one focused change, commits it to git, runs the full backtest, checks the score, and either keeps the change or reverts it. Then it moves to the next iteration immediately, without asking for permission or waiting for human input.</p>
+        <p>We built a <a href="https://github.com/uditgoenka/autoresearch" target="_blank" rel="noopener noreferrer">Claude Code skill</a> that implements the autoresearch pattern for our backtester. The loop works like this: Claude reads the current strategy file, makes one focused change, commits it to git, runs the full backtest, checks the score, and either keeps the change or reverts it. Then it moves to the next iteration immediately, without asking for permission or waiting for human input.</p>
 
         <p>The key constraints that make this work: Claude can only modify the strategy file and a few config parameters. It cannot touch the backtester engine, the data pipeline, or the scoring script. Every change must be atomic - one modification per iteration, so if something breaks, we know exactly what caused it. And every successful change is committed to git, creating a complete audit trail of the strategy's evolution.</p>
 
@@ -246,7 +246,7 @@
 
         <p>This experiment wasn't about finding a profitable trading strategy - as Karpathy himself noted, the goal of autoresearch isn't to produce novel discoveries but to systematically explore a well-defined space. What's significant is the process: an AI agent, given appropriate constraints and a clear metric, can autonomously navigate the parameter space of a trading strategy and converge on meaningful improvements.</p>
 
-        <p>Chris Worsey at General Intelligence Capital took a different approach with his ATLAS system - 25 AI agents debating market direction daily, with their prompts evolving through the same keep/revert loop. His system achieved +22% returns over 173 trading days with real capital. The key difference: Worsey's agents optimize prompts (investment theses), while our approach optimizes code (strategy logic). Both validate the core principle that autonomous iteration works in finance.</p>
+        <p>Chris Worsey at General Intelligence Capital took a different approach with his <a href="https://github.com/chrisworsey55/atlas-gic" target="_blank" rel="noopener noreferrer">ATLAS system</a> - 25 AI agents debating market direction daily, with their prompts evolving through the same keep/revert loop. His system achieved +22% returns over 173 trading days with real capital. The key difference: Worsey's agents optimize prompts (investment theses), while our approach optimizes code (strategy logic). Both validate the core principle that autonomous iteration works in finance.</p>
 
         <p>The implications for quantitative strategy development are practical. Parameter sweeps that would take a researcher hours of manual testing can now run autonomously in minutes. The agent doesn't get tired, doesn't develop confirmation bias, and doesn't skip unpromising-looking parameter combinations. Every iteration is logged, every change is auditable through git history, and every result is reproducible.</p>
 
