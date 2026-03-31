@@ -65,14 +65,14 @@
       margin-bottom: 32px;
     }
     .article-breadcrumb * {
-      color: #F2D978 !important;
+      color: #6BBFB5 !important;
     }
     .article-breadcrumb a {
-      color: #F2D978 !important; text-decoration: none; transition: color 0.2s;
+      color: #6BBFB5 !important; text-decoration: none; transition: color 0.2s;
     }
-    .article-breadcrumb a:hover { color: #F2D978 !important; }
-    .article-breadcrumb span { color: #F2D978 !important; }
-    .article-breadcrumb .crumb-current { color: #F2D978 !important; }
+    .article-breadcrumb a:hover { color: #6BBFB5 !important; }
+    .article-breadcrumb span { color: #6BBFB5 !important; }
+    .article-breadcrumb .crumb-current { color: #6BBFB5 !important; }
     .article-meta {
       display: flex; align-items: center; gap: 16px;
       font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
