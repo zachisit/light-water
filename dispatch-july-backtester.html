@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why We Open-Sourced Our Trading Backtester | The Dispatch | Light Water Capital</title>
+  <meta name="description" content="From internal research tool to open-source project - the story behind July, our professional-grade Python backtesting engine with Monte Carlo, walk-forward analysis, and regime detection.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.lightwatercapital.com/dispatch/july-backtester-open-source/">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.lightwatercapital.com/dispatch/july-backtester-open-source/">
+  <meta property="og:title" content="Why We Open-Sourced Our Trading Backtester | Light Water Capital">
+  <meta property="og:description" content="From internal research tool to open-source project - the story behind July, our professional-grade Python backtesting engine.">
+  <meta property="og:site_name" content="Light Water Capital">
+  <meta property="og:image" content="https://www.lightwatercapital.com/assets/og-july-backtester.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="July Backtester Open Source Release">
+  <meta property="article:published_time" content="2025-12-15">
+  <meta property="article:author" content="Zach Smith">
+  <meta property="article:section" content="Engineering">
+  <meta property="article:tag" content="Open Source">
+  <meta property="article:tag" content="Python">
+  <meta property="article:tag" content="Backtesting">
+  <meta property="article:tag" content="Quantitative Research">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Why We Open-Sourced Our Trading Backtester">
+  <meta name="twitter:description" content="From internal research tool to open-source project - the story behind July, our professional-grade Python backtesting engine.">
+  <meta name="twitter:image" content="https://www.lightwatercapital.com/assets/og-july-backtester.png">
+  <meta name="keywords" content="backtesting, open source, Python, quantitative trading, Monte Carlo simulation, walk-forward analysis, trading strategies, July backtester"
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Why We Open-Sourced Our Trading Backtester",
+    "description": "From internal research tool to open-source project - the story behind July, our professional-grade Python backtesting engine with Monte Carlo, walk-forward analysis, and regime detection.",
+    "image": "https://www.lightwatercapital.com/assets/og-july-backtester.png",
+    "datePublished": "2025-12-15",
+    "dateModified": "2025-12-15",
+    "author": {
+      "@type": "Person",
+      "name": "Zach Smith",
+      "url": "https://github.com/zachisit"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Light Water Capital",
+      "logo": { "@type": "ImageObject", "url": "https://www.lightwatercapital.com/assets/light-water-transparent-cropped-logo.PNG" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.lightwatercapital.com/dispatch/july-backtester-open-source/" },
+    "articleSection": "Engineering",
+    "keywords": ["backtesting", "open source", "Python", "quantitative trading", "Monte Carlo simulation", "walk-forward analysis", "trading strategies"],
+    "wordCount": 1800
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.lightwatercapital.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "The Dispatch",
+        "item": "https://www.lightwatercapital.com/dispatch/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "July Backtester Open Source",
+        "item": "https://www.lightwatercapital.com/dispatch/july-backtester-open-source/"
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#1E3A5F">
+
+  <style>
+    :root {
+      --navy:       #1E3A5F;
+      --navy-mid:   #2E5075;
+      --teal:       #6BBFB5;
+      --sky-pale:   #D9EDF8;
+      --warm-white: #F4F2EE;
+      --off-white:  #EBE9E5;
+      --mid-gray:   #9A9A96;
+      --lt-gray:    #E8E7E3;
+      --body-text:  #3A3A38;
+      --rule:       rgba(30,58,95,0.10);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      color: var(--body-text);
+      background: #E5E3DF;
+      -webkit-font-smoothing: antialiased;
+    }
+    .skip-link {
+      position: absolute; top: -100px; left: 0;
+      background: var(--navy); color: #fff;
+      padding: 8px 16px; font-size: 13px; z-index: 9999;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 60px; height: 72px;
+      background: rgba(229, 227, 223, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 2px 24px rgba(30,58,95,0.07); }
+    .nav-logo { height: 70px; width: auto; }
+    .nav-links { list-style: none; display: flex; gap: 40px; }
+    .nav-links a {
+      font-size: 11px; font-weight: 400; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--navy);
+      text-decoration: none; opacity: 0.5; transition: opacity 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { opacity: 1; }
+
+    /* ARTICLE HEADER - navy band */
+    .article-header {
+      background: #1E3A5F;
+      background-color: #1E3A5F;
+      padding: 148px 60px 72px;
+    }
+    .article-header-inner {
+      max-width: 75vw;
+      margin: 0 auto;
+    }
+    .article-breadcrumb {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+    .article-breadcrumb a {
+      color: var(--teal); text-decoration: none; opacity: 0.8; transition: opacity 0.2s;
+    }
+    .article-breadcrumb a:hover { opacity: 1; }
+    .article-breadcrumb span { color: rgba(255,255,255,0.2); }
+    .article-breadcrumb .crumb-current { color: rgba(255,255,255,0.35); }
+    .article-meta {
+      display: flex; align-items: center; gap: 16px;
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .article-tag { color: var(--teal); }
+    .article-meta-dot {
+      width: 3px; height: 3px; border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+    }
+    .article-meta-date { color: rgba(255,255,255,0.35); }
+    .article-meta-read { color: rgba(255,255,255,0.35); }
+    h1.article-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(36px, 5.5vw, 62px);
+      line-height: 1.06;
+      color: rgba(255,255,255,0.92);
+      letter-spacing: -0.02em;
+      margin-bottom: 28px;
+    }
+    .article-dek {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300; font-style: italic;
+      font-size: 20px; line-height: 1.6;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 44px;
+    }
+
+    /* BYLINE */
+    .byline {
+      display: flex; align-items: center; gap: 14px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .byline-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--navy-mid);
+      border: 1.5px solid rgba(255,255,255,0.15);
+      overflow: hidden; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    /* Placeholder initials */
+    .byline-avatar-initials {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400; font-size: 16px;
+      color: rgba(255,255,255,0.5);
+      user-select: none;
+    }
+    .byline-text {}
+    .byline-name {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400; font-size: 13px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.3;
+    }
+    .byline-role {
+      font-size: 11px; letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.3);
+      margin-top: 2px;
+    }
+
+    /* ARTICLE BODY */
+    .article-body-wrap {
+      max-width: 75vw;
+      margin: 0 auto;
+      padding: 0 60px;
+    }
+    .article-body {
+      background: var(--warm-white);
+      padding: 60px 64px 72px;
+      margin-top: 0;
+      border-radius: 12px;
+    }
+
+    .article-body p {
+      font-size: 17px; line-height: 1.9;
+      color: var(--body-text);
+      margin-bottom: 28px;
+    }
+    .article-body h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400; font-size: 26px;
+      color: var(--navy); line-height: 1.2;
+      margin: 52px 0 20px; letter-spacing: -0.01em;
+    }
+    .article-body h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500; font-size: 11px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--mid-gray); margin: 40px 0 14px;
+    }
+    .article-body blockquote {
+      border-left: 2px solid var(--teal);
+      margin: 48px 0; padding: 4px 0 4px 32px;
+    }
+    .article-body blockquote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300; font-style: italic;
+      font-size: 22px; line-height: 1.55;
+      color: var(--navy); margin-bottom: 0; opacity: 0.85;
+    }
+    .article-body hr {
+      border: none; border-top: 1px solid var(--rule);
+      margin: 52px 0;
+    }
+
+    /* FIGURES & IMAGES */
+    .article-body figure {
+      margin: 52px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--lt-gray);
+    }
+    .article-body figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .article-body figcaption {
+      padding: 16px 20px;
+      background: var(--off-white);
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--mid-gray);
+      letter-spacing: 0.02em;
+    }
+
+    /* CHARTS & DATA VISUALIZATION */
+    .article-chart {
+      margin: 52px 0;
+      padding: 32px;
+      background: var(--off-white);
+      border: 1px solid var(--lt-gray);
+      border-radius: 12px;
+    }
+    .article-chart-title {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+      margin-bottom: 24px;
+    }
+    .article-chart-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .article-chart-label {
+      width: 120px;
+      font-size: 13px;
+      color: var(--body-text);
+      flex-shrink: 0;
+    }
+    .article-chart-bar-outer {
+      flex: 1;
+      height: 32px;
+      background: var(--warm-white);
+      border-radius: 4px;
+      border: 1px solid var(--lt-gray);
+      overflow: hidden;
+    }
+    .article-chart-bar-inner {
+      height: 100%;
+      background: linear-gradient(90deg, var(--teal) 0%, var(--teal-lt) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 12px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--navy);
+    }
+    .article-chart-caption {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--rule);
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--mid-gray);
+      letter-spacing: 0.02em;
+    }
+
+    /* LINE CHART */
+    .article-line-chart {
+      margin: 52px 0;
+      padding: 32px;
+      background: var(--off-white);
+      border: 1px solid var(--lt-gray);
+      border-radius: 12px;
+    }
+    .article-line-chart-svg {
+      width: 100%;
+      height: 240px;
+    }
+
+    /* STAT CALLOUT */
+    .article-stat-box {
+      margin: 40px 0;
+      padding: 28px 32px;
+      background: linear-gradient(135deg, var(--sky-pale) 0%, var(--warm-white) 100%);
+      border-left: 3px solid var(--teal);
+      border-radius: 8px;
+    }
+    .article-stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 48px;
+      line-height: 1;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .article-stat-label {
+      font-size: 13px;
+      color: var(--mid-gray);
+      letter-spacing: 0.04em;
+    }
+
+    /* END MARK */
+    .article-end {
+      display: flex; align-items: center; gap: 16px;
+      margin-top: 56px; padding-top: 36px;
+      border-top: 1px solid var(--rule);
+    }
+    .article-end-mark { width: 28px; height: 1px; background: var(--teal); }
+    .article-end-text {
+      font-size: 11px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--mid-gray);
+    }
+
+    /* AUTHOR CARD - footer of article */
+    .author-card-wrap {
+      max-width: 75vw;
+      margin: 0 auto;
+      padding: 0 60px 80px;
+    }
+    .author-card {
+      background: var(--warm-white);
+      border: 1px solid var(--lt-gray);
+      border-top: 2px solid var(--teal);
+      border-radius: 12px;
+      padding: 36px 40px;
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+    }
+    .author-card-avatar {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: var(--lt-gray);
+      border: 1.5px solid var(--lt-gray);
+      overflow: hidden; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .author-card-avatar-initials {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400; font-size: 22px;
+      color: var(--mid-gray);
+    }
+    .author-card-body {}
+    .author-card-label {
+      font-size: 10px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--teal);
+      margin-bottom: 6px; display: block;
+    }
+    .author-card-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400; font-size: 22px;
+      color: var(--navy); margin-bottom: 4px;
+      line-height: 1.2;
+    }
+    .author-card-title {
+      font-size: 12px; color: var(--mid-gray);
+      letter-spacing: 0.04em; margin-bottom: 14px;
+    }
+    .author-card-bio {
+      font-size: 14px; line-height: 1.75;
+      color: var(--body-text); opacity: 0.7;
+      margin-bottom: 16px;
+    }
+    .author-card-linkedin {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--navy); text-decoration: none; opacity: 0.4;
+      border-bottom: 1px solid var(--lt-gray); padding-bottom: 3px;
+      transition: opacity 0.2s;
+    }
+    .author-card-linkedin:hover { opacity: 1; }
+
+    /* BACK LINK */
+    .article-back-wrap {
+      max-width: 75vw; margin: 0 auto; padding: 0 60px 32px;
+    }
+    .article-back {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--navy); text-decoration: none; opacity: 0.4;
+      border-bottom: 1px solid var(--rule); padding-bottom: 4px;
+      transition: opacity 0.2s;
+    }
+    .article-back:hover { opacity: 1; }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      padding: 56px 60px 44px;
+    }
+    .footer-top {
+      display: flex; align-items: flex-start;
+      justify-content: space-between; gap: 40px; margin-bottom: 48px;
+    }
+    .footer-logo { height: 90px; width: auto; opacity: 0.8; }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a {
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.8); }
+    .footer-bottom {
+      display: flex; align-items: flex-end;
+      justify-content: space-between; gap: 32px;
+      border-top: 1px solid rgba(255,255,255,0.06); padding-top: 28px;
+    }
+    .footer-legal {
+      font-size: 11px; line-height: 1.7;
+      color: rgba(255,255,255,0.2); max-width: 560px;
+    }
+    .footer-location {
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.2); white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .article-header { padding: 120px 24px 56px; }
+      .article-body-wrap, .author-card-wrap, .article-back-wrap { padding: 0 24px; }
+      .article-body { padding: 40px 28px 52px; }
+      .author-card { flex-direction: column; gap: 20px; padding: 28px 24px; }
+      footer { padding: 48px 24px 36px; }
+      .footer-top { flex-direction: column; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <img class="nav-logo" src="assets/light-water-transparent-cropped-logo.PNG" alt="Light Water Capital">
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/dispatch/" class="active">Dispatch</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+
+    <!-- NAVY HEADER BAND -->
+    <header class="article-header">
+      <div class="article-header-inner">
+        <nav class="article-breadcrumb" aria-label="Breadcrumb">
+          <a href="/dispatch/">The Dispatch</a>
+          <span aria-hidden="true">→</span>
+          <span class="crumb-current">Engineering</span>
+        </nav>
+        <div class="article-meta">
+          <span class="article-tag">Engineering</span>
+          <span class="article-meta-dot" aria-hidden="true"></span>
+          <time class="article-meta-date" datetime="2025-12-15">December 2025</time>
+          <span class="article-meta-dot" aria-hidden="true"></span>
+          <span class="article-meta-read">7 min read</span>
+        </div>
+        <div class="article-tags" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;">
+          <span style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;">Open Source</span>
+          <span style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;">Python</span>
+          <span style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;">Backtesting</span>
+          <span style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;">Quantitative</span>
+          <span style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;">Monte Carlo</span>
+        </div>
+        <h1 class="article-title">Why We Open-Sourced<br>Our Trading Backtester</h1>
+        <p class="article-dek">From internal research tool to open-source project - the story behind July, our professional-grade Python backtesting engine.</p>
+
+        <!-- BYLINE -->
+        <div class="byline">
+          <div class="byline-avatar" aria-hidden="true">
+            <span class="byline-avatar-initials">ZS</span>
+          </div>
+          <div class="byline-text">
+            <div class="byline-name">Zach Smith</div>
+            <div class="byline-role">Engineering, Light Water Capital</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- BODY ON WARM WHITE CARD -->
+    <div class="article-body-wrap">
+      <article class="article-body" aria-label="Article content">
+
+
+        <p>Every quantitative trading shop eventually builds their own backtesting engine. It's a rite of passage - you start with someone else's framework, hit a wall when you need something custom, and end up writing your own. We followed that path. What we didn't expect was that our internal tool would become something worth sharing.</p>
+
+        <p>In July of last year, we started building what would become our primary research infrastructure. The goal was simple: a Python backtesting engine that handled the realities of multi-asset portfolio simulation without the ceremony of enterprise platforms or the limitations of academic libraries. Seven months later, we're making it public.</p>
+
+        <h2>Why Another Backtester?</h2>
+
+        <p>The Python ecosystem has no shortage of backtesting frameworks. Backtrader, Zipline, VectorBT, QuantConnect - each has strengths. But when you're running serious research, you need specific capabilities that don't always align with what's available off the shelf.</p>
+
+        <p>We needed Monte Carlo simulation with block-bootstrap resampling to preserve win/loss sequence patterns. We needed walk-forward analysis across rolling time windows to catch overfitting before it reached production. We needed parameter sensitivity sweeps that could show us when a strategy depended too heavily on exact settings. We needed regime heatmaps to understand how performance shifted across different VIX environments.</p>
+
+        <p>Most importantly, we needed all of this to work with multiple data sources - Norgate for survivorship-bias-free US equities, Yahoo Finance for quick prototyping, Massive API for futures, and CSV imports for proprietary datasets - without requiring API keys or subscriptions for basic use.</p>
+
+        <div class="article-stat-box">
+          <div class="article-stat-number">MIT</div>
+          <div class="article-stat-label">Licensed under MIT. Use it commercially, modify it freely, build products on top of it. We benefit more from having a shared standard than from keeping this proprietary.</div>
+        </div>
+
+        <h2>What Makes July Different</h2>
+
+        <h3>Monte Carlo with Block Bootstrap</h3>
+
+        <p>Traditional Monte Carlo shuffles trade outcomes randomly, which destroys autocorrelation structure. If your strategy has streaky win/loss patterns, random shuffling will underestimate tail risk. Block bootstrap solves this by sampling trades in sequences, preserving the clustering behavior of real performance.</p>
+
+        <p>July runs Monte Carlo by default on every backtest. You get a distribution of outcomes, not just a single equity curve. This makes it trivial to answer questions like: "What's the 5th percentile return over the test period?" or "How often does this strategy experience a 20% drawdown?"</p>
+
+        <h3>Walk-Forward Analysis</h3>
+
+        <p>Overfitting is the silent killer of quantitative strategies. A backtest that looks phenomenal in-sample often collapses out-of-sample because the parameters were tuned to historical noise, not signal.</p>
+
+        <p>Walk-forward analysis splits your data into training and testing windows, optimizes parameters on the training set, tests them on the hold-out set, and rolls forward through time. If performance degrades significantly out-of-sample, you know the strategy won't generalize. July automates this entire process and visualizes the degradation across periods.</p>
+
+        <h3>Parameter Sensitivity Sweeps</h3>
+
+        <p>A robust strategy should have a flat region around its optimal parameters. If changing an EMA period from 50 to 51 tanks your Sharpe ratio, you don't have an edge - you have a curve-fitted accident.</p>
+
+        <p>July's sensitivity sweep runs a grid search across parameter ranges and plots performance as a heatmap. You can visually identify whether your strategy has a stable region or a single lucky peak surrounded by cliffs.</p>
+
+        <h3>Regime Heatmaps</h3>
+
+        <p>Different market conditions favor different strategies. A momentum strategy that works in low-volatility trending markets may bleed capital during high-VIX whipsaw periods.</p>
+
+        <p>July bins your backtest results by VIX regime and shows performance across each bucket. You can see at a glance whether your strategy works everywhere or only in specific conditions - and whether those conditions are common enough to justify the strategy's use.</p>
+
+        <h3>ML-Ready Trade Export</h3>
+
+        <p>Modern quantitative research often involves feeding backtest features into machine learning models. July exports every trade with entry/exit timestamps, holding periods, P&L, market conditions at entry, and custom strategy-specific features you define.</p>
+
+        <p>This makes it trivial to build downstream models that predict trade outcomes, optimize position sizing dynamically, or filter trades based on learned patterns.</p>
+
+        <h2>Getting Started</h2>
+
+        <p>The repository is live at github.com/zachisit/july-backtester. Installation is straightforward:</p>
+
+        <blockquote>
+          <p>pip install july-backtester</p>
+        </blockquote>
+
+        <p>The documentation walks through a full example: loading data from Yahoo Finance (no API key required), defining a simple moving average crossover strategy, running a backtest with Monte Carlo enabled, and generating all the standard reports - equity curve, drawdown chart, trade log, and performance metrics.</p>
+
+        <p>For users with Norgate or Massive API subscriptions, the data adapters are plug-and-play. For custom data, the CSV import handles OHLCV format with automatic column mapping.</p>
+
+        <h2>Why Open Source This?</h2>
+
+        <p>We could have kept this internal. Most trading firms guard their infrastructure like nuclear launch codes. But backtesting engines aren't a source of edge - the strategies you run on them are.</p>
+
+        <p>By open-sourcing July, we gain more than we lose. We get external contributions that improve the engine for everyone. We establish a shared standard that makes it easier to reproduce research and validate findings. We reduce the friction for talented researchers who want to contribute to Light Water's work but don't want to rebuild infrastructure from scratch.</p>
+
+        <p>Most importantly, we believe transparency in research tooling builds trust. If someone wants to validate our published results, they can use the exact same backtesting engine we used, with the same cost models, the same data handling, and the same statistical tests. Reproducibility is a feature, not a liability.</p>
+
+        <div class="article-stat-box">
+          <div class="article-stat-number">Zero</div>
+          <div class="article-stat-label">Cost to run your first backtest. Yahoo Finance integration works out of the box with no API keys, no subscriptions, no data fees.</div>
+        </div>
+
+        <h2>What's Next</h2>
+
+        <p>July is actively maintained. We're using it daily for internal research, which means bugs get found and fixed quickly. The roadmap includes options backtesting support, intraday data handling for higher-frequency strategies, and tighter integration with ML pipelines for automated feature engineering.</p>
+
+        <p>Community contributions are welcome. Star the repo, fork it, open a PR. If you build something useful on top of July, we'd love to see it. The more people use this tool, the better it becomes for everyone.</p>
+
+        <p>Quantitative trading has too many barriers to entry already. July is our attempt to lower one of them.</p>
+        <div class="article-end">
+          <div class="article-end-mark"></div>
+          <span class="article-end-text">Light Water Capital &nbsp;·&nbsp; December 2025</span>
+        </div>
+
+      </article>
+    </div>
+
+    <!-- SHARE SECTION -->
+    <div class="article-body-wrap">
+      <div style="max-width: 75vw; margin: 0 auto; padding: 32px 60px 48px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--lt-gray);">
+        <span style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-gray);">Share this article</span>
+        <a href="https://twitter.com/intent/tweet?text=Why%20We%20Open-Sourced%20Our%20Trading%20Backtester&url=https://www.lightwatercapital.com/dispatch/july-backtester-open-source/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: var(--navy); color: #fff; text-decoration: none; border-radius: 6px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-top: -1px;">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+          Share on X
+        </a>
+      </div>
+    </div>
+
+    <!-- AUTHOR CARD -->
+    <div class="author-card-wrap">
+      <div class="author-card" role="complementary" aria-label="About the author">
+        <div class="author-card-avatar" aria-hidden="true">
+          <img src="https://media.licdn.com/dms/image/v2/D4E03AQFq0c4d5QVNVw/profile-displayphoto-crop_800_800/B4EZtDJpp3HoAI-/0/1766358163169?e=1776297600&v=beta&t=P5MQvAXXCYVHo5woFpaDLNotQtvwaMqWS33L8ldmaTQ" alt="Suriya Narayanan Rajavel" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="author-card-body">
+          <span class="author-card-label">About the author</span>
+          <div class="author-card-name">Zach Smith</div>
+          <div class="author-card-title">Engineering, Light Water Capital</div>
+          <p class="author-card-bio">Zach builds quantitative research infrastructure at Light Water. He created July Backtester to solve internal research needs and open-sourced it to lower barriers for the quantitative trading community. He's passionate about making professional-grade trading tools accessible.</p>
+          <a href="https://github.com/zachisit" target="_blank" rel="noopener noreferrer" class="author-card-linkedin" aria-label="View Zach Smith on GitHub">
+            GitHub
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 4h10M7.5 1l3 3-3 3" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BACK LINK -->
+    <div class="article-back-wrap">
+      <a href="/dispatch/" class="article-back" aria-label="Back to The Dispatch">
+        <svg width="14" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
+          <path d="M13 4.5H1M5.5 1L2 4.5 5.5 8" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back to the Dispatch
+      </a>
+    </div>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-top">
+      <img class="footer-logo" src="assets/light-water-transparent-cropped-logo.PNG" alt="Light Water Capital">
+      <ul class="footer-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/dispatch/">Dispatch</a></li>
+        <li><a href="https://www.linkedin.com/company/light-water" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">
+        &copy; 2025 Light Water Capital. All rights reserved. This website is for informational purposes only and does not constitute investment advice or an offer to buy or sell any security. Past performance is not indicative of future results.
+      </p>
+      <span class="footer-location">Corydon, Indiana</span>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+  </script>
+</body>
+</html>
