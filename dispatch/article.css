@@ -63,13 +63,14 @@
       display: flex; align-items: center; gap: 8px;
       font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
       margin-bottom: 32px;
+      color: var(--sun);
     }
     .article-breadcrumb a {
-      color: var(--sun); text-decoration: none; opacity: 0.8; transition: opacity 0.2s;
+      color: var(--sun) !important; text-decoration: none; opacity: 0.8; transition: opacity 0.2s;
     }
     .article-breadcrumb a:hover { opacity: 1; }
-    .article-breadcrumb span { color: var(--sun); opacity: 0.3; }
-    .article-breadcrumb .crumb-current { color: var(--sun); opacity: 0.5; }
+    .article-breadcrumb span { color: var(--sun) !important; opacity: 0.3; }
+    .article-breadcrumb .crumb-current { color: var(--sun) !important; opacity: 0.5; }
     .article-meta {
       display: flex; align-items: center; gap: 16px;
       font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
