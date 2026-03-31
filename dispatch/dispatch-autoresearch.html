@@ -12,7 +12,7 @@
   <meta property="og:title" content="We Let AI Iterate on a Trading Strategy for 20 Minutes | Light Water Capital">
   <meta property="og:description" content="Applying Karpathy's autoresearch loop to quantitative strategy development - 30 autonomous experiments, zero human intervention.">
   <meta property="og:site_name" content="Light Water Capital">
-  <meta property="og:image" content="https://www.lightwatercapital.com/assets/og-autoresearch.png">
+  <meta property="og:image" content="https://www.lightwatercapital.com/dispatch/images/chart_loop_flowchart.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="AI Trading Strategy Optimization Results">
@@ -26,7 +26,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="We Let AI Iterate on a Trading Strategy for 20 Minutes">
   <meta name="twitter:description" content="Applying Karpathy's autoresearch loop to quantitative strategy development - 30 autonomous experiments, zero human intervention.">
-  <meta name="twitter:image" content="https://www.lightwatercapital.com/assets/og-autoresearch.png">
+  <meta name="twitter:image" content="https://www.lightwatercapital.com/dispatch/images/chart_loop_flowchart.png">
   <meta name="keywords" content="AI trading, autoresearch, quantitative trading, algorithmic trading, machine learning, trading strategies, backtesting, EMA crossover, Claude AI">
   <script type="application/ld+json">
   {
@@ -34,7 +34,7 @@
     "@type": "Article",
     "headline": "We Let AI Iterate on a Trading Strategy for 20 Minutes. Here's What It Found.",
     "description": "Applying Karpathy's autoresearch loop to quantitative strategy development - 30 autonomous experiments, zero human intervention.",
-    "image": "https://www.lightwatercapital.com/assets/og-autoresearch.png",
+    "image": "https://www.lightwatercapital.com/dispatch/images/chart_loop_flowchart.png",
     "datePublished": "2026-03-30",
     "dateModified": "2026-03-30",
     "author": {
@@ -169,8 +169,8 @@
         <p>We set Claude loose with a simple prompt: "Run 30 iterations. Improve the total return." Then we walked away.</p>
 
         <figure>
-          <a href="chart_loop_flowchart.png" target="_blank" rel="noopener noreferrer">
-            <img src="chart_loop_flowchart.png" alt="Autoresearch loop flowchart" />
+          <a href="images/chart_loop_flowchart.png" target="_blank" rel="noopener noreferrer">
+            <img src="images/chart_loop_flowchart.png" alt="Autoresearch loop flowchart" />
           </a>
           <figcaption>The autoresearch loop: one change per iteration, scored against the previous best, kept or reverted automatically.</figcaption>
         </figure>
@@ -186,8 +186,8 @@
         <p>Here's what stood out from the evolution:</p>
 
         <figure>
-          <a href="chart_iteration_progression.png" target="_blank" rel="noopener noreferrer">
-            <img src="chart_iteration_progression.png" alt="Score progression across 30 iterations" />
+          <a href="images/chart_iteration_progression.png" target="_blank" rel="noopener noreferrer">
+            <img src="images/chart_iteration_progression.png" alt="Score progression across 30 iterations" />
           </a>
           <figcaption>Score progression across 30 iterations. Green bars = kept improvements, red bars = reverted attempts, dotted line = running best.</figcaption>
         </figure>
@@ -211,8 +211,8 @@
         <p>The SPY SMA200 trend filter - a common institutional overlay that only allows trades when the broad market is in an uptrend - actually reduced returns from 290.5% to 199.9%. In backtesting, this filter removes both losing trades in bear markets and winning trades in early recoveries. The net effect was negative.</p>
 
         <figure>
-          <a href="chart_strategy_comparison.png" target="_blank" rel="noopener noreferrer">
-            <img src="chart_strategy_comparison.png" alt="Comparison of strategy types attempted" />
+          <a href="images/chart_strategy_comparison.png" target="_blank" rel="noopener noreferrer">
+            <img src="images/chart_strategy_comparison.png" alt="Comparison of strategy types attempted" />
           </a>
           <figcaption>Comparison of all strategy types attempted. EMA crossovers dominated, while alternative approaches like MACD and Bollinger underperformed the baseline.</figcaption>
         </figure>
@@ -229,15 +229,15 @@
         <p>The resulting strategy trades less frequently than the baseline (92 trades vs. 172), holds positions longer, and captures more of each trend by using a much wider spread between the fast and slow averages. The 120-period slow EMA effectively acts as a 6-month trend filter, only entering positions when a stock's short-term momentum aligns with its half-year direction.</p>
 
         <figure>
-          <a href="equity_curves.png" target="_blank" rel="noopener noreferrer">
-            <img src="equity_curves.png" alt="Equity curve evolution across 30 iterations" />
+          <a href="images/equity_curves.png" target="_blank" rel="noopener noreferrer">
+            <img src="images/equity_curves.png" alt="Equity curve evolution across 30 iterations" />
           </a>
           <figcaption>Equity curve evolution across 30 iterations. Dashed gray line shows the SMA 20/50 baseline. Green line shows the best-performing EMA 13/120 strategy. Gray cloud represents all intermediate iterations. The strategy evolved from $233K to $390K final portfolio value on a $100K starting capital.</figcaption>
         </figure>
 
         <figure>
-          <a href="chart_before_after.png" target="_blank" rel="noopener noreferrer">
-            <img src="chart_before_after.png" alt="Before and after equity curve comparison" />
+          <a href="images/chart_before_after.png" target="_blank" rel="noopener noreferrer">
+            <img src="images/chart_before_after.png" alt="Before and after equity curve comparison" />
           </a>
           <figcaption>Direct comparison: baseline SMA 20/50 (dashed) vs. AI-optimized EMA 13/120 (solid). Starting capital: $100K.</figcaption>
         </figure>
