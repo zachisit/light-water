@@ -3,6 +3,8 @@
       --navy-mid:   #2E5075;
       --teal:       #6BBFB5;
       --sky-pale:   #D9EDF8;
+      --sun:        #F2D978;
+      --sun-lt:     #F8EBB0;
       --warm-white: #F4F2EE;
       --off-white:  #EBE9E5;
       --mid-gray:   #9A9A96;
@@ -363,16 +365,15 @@
       max-width: 75vw; margin: 0 auto; padding: 48px 60px;
     }
     .comment-cta {
-      background: var(--warm-white);
-      border: 1px solid var(--lt-gray);
-      border-left: 3px solid var(--teal);
+      background: var(--sun-lt);
+      border: 1px solid rgba(242,217,120,0.3);
       border-radius: 8px;
       padding: 40px 48px;
       text-align: center;
-      transition: border-color 0.3s;
+      transition: background 0.3s;
     }
     .comment-cta:hover {
-      border-left-color: var(--navy);
+      background: var(--sun);
     }
     .comment-cta-eyebrow {
       font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
