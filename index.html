@@ -44,6 +44,46 @@
     "sameAs": ["https://www.linkedin.com/company/light-water"]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does Light Water Capital do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Light Water Capital is a private investment firm and family office. We manage capital for a select number of clients, focusing on public equities and quantitative strategies with a long-term investment horizon."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is Light Water Capital based?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We are based in Corydon, Indiana. We operate as a private firm and do not maintain public-facing offices."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is your investment philosophy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We build concentrated, high-conviction portfolios backed by quantitative research. We prioritize long time horizons, aligned incentives with our clients, and rigorous data-driven analysis over market consensus or short-term performance chasing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is The Dispatch?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Dispatch is our publication where we share notes on the strategies we're working on, the tools we're building, and what's happening inside the firm. It's how we think out loud, on our own terms."
+        }
+      }
+    ]
+  }
+  </script>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -157,6 +197,55 @@
       color: var(--navy);
     }
     .about-text em { font-style: italic; }
+    .about-detail {
+      font-size: 15px; line-height: 1.8;
+      color: var(--body-text); opacity: 0.65;
+      margin-top: 28px; max-width: 640px;
+    }
+
+    /* PHILOSOPHY */
+    #philosophy {
+      padding: 100px 60px;
+      background: var(--off-white);
+      border-bottom: 1px solid var(--rule);
+    }
+    .philosophy-inner {
+      max-width: 860px; margin: 0 auto;
+    }
+    .philosophy-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 48px; margin-top: 40px;
+    }
+    .philosophy-item h3 {
+      font-family: 'Cormorant Garamond', serif; font-weight: 400;
+      font-size: 20px; color: var(--navy); margin-bottom: 12px;
+    }
+    .philosophy-item p {
+      font-size: 14px; line-height: 1.75;
+      color: var(--body-text); opacity: 0.6;
+    }
+
+    /* FAQ */
+    #faq {
+      padding: 100px 60px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .faq-inner {
+      max-width: 640px;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--rule);
+      padding: 28px 0;
+    }
+    .faq-item:first-of-type { border-top: 1px solid var(--rule); }
+    .faq-q {
+      font-family: 'Cormorant Garamond', serif; font-weight: 400;
+      font-size: 19px; color: var(--navy); margin-bottom: 12px;
+    }
+    .faq-a {
+      font-size: 14px; line-height: 1.75;
+      color: var(--body-text); opacity: 0.6;
+    }
 
     /* DISPATCH LINK */
     #dispatch {
@@ -236,7 +325,8 @@
       nav { padding: 0 24px; }
       .nav-links { display: none; }
       #hero { padding: 0 24px 72px; }
-      #about, #dispatch { padding: 72px 24px; }
+      #about, #dispatch, #philosophy, #faq { padding: 72px 24px; }
+      .philosophy-grid { grid-template-columns: 1fr; gap: 32px; }
       footer { padding: 48px 24px 36px; }
       .dispatch-inner { flex-direction: column; align-items: flex-start; gap: 32px; }
       .footer-top { flex-direction: column; }
@@ -271,9 +361,58 @@
     <section id="about" aria-labelledby="about-heading">
       <div class="about-inner">
         <span class="eyebrow reveal">The firm</span>
-        <p class="about-text reveal" id="about-heading">
-          Light Water Capital is a private investment firm and family office based in Indiana. We manage capital for a select number of clients — <em>carefully, deliberately, and with a long horizon.</em>
-        </p>
+        <h2 class="about-text reveal" id="about-heading">
+          Light Water Capital is a private investment firm and family office based in Corydon, Indiana. We manage capital for a select number of clients - <em>carefully, deliberately, and with a long horizon.</em>
+        </h2>
+        <p class="about-detail reveal">Private capital management means we invest our own capital alongside our clients. We focus on public equities and quantitative strategies, building concentrated positions where we have high conviction. We don't chase short-term performance or follow consensus. Our edge comes from patience, rigorous research, and a willingness to wait for the right opportunity.</p>
+      </div>
+    </section>
+
+    <section id="philosophy" aria-labelledby="philosophy-heading">
+      <div class="philosophy-inner">
+        <span class="eyebrow reveal">Our approach</span>
+        <h2 class="about-text reveal" id="philosophy-heading" style="max-width:640px;">How we think about capital allocation</h2>
+        <div class="philosophy-grid">
+          <div class="philosophy-item reveal">
+            <h3>Concentration over diversification</h3>
+            <p>We prefer a small number of deeply researched positions over a broad portfolio. When you know what you own and why, less is more.</p>
+          </div>
+          <div class="philosophy-item reveal">
+            <h3>Quantitative rigor</h3>
+            <p>Every investment thesis is tested against data. We build and maintain our own research infrastructure, including open-source tools like our July Backtester.</p>
+          </div>
+          <div class="philosophy-item reveal">
+            <h3>Long time horizons</h3>
+            <p>We underwrite investments over years, not quarters. Patient capital earns the premium that impatient capital leaves on the table.</p>
+          </div>
+          <div class="philosophy-item reveal">
+            <h3>Aligned incentives</h3>
+            <p>We invest our own capital alongside our clients. Our interests are aligned because we bear the same risk and earn the same returns.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" aria-labelledby="faq-heading">
+      <div class="faq-inner">
+        <span class="eyebrow reveal">Common questions</span>
+        <h2 class="about-text reveal" id="faq-heading">Frequently asked questions</h2>
+        <div class="faq-item reveal">
+          <h3 class="faq-q">What does Light Water Capital do?</h3>
+          <p class="faq-a">Light Water Capital is a private investment firm and family office. We manage capital for a select number of clients, focusing on public equities and quantitative strategies with a long-term investment horizon.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3 class="faq-q">Where is Light Water Capital based?</h3>
+          <p class="faq-a">We are based in Corydon, Indiana. We operate as a private firm and do not maintain public-facing offices.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3 class="faq-q">What is your investment philosophy?</h3>
+          <p class="faq-a">We build concentrated, high-conviction portfolios backed by quantitative research. We prioritize long time horizons, aligned incentives with our clients, and rigorous data-driven analysis over market consensus or short-term performance chasing.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3 class="faq-q">What is The Dispatch?</h3>
+          <p class="faq-a">The Dispatch is our publication where we share notes on the strategies we're working on, the tools we're building, and what's happening inside the firm. It's how we think out loud, on our own terms.</p>
+        </div>
       </div>
     </section>
 
