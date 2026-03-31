@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&amp;family=DM+Sans:wght@300;400;500&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#1E3A5F"/>
+
+  <!-- Subtle gradient overlay -->
+  <rect width="1200" height="630" fill="url(#grad)" opacity="0.15"/>
+  <defs>
+    <radialGradient id="grad" cx="85%" cy="85%" r="60%">
+      <stop offset="0%" stop-color="#6BBFB5"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Top rule line -->
+  <line x1="80" y1="80" x2="1120" y2="80" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+
+  <!-- Eyebrow -->
+  <text x="80" y="160" font-family="'DM Sans', sans-serif" font-size="14" font-weight="500" letter-spacing="3" fill="#6BBFB5" text-transform="uppercase">FIRM NEWS</text>
+
+  <!-- Title -->
+  <text x="80" y="240" font-family="'Cormorant Garamond', serif" font-size="56" font-weight="300" fill="rgba(255,255,255,0.92)" letter-spacing="-0.5">Welcoming Our Spring 2026</text>
+  <text x="80" y="310" font-family="'Cormorant Garamond', serif" font-size="56" font-weight="300" fill="rgba(255,255,255,0.92)" letter-spacing="-0.5">Quant Strategy Interns</text>
+
+  <!-- Dek -->
+  <text x="80" y="380" font-family="'Cormorant Garamond', serif" font-size="22" font-weight="300" font-style="italic" fill="rgba(255,255,255,0.45)">Chang Liu &amp; Alice Li join Light Water Capital</text>
+
+  <!-- Divider -->
+  <line x1="80" y1="430" x2="280" y2="430" stroke="#6BBFB5" stroke-width="1" opacity="0.4"/>
+
+  <!-- Footer brand -->
+  <text x="80" y="530" font-family="'DM Sans', sans-serif" font-size="13" font-weight="400" letter-spacing="2.5" fill="rgba(255,255,255,0.3)">LIGHT WATER CAPITAL</text>
+  <text x="80" y="560" font-family="'DM Sans', sans-serif" font-size="11" font-weight="300" letter-spacing="1.5" fill="rgba(255,255,255,0.15)">THE DISPATCH &middot; MARCH 2026</text>
+
+  <!-- Bottom rule -->
+  <line x1="80" y1="590" x2="1120" y2="590" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+</svg>
