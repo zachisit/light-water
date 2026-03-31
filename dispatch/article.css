@@ -365,19 +365,20 @@
       max-width: 75vw; margin: 0 auto; padding: 48px 60px;
     }
     .comment-cta {
-      background: var(--sun-lt);
-      border: 1px solid rgba(242,217,120,0.3);
+      background: rgba(107,191,181,0.12);
+      border: 1px solid rgba(107,191,181,0.25);
       border-radius: 8px;
       padding: 40px 48px;
       text-align: center;
-      transition: background 0.3s;
+      transition: background 0.3s, border-color 0.3s;
     }
     .comment-cta:hover {
-      background: var(--sun);
+      background: rgba(107,191,181,0.18);
+      border-color: rgba(107,191,181,0.35);
     }
     .comment-cta-eyebrow {
       font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--teal); margin-bottom: 12px; opacity: 0.8;
+      color: var(--navy); margin-bottom: 12px; font-weight: 500;
     }
     .comment-cta-title {
       font-family: 'Cormorant Garamond', serif; font-weight: 400;
