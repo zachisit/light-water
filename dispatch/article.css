@@ -370,11 +370,6 @@
       border-radius: 8px;
       padding: 40px 48px;
       text-align: center;
-      transition: background 0.3s, border-color 0.3s;
-    }
-    .comment-cta:hover {
-      background: rgba(107,191,181,0.18);
-      border-color: rgba(107,191,181,0.35);
     }
     .comment-cta-eyebrow {
       font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
