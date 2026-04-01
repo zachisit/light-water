@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZTK7L0CNSR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZTK7L0CNSR');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>We Let AI Iterate on a Trading Strategy for 20 Minutes | Light Water Capital</title>
+  <meta name="description" content="Applying Karpathy's autoresearch loop to quantitative strategy development - 30 autonomous experiments, zero human intervention.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://lightwaterdispatch.com/dispatch/ai-autoresearch-trading-strategy-backtesting/">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://lightwaterdispatch.com/dispatch/ai-autoresearch-trading-strategy-backtesting/">
+  <meta property="og:title" content="We Let AI Iterate on a Trading Strategy for 20 Minutes | Light Water Capital">
+  <meta property="og:description" content="Applying Karpathy's autoresearch loop to quantitative strategy development - 30 autonomous experiments, zero human intervention.">
+  <meta property="og:site_name" content="Light Water Capital">
+  <meta property="og:image" content="https://www.lightwatercapital.com/dispatch/images/chart_loop_flowchart.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="AI Trading Strategy Optimization Results">
+  <meta property="article:published_time" content="2026-03-30">
+  <meta property="article:author" content="Suriya Narayanan Rajavel">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="AI">
+  <meta property="article:tag" content="Trading">
+  <meta property="article:tag" content="Quantitative Research">
+  <meta property="article:tag" content="Backtesting">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="We Let AI Iterate on a Trading Strategy for 20 Minutes">
+  <meta name="twitter:description" content="Applying Karpathy's autoresearch loop to quantitative strategy development - 30 autonomous experiments, zero human intervention.">
+  <meta name="twitter:image" content="https://www.lightwatercapital.com/dispatch/images/chart_loop_flowchart.png">
+  <meta name="keywords" content="AI trading, autoresearch, quantitative trading, algorithmic trading, machine learning, trading strategies, backtesting, EMA crossover, Claude AI">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "We Let AI Iterate on a Trading Strategy for 20 Minutes. Here's What It Found.",
+    "description": "Applying Karpathy's autoresearch loop to quantitative strategy development - 30 autonomous experiments, zero human intervention.",
+    "image": "https://www.lightwatercapital.com/dispatch/images/chart_loop_flowchart.png",
+    "datePublished": "2026-03-30",
+    "dateModified": "2026-03-30",
+    "author": {
+      "@type": "Person",
+      "name": "Suriya Narayanan Rajavel",
+      "url": "https://www.linkedin.com/in/suriya-rajavel/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Light Water Capital",
+      "logo": { "@type": "ImageObject", "url": "https://www.lightwatercapital.com/assets/light-water-transparent-cropped-logo.PNG" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://lightwaterdispatch.com/dispatch/ai-autoresearch-trading-strategy-backtesting/" },
+    "articleSection": "Research",
+    "keywords": ["AI trading", "autoresearch", "quantitative trading", "algorithmic trading", "machine learning", "trading strategies", "backtesting", "EMA crossover"],
+    "wordCount": 2100
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.lightwatercapital.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "The Dispatch",
+        "item": "https://www.lightwatercapital.com/dispatch/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "AI Autoresearch Trading Strategy",
+        "item": "https://lightwaterdispatch.com/dispatch/ai-autoresearch-trading-strategy-backtesting/"
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1E3A5F">
+
+  <link rel="stylesheet" href="../article.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <img class="nav-logo" src="../../assets/light-water-transparent-cropped-logo.PNG" alt="Light Water Capital">
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../index.html" class="active">Dispatch</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+
+    <!-- NAVY HEADER BAND -->
+    <header class="article-header">
+      <div class="article-header-inner">
+        <nav class="article-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">The Dispatch</a>
+          <span aria-hidden="true">→</span>
+          <span class="crumb-current">Strategy Research</span>
+        </nav>
+        <div class="article-meta">
+          <span class="article-tag">Strategy Research</span>
+          <span class="article-meta-dot" aria-hidden="true"></span>
+          <time class="article-meta-date" datetime="2026-03-30">March 2026</time>
+          <span class="article-meta-dot" aria-hidden="true"></span>
+          <span class="article-meta-read">8 min read</span>
+        </div>
+        <div class="article-tags" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;">
+          <span style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;">AI Trading</span>
+          <span style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;">Autoresearch</span>
+          <span style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;">Quantitative</span>
+          <span style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;">Backtesting</span>
+          <span style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;">Machine Learning</span>
+        </div>
+        <h1 class="article-title">We Let AI Iterate on a Trading Strategy<br>for 20 Minutes. Here's What It Found.</h1>
+        <p class="article-dek">Applying Karpathy's autoresearch loop to quantitative strategy development - 30 autonomous experiments, zero human intervention.</p>
+
+        <!-- BYLINE -->
+        <div class="byline">
+          <div class="byline-avatar" aria-hidden="true">
+            <img src="../../assets/suriya-rajavel-avatar.jpg" alt="Suriya Narayanan Rajavel" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="byline-text">
+            <div class="byline-name">Suriya Narayanan Rajavel</div>
+            <div class="byline-role">Strategy Research, Light Water</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- BODY ON WARM WHITE CARD -->
+    <div class="article-body-wrap">
+      <article class="article-body" aria-label="Article content">
+
+        <p>In early March 2026, Andrej Karpathy released <a href="https://github.com/karpathy/autoresearch" target="_blank" rel="noopener noreferrer">autoresearch</a> - a framework that lets AI agents run experiments autonomously overnight. The idea is elegant: give an agent a codebase, a measurable metric, and a simple rule - if the change improves the metric, keep it; if not, revert it. Within days, the repo had over 28,000 GitHub stars. Shopify's CEO ran it on an internal model and reported a 19% performance gain from 37 experiments run while he slept.</p>
+
+        <p>The original autoresearch was built for machine learning - optimizing training code for a small language model. But the core pattern is domain-agnostic: constrain the scope, define success as a number, mechanize the verification, and let the agent iterate. We wanted to see what happens when you point this loop at a different problem entirely: trading strategy development.</p>
+
+        <div class="article-stat-box">
+          <div class="article-stat-number">290.6%</div>
+          <div class="article-stat-label">Best total return achieved by the AI-optimized strategy, up from a 133.8% baseline - a +156.7% improvement in 20 minutes of autonomous iteration.</div>
+        </div>
+
+        <h2>The Setup</h2>
+
+        <p>We started with the simplest possible trading strategy: a Simple Moving Average (SMA) crossover. When the 20-day moving average crosses above the 50-day moving average, buy. When it crosses below, sell. It's the "hello world" of quantitative trading - easy to understand, easy to measure, and easy to improve.</p>
+
+        <p>The strategy was backtested on a small portfolio of three liquid securities - SPY, QQQ, and AAPL - using daily data from 2004 through March 2026. The <a href="/dispatch/july-backtester.html">backtester</a>, Light Water's open-source engine, runs a full portfolio simulation with realistic trading costs: slippage, commissions, and position sizing constraints.</p>
+
+        <p>The metric we chose was total return percentage. Not Sharpe ratio, not risk-adjusted anything - just raw portfolio growth from $100,000 starting capital. We wanted the most tangible, visual metric possible: did the equity curve go up or down?</p>
+
+        <p>The baseline SMA 20/50 strategy delivered a 133.8% total return over the test period. Reasonable, but nothing remarkable. This became iteration zero - the starting point for the AI to improve.</p>
+
+        <h2>The Autoresearch Loop</h2>
+
+        <p>We built a <a href="https://github.com/uditgoenka/autoresearch" target="_blank" rel="noopener noreferrer">Claude Code skill</a> that implements the autoresearch pattern for our backtester. The loop works like this: Claude reads the current strategy file, makes one focused change, commits it to git, runs the full backtest, checks the score, and either keeps the change or reverts it. Then it moves to the next iteration immediately, without asking for permission or waiting for human input.</p>
+
+        <p>The key constraints that make this work: Claude can only modify the strategy file and a few config parameters. It cannot touch the backtester engine, the data pipeline, or the scoring script. Every change must be atomic - one modification per iteration, so if something breaks, we know exactly what caused it. And every successful change is committed to git, creating a complete audit trail of the strategy's evolution.</p>
+
+        <p>We set Claude loose with a simple prompt: "Run 30 iterations. Improve the total return." Then we walked away.</p>
+
+        <figure>
+          <a href="../images/chart_loop_flowchart.png" target="_blank" rel="noopener noreferrer">
+            <img src="../images/chart_loop_flowchart.png" alt="Autoresearch loop flowchart" />
+          </a>
+          <figcaption>The autoresearch loop: one change per iteration, scored against the previous best, kept or reverted automatically.</figcaption>
+        </figure>
+
+        <blockquote>
+          <p>The insight from Karpathy's work applies directly here: autonomy scales when you constrain scope, clarify success, and mechanize verification. The agent optimizes tactics while humans optimize strategy.</p>
+        </blockquote>
+
+        <h2>What Claude Discovered</h2>
+
+        <p>The 30 iterations ran in just under 20 minutes. Of the 30 attempted changes, 11 were kept and 20 were reverted - a 37% keep rate, remarkably close to the rates reported in other autoresearch applications.</p>
+
+        <p>Here's what stood out from the evolution:</p>
+
+        <figure>
+          <a href="../images/chart_iteration_progression.png" target="_blank" rel="noopener noreferrer">
+            <img src="../images/chart_iteration_progression.png" alt="Score progression across 30 iterations" />
+          </a>
+          <figcaption>Score progression across 30 iterations. Green bars = kept improvements, red bars = reverted attempts, dotted line = running best.</figcaption>
+        </figure>
+
+        <h3>The SMA to EMA Switch</h3>
+
+        <p>Claude's first major move came at iteration 5: switching from Simple Moving Averages to Exponential Moving Averages. EMAs weight recent prices more heavily than older ones, making them more responsive to trend changes. This single change jumped the return from 150.7% to 192.6% - the largest single-iteration improvement in the entire run.</p>
+
+        <p>This is notable because it's not a parameter tweak. It's a structural change in how the strategy interprets price data. The agent recognized that the fundamental indicator type was a bottleneck, not just its parameters.</p>
+
+        <h3>Systematic Slow EMA Widening</h3>
+
+        <p>After establishing the EMA crossover as the base strategy, Claude began a methodical exploration of the slow EMA period. Starting from 50, it tested 55, 60, 70, 80, 100, and 120 - keeping each improvement and reverting each decline. The slow EMA landed at 120 as the optimal value, with the return climbing from 192.6% to 290.5% through this progression.</p>
+
+        <p>What's interesting is the pattern of exploration. Claude didn't jump randomly between values. It incrementally widened the slow EMA, observed that each step improved returns, and continued in the same direction until it hit diminishing returns at 150. This is gradient-following behavior - the agent learned which direction to push the parameter.</p>
+
+        <h3>What Failed</h3>
+
+        <p>Not everything worked. Claude tried MACD crossover (12/26/9), which dropped the return to 98.3% - reverted immediately. It attempted a Rate of Change momentum strategy at 221.8% - better than the original baseline but worse than the current best. Bollinger band breakouts produced 118.5%. A Donchian channel approach managed 104.9%. An RSI filter added on top of the EMA crossover produced no improvement at all - the exact same score, suggesting the filter was neither helping nor hurting.</p>
+
+        <p>The SPY SMA200 trend filter - a common institutional overlay that only allows trades when the broad market is in an uptrend - actually reduced returns from 290.5% to 199.9%. In backtesting, this filter removes both losing trades in bear markets and winning trades in early recoveries. The net effect was negative.</p>
+
+        <figure>
+          <a href="../images/chart_strategy_comparison.png" target="_blank" rel="noopener noreferrer">
+            <img src="../images/chart_strategy_comparison.png" alt="Comparison of strategy types attempted" />
+          </a>
+          <figcaption>Comparison of all strategy types attempted. EMA crossovers dominated, while alternative approaches like MACD and Bollinger underperformed the baseline.</figcaption>
+        </figure>
+
+        <div class="article-stat-box">
+          <div class="article-stat-number">20 min</div>
+          <div class="article-stat-label">Total runtime for 30 autonomous iterations. Each backtest completed in roughly 30 seconds, with Claude's analysis and code modification adding another 10 seconds per cycle.</div>
+        </div>
+
+        <h2>The Final Strategy</h2>
+
+        <p>The optimal configuration that emerged from 30 iterations: an EMA crossover with a fast period of 13 and a slow period of 120. The fast EMA was fine-tuned from 12 to 13 in the final iterations - a marginal improvement of 290.49% to 290.55%.</p>
+
+        <p>The resulting strategy trades less frequently than the baseline (92 trades vs. 172), holds positions longer, and captures more of each trend by using a much wider spread between the fast and slow averages. The 120-period slow EMA effectively acts as a 6-month trend filter, only entering positions when a stock's short-term momentum aligns with its half-year direction.</p>
+
+        <figure>
+          <a href="../images/equity_curves.png" target="_blank" rel="noopener noreferrer">
+            <img src="../images/equity_curves.png" alt="Equity curve evolution across 30 iterations" />
+          </a>
+          <figcaption>Equity curve evolution across 30 iterations. Dashed gray line shows the SMA 20/50 baseline. Green line shows the best-performing EMA 13/120 strategy. Gray cloud represents all intermediate iterations. The strategy evolved from $233K to $390K final portfolio value on a $100K starting capital.</figcaption>
+        </figure>
+
+        <figure>
+          <a href="../images/chart_before_after.png" target="_blank" rel="noopener noreferrer">
+            <img src="../images/chart_before_after.png" alt="Before and after equity curve comparison" />
+          </a>
+          <figcaption>Direct comparison: baseline SMA 20/50 (dashed) vs. AI-optimized EMA 13/120 (solid). Starting capital: $100K.</figcaption>
+        </figure>
+
+        <h2>What This Means</h2>
+
+        <p>This experiment wasn't about finding a profitable trading strategy - as Karpathy himself noted, the goal of autoresearch isn't to produce novel discoveries but to systematically explore a well-defined space. What's significant is the process: an AI agent, given appropriate constraints and a clear metric, can autonomously navigate the parameter space of a trading strategy and converge on meaningful improvements.</p>
+
+        <p>Chris Worsey at General Intelligence Capital took a different approach with his <a href="https://github.com/chrisworsey55/atlas-gic" target="_blank" rel="noopener noreferrer">ATLAS system</a> - 25 AI agents debating market direction daily, with their prompts evolving through the same keep/revert loop. His system achieved +22% returns over 173 trading days with real capital. The key difference: Worsey's agents optimize prompts (investment theses), while our approach optimizes code (strategy logic). Both validate the core principle that autonomous iteration works in finance.</p>
+
+        <p>The implications for quantitative strategy development are practical. Parameter sweeps that would take a researcher hours of manual testing can now run autonomously in minutes.</p>
+
+        <p>A parameter sweep would have found the optimal EMA periods faster. What it wouldn't have done is suggest switching from SMA to EMA in the first place - that's a structural change, not a parameter change, and it was responsible for the largest single-iteration improvement in the entire run.</p>
+
+        <p>The agent doesn't get tired, doesn't develop confirmation bias, and doesn't skip unpromising-looking parameter combinations. Every iteration is logged, every change is auditable through git history, and every result is reproducible.</p>
+
+        <blockquote>
+          <p>The question isn't whether AI agents can improve trading strategies. They already can. The question is: what constraints and metrics produce the most useful exploration?</p>
+        </blockquote>
+
+        <p>We'll be running more experiments in the coming weeks - different base strategies, different asset classes, longer iteration runs. Each experiment will be documented here with full methodology and results. The autoresearch pattern is general enough to apply to any measurable aspect of strategy development, from entry logic to position sizing to risk management. The loop is simple. The possibilities are not.</p>
+
+        <div class="article-end">
+          <div class="article-end-mark"></div>
+          <span class="article-end-text">Light Water Capital &nbsp;·&nbsp; March 2026</span>
+        </div>
+
+      </article>
+    </div>
+
+    <!-- SHARE SECTION -->
+    <div class="article-body-wrap">
+      <div style="max-width: 75vw; margin: 0 auto; padding: 32px 60px 48px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--lt-gray);">
+        <span style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-gray);">Share this article</span>
+        <a href="https://twitter.com/intent/tweet?text=We%20Let%20AI%20Iterate%20on%20a%20Trading%20Strategy%20for%2020%20Minutes&url=https://lightwaterdispatch.com/dispatch/ai-autoresearch-trading-strategy-backtesting/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: var(--navy); color: #fff; text-decoration: none; border-radius: 6px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-top: -1px;">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+          Share on X
+        </a>
+      </div>
+    </div>
+
+    <!-- AUTHOR CARD -->
+    <div class="author-card-wrap">
+      <div class="author-card" role="complementary" aria-label="About the author">
+        <div class="author-card-avatar" aria-hidden="true">
+          <img src="../../assets/suriya-rajavel-avatar.jpg" alt="Suriya Narayanan Rajavel" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="author-card-body">
+          <span class="author-card-label">About the author</span>
+          <div class="author-card-name">Suriya Narayanan Rajavel</div>
+          <div class="author-card-title">Strategy Research, Light Water</div>
+          <p class="author-card-bio">Suriya is an open-source contributor to Light Water's backtesting engine, focusing on strategy development, automated testing, and AI-assisted research. He holds a background in quantitative methods and is passionate about applying modern AI tooling to systematic trading.</p>
+          <a href="https://www.linkedin.com/in/suriya-rajavel/" target="_blank" rel="noopener noreferrer" class="author-card-linkedin" aria-label="View Suriya Narayanan Rajavel on LinkedIn">
+            LinkedIn
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 4h10M7.5 1l3 3-3 3" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMMENT CTA -->
+    <div class="comment-cta-wrap">
+      <div class="comment-cta">
+        <div class="comment-cta-eyebrow">Join the discussion</div>
+        <h2 class="comment-cta-title">Leave a comment - join the conversation</h2>
+        <p class="comment-cta-text">Share your thoughts, questions, or insights on this article. We'd love to hear your perspective.</p>
+        <a href="#" class="comment-cta-button" target="_blank" rel="noopener noreferrer">
+          Comment on LinkedIn
+          <svg width="14" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
+            <path d="M1 4.5h12M8.5 1l3.5 3.5L8.5 8" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- BACK LINK -->
+    <div class="article-back-wrap">
+      <a href="../index.html" class="article-back" aria-label="Back to The Dispatch">
+        <svg width="14" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
+          <path d="M13 4.5H1M5.5 1L2 4.5 5.5 8" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back to the Dispatch
+      </a>
+    </div>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-top">
+      <img class="footer-logo" src="../../assets/light-water-transparent-cropped-logo-dark-bg.png" alt="Light Water Capital">
+      <ul class="footer-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../index.html">Dispatch</a></li>
+        <li><a href="https://www.linkedin.com/company/light-water" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">
+        &copy; 2026 Light Water Capital. All rights reserved. This website is for informational purposes only and does not constitute investment advice or an offer to buy or sell any security. Past performance is not indicative of future results.
+      </p>
+      <span class="footer-location">Corydon, Indiana</span>
+    </div>
+  </footer>
+
+  <script src="../article.js"></script>
+</body>
+</html>
