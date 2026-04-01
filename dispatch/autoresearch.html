@@ -258,7 +258,11 @@
 
         <p>Chris Worsey at General Intelligence Capital took a different approach with his <a href="https://github.com/chrisworsey55/atlas-gic" target="_blank" rel="noopener noreferrer">ATLAS system</a> - 25 AI agents debating market direction daily, with their prompts evolving through the same keep/revert loop. His system achieved +22% returns over 173 trading days with real capital. The key difference: Worsey's agents optimize prompts (investment theses), while our approach optimizes code (strategy logic). Both validate the core principle that autonomous iteration works in finance.</p>
 
-        <p>The implications for quantitative strategy development are practical. Parameter sweeps that would take a researcher hours of manual testing can now run autonomously in minutes. The agent doesn't get tired, doesn't develop confirmation bias, and doesn't skip unpromising-looking parameter combinations. Every iteration is logged, every change is auditable through git history, and every result is reproducible.</p>
+        <p>The implications for quantitative strategy development are practical. Parameter sweeps that would take a researcher hours of manual testing can now run autonomously in minutes.</p>
+
+        <p>A parameter sweep would have found the optimal EMA periods faster. What it wouldn't have done is suggest switching from SMA to EMA in the first place - that's a structural change, not a parameter change, and it was responsible for the largest single-iteration improvement in the entire run.</p>
+
+        <p>The agent doesn't get tired, doesn't develop confirmation bias, and doesn't skip unpromising-looking parameter combinations. Every iteration is logged, every change is auditable through git history, and every result is reproducible.</p>
 
         <blockquote>
           <p>The question isn't whether AI agents can improve trading strategies. They already can. The question is: what constraints and metrics produce the most useful exploration?</p>
