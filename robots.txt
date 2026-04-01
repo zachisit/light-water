@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /private/
-Disallow: /admin/
+Disallow: /documentation/
 
-Sitemap: https://www.lightwatercapital.com/sitemap.xml
+Sitemap: https://lightwaterdispatch.com/sitemap.xml
