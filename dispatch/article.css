@@ -570,17 +570,19 @@
     }
 
     @media (max-width: 768px) {
-      nav { padding: 0 24px; }
+      nav { padding: 0 4px; }
       .nav-links { display: none; }
-      .page-header { padding: 120px 24px 56px; }
-      .articles-wrap { padding: 0 24px 72px; }
+      .page-header { padding: 120px 4px 56px; }
+      .page-header-inner { max-width: 98%; }
+      .articles-wrap { max-width: 98%; padding: 0 4px 72px; }
       .article-row { grid-template-columns: 1fr; gap: 12px; }
       .article-row-byline { display: none; }
-      .article-header { padding: 120px 24px 56px; }
-      .article-body-wrap, .author-card-wrap, .article-back-wrap { padding: 0 24px; }
-      .article-body { padding: 40px 28px 52px; }
-      .author-card { flex-direction: column; gap: 20px; padding: 28px 24px; }
-      footer { padding: 48px 24px 36px; }
+      .article-header { padding: 120px 4px 56px; }
+      .article-header-inner { max-width: 98%; }
+      .article-body-wrap, .author-card-wrap, .article-back-wrap, .comment-cta-wrap { max-width: 98%; padding-left: 4px; padding-right: 4px; }
+      .article-body { padding: 40px 16px 52px; }
+      .author-card { flex-direction: column; gap: 20px; padding: 28px 16px; }
+      footer { padding: 48px 4px 36px; }
       .footer-top { flex-direction: column; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
     }
