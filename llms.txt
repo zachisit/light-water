@@ -2,24 +2,35 @@
 
 > Private capital management and family office based in Corydon, Indiana.
 
-Light Water Capital is a private investment firm that manages capital for a select number of clients with a long-term, conviction-based approach. We combine quantitative research with fundamental judgment.
+Light Water Capital is a private investment firm that manages capital for a select number of clients with a long-term, conviction-based approach. We combine quantitative research with fundamental judgment. We focus on public equities and quantitative strategies, building concentrated positions where we have high conviction.
 
 ## Pages
 
-- Home: https://www.lightwatercapital.com/
-- Blog / Perspectives: https://www.lightwatercapital.com/blog/
+- Home: https://lightwaterdispatch.com/
+- The Dispatch (blog): https://lightwaterdispatch.com/dispatch/
 
 ## Recent Articles
 
-- [On patience in capital allocation](https://www.lightwatercapital.com/blog/on-patience-in-capital-allocation/) — March 2026
-- [What quantitative research can — and cannot — do](https://www.lightwatercapital.com/blog/what-quantitative-research-can-and-cannot-do/) — February 2026
-- [The case for concentration](https://www.lightwatercapital.com/blog/the-case-for-concentration/) — January 2026
+- [We Let AI Iterate on a Trading Strategy for 20 Minutes](https://lightwaterdispatch.com/dispatch/ai-autoresearch-trading-strategy-backtesting/) — March 2026. Applying Karpathy's autoresearch loop to quantitative strategy development - 30 autonomous experiments, zero human intervention. AI improved returns from 133.8% to 290.6%.
+- [Why We Open-Sourced Our Trading Backtester](https://lightwaterdispatch.com/dispatch/july-backtester/) — March 2026. The story behind July, our open-source Python backtesting engine with Monte Carlo simulation, walk-forward analysis, and regime detection.
+- [Welcoming Our Spring 2026 Quant Strategy Interns](https://lightwaterdispatch.com/dispatch/intern-announcement/) — March 2026. Chang Liu (Johns Hopkins) and Alice Li (Columbia Engineering) join as Quant Strategist Interns.
+
+## Investment Philosophy
+
+- Concentration over diversification: fewer, deeply researched positions
+- Quantitative rigor: every thesis tested against data
+- Long time horizons: underwriting investments over years, not quarters
+- Aligned incentives: firm capital invested alongside clients
+
+## Open Source
+
+- July Backtester: https://github.com/zachisit/july-backtester — Professional-grade Python backtesting engine with Monte Carlo, walk-forward analysis, parameter sensitivity, and regime detection. MIT licensed.
 
 ## About
 
 - Location: Corydon, Indiana, USA
 - Type: Private capital management, family office
-- Focus: Long-term investment, quantitative research, portfolio construction
+- Focus: Long-term investment, quantitative research, portfolio construction, public equities
 
 ## Contact
 

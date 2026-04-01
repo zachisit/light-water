@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>We Let AI Iterate on a Trading Strategy for 20 Minutes | Light Water Capital</title>
   <meta name="description" content="Applying Karpathy's autoresearch loop to quantitative strategy development - 30 autonomous experiments, zero human intervention.">
-  <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://lightwaterdispatch.com/dispatch/ai-autoresearch-trading-strategy-backtesting/">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://lightwaterdispatch.com/dispatch/ai-autoresearch-trading-strategy-backtesting/">
@@ -150,6 +150,10 @@
     <!-- BODY ON WARM WHITE CARD -->
     <div class="article-body-wrap">
       <article class="article-body" aria-label="Article content">
+
+        <div class="article-stat-box">
+          <div class="article-stat-label"><strong>Summary:</strong> We applied Karpathy's autoresearch pattern to trading strategy development. An AI agent ran 30 autonomous iterations on an SMA crossover strategy, improving total returns from 133.8% to 290.6% in 20 minutes - discovering structural improvements like switching from SMA to EMA that a simple parameter sweep wouldn't find.</div>
+        </div>
 
         <p>In early March 2026, Andrej Karpathy released <a href="https://github.com/karpathy/autoresearch" target="_blank" rel="noopener noreferrer">autoresearch</a> - a framework that lets AI agents run experiments autonomously overnight. The idea is elegant: give an agent a codebase, a measurable metric, and a simple rule - if the change improves the metric, keep it; if not, revert it. Within days, the repo had over 28,000 GitHub stars. Shopify's CEO ran it on an internal model and reported a 19% performance gain from 37 experiments run while he slept.</p>
 

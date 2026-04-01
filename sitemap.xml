@@ -2,17 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://www.lightwatercapital.com/</loc>
-    <lastmod>2026-03-31</lastmod>
+    <loc>https://lightwaterdispatch.com/</loc>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://www.lightwatercapital.com/dispatch/</loc>
-    <lastmod>2026-03-31</lastmod>
+    <loc>https://lightwaterdispatch.com/dispatch/</loc>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lightwaterdispatch.com/dispatch/ai-autoresearch-trading-strategy-backtesting/</loc>
+    <lastmod>2026-04-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <url>
@@ -25,13 +32,6 @@
   <url>
     <loc>https://lightwaterdispatch.com/dispatch/intern-announcement/</loc>
     <lastmod>2026-03-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://lightwaterdispatch.com/dispatch/ai-autoresearch-trading-strategy-backtesting/</loc>
-    <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
