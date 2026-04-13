@@ -11,6 +11,7 @@ Light Water Capital is a private investment firm that manages capital for a sele
 
 ## Recent Articles
 
+- [Alpha Sprint: Intern Coverage Initiations on $COIN and $NVDA](https://lightwaterdispatch.com/dispatch/alpha-sprint-coverage-initiation/) — April 2026. Chang Liu initiates Coinbase at Hold and Alice Li initiates Nvidia at Hold as the first research output of Light Water's 12-week Alpha Sprint program.
 - [We Let AI Iterate on a Trading Strategy for 20 Minutes](https://lightwaterdispatch.com/dispatch/ai-autoresearch-trading-strategy-backtesting/) — March 2026. Applying Karpathy's autoresearch loop to quantitative strategy development - 30 autonomous experiments, zero human intervention. AI improved returns from 133.8% to 290.6%.
 - [Why We Open-Sourced Our Trading Backtester](https://lightwaterdispatch.com/dispatch/july-backtester/) — March 2026. The story behind July, our open-source Python backtesting engine with Monte Carlo simulation, walk-forward analysis, and regime detection.
 - [Welcoming Our Spring 2026 Quant Strategy Interns](https://lightwaterdispatch.com/dispatch/intern-announcement/) — March 2026. Chang Liu (Johns Hopkins) and Alice Li (Columbia Engineering) join as Quant Strategist Interns.
