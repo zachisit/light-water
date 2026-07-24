@@ -45,7 +45,7 @@
     "description": "An RSI-divergence strategy built live on a Nasdaq 100 backtest — a case study in how a backtest lies before it tells the truth.",
     "image": "https://lightwaterdispatch.com/assets/og-image.svg",
     "datePublished": "2026-07-21",
-    "dateModified": "2026-07-21",
+    "dateModified": "2026-07-24",
     "author": [
       { "@type": "Person", "name": "Zach Smith", "url": "https://www.linkedin.com/in/zachisit/" },
       { "@type": "Person", "name": "Shardul Mehetar", "url": "https://www.linkedin.com/in/shardul-mehetar-a4764a193/" }
@@ -300,6 +300,18 @@
         <p>Where does the idea go from here? If we keep pulling this thread, the honest next steps are a <em>long-short</em> version that trades divergence as a relative signal instead of fighting index beta, the same logic applied to market <em>breadth</em> rather than individual names, and a re-test on decades of history rather than the five years our data provider currently offers. v2's real talent was drawdown control — its most plausible future is as a defensive overlay, not a standalone return engine.</p>
 
         <p>That's the unglamorous truth of systematic research: most ideas don't work, and the value is in finding out quickly, cheaply, and honestly. We did it live, in an afternoon, on open-source tooling anyone can download. The strategy was a dud. The process was the product.</p>
+
+        <h2>Reader Questions — Methodology Notes</h2>
+
+        <p>After the stream, a few people wrote in with sharp questions about the mechanics under the hood. They're worth answering in the open, because the details are exactly where a backtest earns — or loses — your trust.</p>
+
+        <p><strong>What was the position sizing, or risk per trade?</strong> Fixed fractional: each entry took <strong>10% of account equity as notional</strong> — not a fixed percentage of equity <em>risked</em>. There was no "risk 1% per trade" rule and no volatility- or Kelly-based sizing. Downside on any single position was bounded only by the ATR stop, which in practice put roughly 1.5–3% of equity at risk on a typical name.</p>
+
+        <p><strong>How did it take profit?</strong> It didn't — there was no fixed take-profit target on any version. v1 exited when the opposite (bearish) divergence fired. v2 dropped that exit entirely and rode a <strong>2× ATR(14) trailing stop</strong>, backstopped by a trend-break exit (a weekly close below the stock's long-run moving average). Letting the trail do the work — instead of cutting winners at the next divergence — was the entire point of v2.</p>
+
+        <p><strong>Why does the equity curve start around 2022 when the code was set to 2003?</strong> Good catch, and it's a data-availability quirk, not a bug. The config requested a start date of January 2003, but our data provider's plan only returns roughly the last five years of history — the run's <em>actual</em> data began in <strong>July 2021</strong>. The chart is honest; it plots the only data that existed. So every figure in this teardown is a ~4.5-year result, not a two-decade one — which is exactly why "re-test on decades of history" sits on the next-steps list above.</p>
+
+        <p><strong>So — can you trust the rest of the data?</strong> Directionally, with two caveats beyond the split-adjustment fix that headlines this piece. First, the universe is <em>today's</em> Nasdaq 100 membership, which introduces <strong>survivorship bias</strong>: names that were dropped from the index never enter the test, and that flatters results. Second, the ~4.5-year window spans essentially one regime cycle — the 2022 drawdown and the recovery since. Both of those biases push in the same direction as our conclusion, so neither rescues the idea: the raw edge still isn't there.</p>
 
         <!-- MISSION CALLOUT -->
         <div style="margin:44px 0 8px;padding:34px 36px;background:#1E3A5F;border-radius:8px;color:#fff;">
