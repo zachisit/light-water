@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZTK7L0CNSR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZTK7L0CNSR');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>We Ran 60 Backtests on One Forex Strategy. The Win Rate Never Beat a Coin Flip. | Light Water Capital</title>
+  <meta name="description" content="A 50-EMA session breakout on EURUSD, GBPUSD and XAUUSD, tested four ways across 16 years of hourly data — and the one statistical test that settles whether an entry predicts anything at all.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://lightwaterdispatch.com/dispatch/forex-ema-breakout-strategy-teardown/">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://lightwaterdispatch.com/dispatch/forex-ema-breakout-strategy-teardown/">
+  <meta property="og:title" content="We Ran 60 Backtests on One Forex Strategy. The Win Rate Never Beat a Coin Flip.">
+  <meta property="og:description" content="A 50-EMA session breakout on forex and gold, tested four ways across 16 years — and the test that proves an entry carries no information.">
+  <meta property="og:site_name" content="Light Water Capital">
+  <meta property="og:image" content="https://lightwaterdispatch.com/assets/og-image.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Forex EMA Breakout Strategy Backtest">
+  <meta property="article:published_time" content="2026-07-31">
+  <meta property="article:author" content="Zach Smith">
+  <meta property="article:author" content="Shardul Mehetar">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="Strategy Research">
+  <meta property="article:tag" content="Backtesting">
+  <meta property="article:tag" content="Forex">
+  <meta property="article:tag" content="Risk Reward">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="We Ran 60 Backtests on One Forex Strategy. The Win Rate Never Beat a Coin Flip.">
+  <meta name="twitter:description" content="A 50-EMA session breakout on forex and gold, tested four ways across 16 years — and the test that proves an entry carries no information.">
+  <meta name="twitter:image" content="https://lightwaterdispatch.com/assets/og-image.svg">
+  <meta name="keywords" content="forex backtesting, EMA breakout, EURUSD, GBPUSD, XAUUSD, risk reward ratio, breakeven win rate, expectancy, R-multiple, spread costs, quantitative research, Light Water Capital">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "We Ran 60 Backtests on One Forex Strategy. The Win Rate Never Beat a Coin Flip.",
+    "description": "A 50-EMA session breakout on forex and gold, tested four ways across 16 years — and the test that proves an entry carries no information.",
+    "image": "https://lightwaterdispatch.com/assets/og-image.svg",
+    "datePublished": "2026-07-31",
+    "dateModified": "2026-07-31",
+    "author": [
+      { "@type": "Person", "name": "Zach Smith", "url": "https://www.linkedin.com/in/zachisit/" },
+      { "@type": "Person", "name": "Shardul Mehetar", "url": "https://www.linkedin.com/in/shardul-mehetar-a4764a193/" }
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Light Water Capital",
+      "logo": { "@type": "ImageObject", "url": "https://lightwaterdispatch.com/assets/light-water-transparent-cropped-logo.PNG" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://lightwaterdispatch.com/dispatch/forex-ema-breakout-strategy-teardown/" },
+    "articleSection": "Research",
+    "keywords": ["forex backtesting", "EMA breakout", "risk reward ratio", "breakeven win rate", "expectancy", "spread costs", "EURUSD", "XAUUSD"],
+    "wordCount": 2600
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lightwaterdispatch.com/" },
+      { "@type": "ListItem", "position": 2, "name": "The Dispatch", "item": "https://lightwaterdispatch.com/dispatch/" },
+      { "@type": "ListItem", "position": 3, "name": "Forex EMA Breakout — Live Teardown", "item": "https://lightwaterdispatch.com/dispatch/forex-ema-breakout-strategy-teardown/" }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1E3A5F">
+
+  <link rel="stylesheet" href="../article.css">
+  <style>
+    /* Scoped table styling for the data comparisons in this article */
+    .lw-table-wrap { overflow-x: auto; margin: 32px 0; }
+    .lw-table { width: 100%; border-collapse: collapse; font-family: 'DM Sans', sans-serif; font-size: 14px; }
+    .lw-table th, .lw-table td { padding: 10px 14px; text-align: right; border-bottom: 1px solid var(--lt-gray, #e5e2dc); }
+    .lw-table th:first-child, .lw-table td:first-child { text-align: left; }
+    .lw-table thead th { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mid-gray, #6b6b6b); border-bottom: 2px solid var(--navy, #1E3A5F); }
+    .lw-table tbody tr:hover { background: rgba(30,58,95,0.03); }
+    .lw-pos { color: #1a7a4c; }
+    .lw-neg { color: #b23a3a; }
+    .lw-row-best td { background: rgba(26,122,76,0.06); font-weight: 500; }
+    .lw-muted { color: var(--mid-gray, #6b6b6b); }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <img class="nav-logo" src="../../assets/light-water-transparent-cropped-logo.PNG" alt="Light Water Capital">
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../index.html" class="active">Dispatch</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+
+    <!-- NAVY HEADER BAND -->
+    <header class="article-header">
+      <div class="article-header-inner">
+        <nav class="article-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">The Dispatch</a>
+          <span aria-hidden="true">→</span>
+          <span class="crumb-current">Strategy Research</span>
+        </nav>
+        <div class="article-meta">
+          <span class="article-tag">Strategy Research</span>
+          <span class="article-meta-dot" aria-hidden="true"></span>
+          <time class="article-meta-date" datetime="2026-07-31">July 2026</time>
+          <span class="article-meta-dot" aria-hidden="true"></span>
+          <span class="article-meta-read">10 min read</span>
+        </div>
+        <div class="article-tags" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;">
+          <span style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;">Forex</span>
+          <span style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;">Backtesting</span>
+          <span style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;">Risk &amp; Reward</span>
+          <span style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;">Live Build</span>
+        </div>
+        <h1 class="article-title">We Ran 60 Backtests on One Strategy.<br>The Win Rate Never Beat a Coin Flip.</h1>
+        <p class="article-dek">A 50-EMA session breakout on forex and gold — and the one statistical test that tells you whether an entry predicts anything at all, before you waste a month tuning it.</p>
+
+        <!-- BYLINE (two authors) -->
+        <div class="byline">
+          <div class="byline-avatar" aria-hidden="true">
+            <img src="../../assets/zach-smith-avatar.jpg" alt="Zach Smith" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="byline-avatar" aria-hidden="true" style="margin-left:-14px;box-shadow:0 0 0 2px #1E3A5F;">
+            <img src="../../assets/shardul-mehetar-avatar.jpg" alt="Shardul Mehetar" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="byline-text">
+            <div class="byline-name">Zach Smith &amp; Shardul Mehetar</div>
+            <div class="byline-role">Systematic Strategies, Light Water</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- BODY ON WARM WHITE CARD -->
+    <div class="article-body-wrap">
+      <article class="article-body" aria-label="Article content">
+
+        <div class="article-stat-box">
+          <div class="article-stat-label"><strong>Summary:</strong> We tested a popular retail setup — buy the 50-EMA breakout during the New York morning, stop below the breakout candle, take profit at 1:2 — on EURUSD, GBPUSD and XAUUSD across <strong>16.5 years of hourly data</strong>. It lost 63%. Then we spent three more rounds trying to rescue it: higher-timeframe trend filters, volume confirmation, a different entry trigger, both 1H and 4H. Roughly <strong>60 configurations</strong>, none with a real edge. Along the way a single trade lost <strong>168&times; its intended risk</strong> and drove the account negative. This is the full teardown — including the test we should have run first.</div>
+        </div>
+
+        <p>There's a version of this article where we find a tweak that works, and you learn a new setup. This isn't that one. What we found instead is more useful: a way to <em>prove</em>, in a single chart, that an entry signal contains no information — so you can stop tuning it and go do something else.</p>
+
+        <p>The rules came in exactly as a trader would describe them:</p>
+
+        <div class="article-stat-box">
+          <div class="article-stat-label"><strong>The setup.</strong> Instruments: EURUSD, GBPUSD, XAUUSD. Timeframe: 1 hour. Enter long when price breaks above the 50 EMA, with the candle closing between 9:30am and 12:30pm New York. Stop loss below the candle that broke the EMA. Take profit at 1:2 risk-reward. Never hold two positions at once.</div>
+        </div>
+
+        <p>Every one of those clauses is doing work, and two of them turned out to matter far more than anyone expected.</p>
+
+        <h2>Three Decisions Before a Single Trade</h2>
+
+        <p>Before you can test a rule you have to make it unambiguous, and that's where quiet assumptions get baked in. Three came up here.</p>
+
+        <p><strong>The session window doesn't fit the bars.</strong> Hourly candles close on the hour, so "closing between 9:30 and 12:30" leaves exactly three eligible closes per day: 10:00, 11:00 and 12:00 New York. There is no 9:30 or 12:30 hourly close. We also read "EST" as <em>New York local time</em> rather than a fixed UTC&minus;5, since that's what a trader means — which shifts the eligible bars by an hour across daylight saving.</p>
+
+        <p><strong>Gold is a forex ticker.</strong> On our data provider, XAUUSD lives on the currency endpoint as <code>C:XAUUSD</code>, not the crypto-style <code>X:</code> prefix. Small detail, and the run silently returns nothing if you get it wrong.</p>
+
+        <p><strong>Costs are not optional.</strong> We charged a round-trip spread on every trade — 1.0 pip on EURUSD, 1.4 on GBPUSD, 30 cents on gold — split half on entry and half on exit. Hold that number in mind. It ends up being the entire story.</p>
+
+        <h2>Round One: The Honest Baseline</h2>
+
+        <p>Sixteen and a half years, 1,411 trades after the one-position-at-a-time rule, and the result was unambiguous.</p>
+
+        <div class="lw-table-wrap">
+          <table class="lw-table">
+            <thead>
+              <tr><th>Variant</th><th>Trades</th><th>Win rate</th><th>Total return</th><th>Max drawdown</th><th>Profit factor</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>One trade at a time</td><td>1,411</td><td>32.9%</td><td class="lw-neg">&minus;63.2%</td><td>73.7%</td><td>0.92</td></tr>
+              <tr><td>No concurrency limit</td><td>2,045</td><td>32.6%</td><td class="lw-neg">&minus;79.8%</td><td>88.4%</td><td>0.93</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Now the number that matters. At 1:2 risk-reward, you need to win <strong>33.33%</strong> of the time to break even — one win of 2R pays for two losses of 1R. The strategy won <strong>32.88%</strong>.</p>
+
+        <p>That's not "close to profitable." That's <em>indistinguishable from a random entry</em>. So we re-ran the identical test with the spread set to zero, to separate the signal from the cost:</p>
+
+        <div class="lw-table-wrap">
+          <table class="lw-table">
+            <thead>
+              <tr><th></th><th>Win rate</th><th>Expectancy per trade</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Gross &mdash; zero transaction cost</td><td>33.83%</td><td>+0.0015 R</td></tr>
+              <tr><td>Net &mdash; real spread</td><td>32.88%</td><td class="lw-neg">&minus;0.0606 R</td></tr>
+              <tr><td class="lw-muted">Breakeven requirement</td><td class="lw-muted">33.33%</td><td class="lw-muted">0.000 R</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Gross expectancy was <strong>+0.0015 R with a standard error of 0.038</strong> — a t-statistic of <strong>0.04</strong>, and a 95% confidence interval running from &minus;0.074 to +0.077. In plain terms: after 1,411 trades and 16 years, we could not distinguish this entry from flipping a coin.</p>
+
+        <p>The spread, meanwhile, is not uncertain at all. It costs <strong>6.2% of your risk on every single trade</strong>, deterministically. A zero-edge signal paying 6% of R in friction, 1,411 times, compounds to &minus;63%. That's the whole mechanism.</p>
+
+        <blockquote>
+          <p>A coin flip with a 2:1 payout is a fair game. A coin flip with a 2:1 payout <em>and a toll booth</em> is a slow, statistically inevitable loss. Most retail setups fail here — not because the idea is crazy, but because it's neutral, and neutral doesn't survive costs.</p>
+        </blockquote>
+
+        <h2>Round Two: The Filters Made It Worse</h2>
+
+        <p>The obvious response is that a bare EMA cross is too naive — it needs context. So we added the two filters everyone reaches for: a higher-timeframe trend filter (only go long if price is above the 4H or daily EMA) and volume confirmation (only take breakouts on above-average volume). Twelve combinations.</p>
+
+        <p>All twelve lost money. And the trend filter — the one people trust most — made the per-trade edge <em>worse</em> in every variant:</p>
+
+        <div class="lw-table-wrap">
+          <table class="lw-table">
+            <thead>
+              <tr><th>Higher-timeframe filter</th><th>Trades</th><th>Expectancy (R)</th><th>vs. no filter</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>None (baseline)</td><td>1,411</td><td>&minus;0.061</td><td class="lw-muted">&mdash;</td></tr>
+              <tr><td>Above 4H EMA50</td><td>864</td><td class="lw-neg">&minus;0.083</td><td class="lw-neg">worse</td></tr>
+              <tr><td>Above 1D EMA50</td><td>789</td><td class="lw-neg">&minus;0.093</td><td class="lw-neg">worse</td></tr>
+              <tr><td>Above 1D EMA200</td><td>804</td><td class="lw-neg">&minus;0.078</td><td class="lw-neg">worse</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>In hindsight it's intuitive. A 50-EMA cross <em>is already</em> a momentum condition. Demanding that price also sit above a higher-timeframe average keeps the crosses that fire late in an established move — exactly the ones most likely to be exhaustion, where a stop at the breakout candle's low gets taken out on the first pullback.</p>
+
+        <p>Volume confirmation looked better — total return improved from &minus;63% to &minus;45% — but that improvement is a mirage of a different kind, and it's worth naming because it recurs everywhere in this project:</p>
+
+        <div class="article-stat-box">
+          <div class="article-stat-label"><strong>The "fewer trades looks better" trap.</strong> When per-trade expectancy is negative, <em>any</em> filter that removes trades improves total return. It isn't finding good trades; it's taking fewer bad ones. The tell: as the volume filter tightened, the t-statistic moved <em>toward</em> zero (&minus;1.58 to &minus;0.99). Less evidence, not more edge.</div>
+        </div>
+
+        <p>One methodology note that cost us some certainty here. Forex is an over-the-counter market with no consolidated tape, so there is no true volume figure. What our provider reports for currency pairs is a <em>quote-update tick count</em> — a reasonable activity proxy, but not traded size. A genuine volume filter isn't testable on spot FX at all. If volume confirmation matters to you, the honest venue is a futures contract, where exchange volume is real.</p>
+
+        <h2>Round Three: Remove the EMA — and Break the Account</h2>
+
+        <p>Next we threw out the EMA entirely and replaced it with pure candle strength: enter when a candle's return exceeds the average return of all prior candles. Tested on 1H and 4H, two definitions of "return," three strictness levels. Twenty-four more cells.</p>
+
+        <p>The first thing we measured killed the idea in its literal form. <strong>The mean hourly return of a currency pair is 0.00000017</strong> — indistinguishable from zero. So "return greater than average return" reduces to "the candle is green," and it fired on <strong>49.7% of all eligible bars</strong>. That isn't a filter; it's a coin, and it produced the worst cells in the entire study — around &minus;99% with t-statistics near &minus;5. Those were the only <em>statistically significant</em> results we found all day, and they were significantly <strong>bad</strong>.</p>
+
+        <p>Then the results table showed something impossible: drawdowns of <strong>&minus;101%, &minus;113%, &minus;118%</strong>, and a CAGR of <code>NaN</code>. You cannot lose 118% of your money. Equity had gone <em>negative</em>.</p>
+
+        <div class="article-stat-box">
+          <div class="article-stat-number">&minus;168 R</div>
+          <div class="article-stat-label">The worst single trade in the study — a loss 168 times its intended risk, on a strategy where every trade was supposed to risk exactly 1%. Six such trades drove the account to <strong>&minus;$18,574</strong>.</div>
+        </div>
+
+        <p>The cause is a genuine flaw in the rule as written, not just a coding slip. "Stop below the breakout candle" says nothing about how far below. When the signal candle is a doji — a tiny bar where open and close nearly touch — the stop sits a hair beneath the entry. Risk per unit approaches zero. And position size is <em>risk budget divided by risk per unit</em>, so as that denominator collapses, size explodes toward infinity. Then a weekend gap jumps straight through the hair-thin stop, and a "1% risk" trade takes 168%.</p>
+
+        <p>No broker would extend that leverage, so the unguarded numbers were fiction. We added two guards that any real implementation needs: a <strong>30:1 leverage cap</strong> and a <strong>minimum stop distance of 0.03%</strong>, below which the trade is simply skipped. The blowups vanished; the 4H cells went from &minus;92% and &minus;114% to &minus;73% and &minus;69%. The conclusion didn't change — 4 of 24 cells finished with positive expectancy, none of them significant — but the numbers became real.</p>
+
+        <blockquote>
+          <p>If you ever place a stop at a structural level — a candle's low, a swing point, yesterday's range — you need a minimum-distance rule. Without one, the quietest bar on your chart is the one that ends your account.</p>
+        </blockquote>
+
+        <h2>Round Four: The Test We Should Have Run First</h2>
+
+        <p>By now one possibility remained. Maybe the entry <em>did</em> have signal, and the 1:2 target was simply the wrong shape for it — targets too far away, winners never reaching them. There's a clean way to settle that.</p>
+
+        <p>For any fixed stop with a target at R:R times the risk, the breakeven win rate is exactly:</p>
+
+        <div class="article-stat-box">
+          <div class="article-stat-number">1 / (1 + RR)</div>
+          <div class="article-stat-label">1:1 needs 50%. 1:2 needs 33.3%. 1:3 needs 25%. 1:5 needs 16.7%. If an entry carries <strong>no directional information</strong>, its observed win rate will track that curve at <em>every</em> risk-reward ratio. If it carries real information, some ratio will beat its own breakeven by more than noise.</div>
+        </div>
+
+        <p>This test is immune to the "fewer trades looks better" trap that made every earlier filter appear to help — because it compares each configuration against <em>its own</em> breakeven, not against total return. We swept six risk-reward ratios across four different entries, including the original specification, and measured everything gross of costs so we were testing the <em>entry</em> rather than the spread.</p>
+
+        <div class="lw-table-wrap">
+          <table class="lw-table">
+            <thead>
+              <tr><th>Entry</th><th>R:R</th><th>Trades</th><th>Gross win rate</th><th>Breakeven</th><th>Edge</th><th>z</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1H EMA50 cross</td><td>0.5</td><td>1,699</td><td>64.6%</td><td>66.7%</td><td class="lw-neg">&minus;2.1 pp</td><td>&minus;1.84</td></tr>
+              <tr><td>1H EMA50 cross</td><td>1.0</td><td>1,580</td><td>48.4%</td><td>50.0%</td><td class="lw-neg">&minus;1.6 pp</td><td>&minus;1.27</td></tr>
+              <tr><td>1H EMA50 cross</td><td>2.0</td><td>1,410</td><td>33.8%</td><td>33.3%</td><td>+0.4 pp</td><td>0.32</td></tr>
+              <tr><td>1H EMA50 cross</td><td>5.0</td><td>1,079</td><td>16.9%</td><td>16.7%</td><td>+0.2 pp</td><td>0.18</td></tr>
+              <tr><td>1H candle strength</td><td>2.0</td><td>1,033</td><td>34.6%</td><td>33.3%</td><td>+1.3 pp</td><td>0.89</td></tr>
+              <tr><td>4H candle strength</td><td>0.5</td><td>550</td><td>68.2%</td><td>66.7%</td><td>+1.5 pp</td><td>0.75</td></tr>
+              <tr class="lw-row-best"><td>4H close-to-close</td><td>2.0</td><td>312</td><td>36.0%</td><td>33.3%</td><td>+2.7 pp</td><td>1.01</td></tr>
+              <tr><td>4H close-to-close</td><td>5.0</td><td>185</td><td>18.5%</td><td>16.7%</td><td>+1.8 pp</td><td>0.66</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="lw-muted" style="font-size:13.5px;">Eight of the 24 cells shown; the full sweep is in the tearsheet below. "pp" = percentage points. z = the edge divided by its standard error.</p>
+
+        <p><strong>Zero of 24 cells reached statistical significance.</strong> Every observed win rate sat within one standard error of its theoretical breakeven. The mean edge across the entire sweep was <strong>+0.70 percentage points</strong>, against standard errors of 1.1 to 2.7 points.</p>
+
+        <p>That is the signature of an entry with no information. The 1:2 target was never cutting winners short — there were no winners to cut short. And because the result holds at <em>every</em> ratio from 1:0.5 to 1:5, no exit rule can rescue it. That single chart closed a line of investigation we could otherwise have tuned for weeks.</p>
+
+        <h2>Two Things Worth Stealing</h2>
+
+        <p><strong>The original setup is slightly worse than random.</strong> The 50-EMA cross showed <em>negative</em> gross edge at tight targets — &minus;2.1 points at 1:0.5, &minus;1.6 at 1:1 — and it was the only entry with a negative mean across the sweep. Not significant at two standard errors, but it leans the same wrong way at all three of the tightest targets. The mild implication: price tends to <em>pull back</em> right after a 50-EMA cross in the New York morning. If anything, that cross is a marginally better fade than a follow.</p>
+
+        <p><strong>The apparent improvement was a sample-size illusion.</strong> Across our four entries, mean gross edge climbed steadily — &minus;0.55, +0.83, +1.07, +1.47 points — which looks exactly like filters doing their job. But every step also cut the sample, from 1,699 trades down to 312. The standard error grew right alongside the measured edge, and the significance never moved: 1.84, 0.89, 0.75, 1.01. The number got bigger and the <em>evidence</em> got weaker.</p>
+
+        <div class="article-stat-box">
+          <div class="article-stat-label">This is the most common way a research process fools itself. Each filter you add makes the headline number prettier and the sample smaller. Somewhere around the fourth filter you have a beautiful equity curve built on 40 trades and no statistical power whatsoever — and you'll believe it, because you watched it improve at every step.</div>
+        </div>
+
+        <h2>What We Learned</h2>
+
+        <p><strong>Compare win rate to breakeven, not to zero.</strong> "32.9% win rate" is meaningless on its own. Against the 33.33% that 1:2 demands, it's the whole verdict in one line. Every risk-reward ratio has its own bar; a strategy is only interesting if it clears its own.</p>
+
+        <p><strong>Measure gross before net.</strong> Separating the zero-cost result from the after-cost result tells you which problem you have. Gross positive and net negative is a cost problem — tradable on a better venue, a cheaper broker, a longer timeframe. Gross flat, as here, is a signal problem, and no amount of execution improvement will touch it.</p>
+
+        <p><strong>Distrust every improvement that removes trades.</strong> If expectancy is negative, cutting trades always flatters the total return. Ask what happened to the t-statistic. If it drifted toward zero, you bought a nicer-looking chart with statistical power.</p>
+
+        <p><strong>Put a floor under structural stops.</strong> A stop at a candle's low with no minimum distance is an unbounded position-size bug waiting for a quiet bar and a weekend gap. Ours cost 168R in a system designed to risk 1%.</p>
+
+        <p><strong>Know what your data actually measures.</strong> We nearly reported a volume filter on an instrument class that has no volume. The field was populated, plausible, and meant something else entirely.</p>
+
+        <h2>Where the Idea Goes</h2>
+
+        <p>Nowhere, in this form — and that's a result worth having in an afternoon rather than a quarter. Four rounds, roughly 60 configurations, 16.5 years of hourly data across three instruments, and the premise that failed is a specific one: <em>a single candle's direction inside a fixed morning window does not predict the next several hours in EURUSD, GBPUSD or XAUUSD.</em> Both trigger families said so, and all six risk-reward ratios agreed.</p>
+
+        <p>If we picked this thread up again, we wouldn't add a seventh filter. We'd change the premise — test it where exchange volume is real, so volume confirmation becomes a genuine variable rather than a proxy, or replace the entry with something that has a documented economic reason to work rather than a shape on a chart. The tooling stays; only the hypothesis changes. That's the point of building the harness once.</p>
+
+        <p>None of this makes for a triumphant write-up. But the alternative — publishing the one cell out of 60 that finished green, at a t-statistic of 1.01, and calling it a strategy — is how most retail setups get born. We'd rather show you the graveyard and the shovel.</p>
+
+        <!-- MISSION CALLOUT -->
+        <div style="margin:44px 0 8px;padding:34px 36px;background:#1E3A5F;border-radius:8px;color:#fff;">
+          <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);font-family:'DM Sans',sans-serif;margin-bottom:12px;">Who we built this for</div>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:22px;line-height:1.5;color:#fff;margin:0 0 16px;font-weight:400;">Institutional-grade backtesting — expectancy in R, breakeven-adjusted win rates, significance testing, cost modelling — has mostly lived behind the walls of hedge funds and prop desks. The everyday trader almost never gets to touch it. That's exactly who we built July for.</p>
+          <p style="font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.75;color:rgba(255,255,255,0.82);margin:0;">It's open-source and completely free, because we believe the person risking their own money deserves the same tools — and the same honesty about what those tools really show — that the professionals use. This teardown isn't a strategy we're selling you; it's a worked example of how to kill a bad idea quickly, mistakes and blown-up accounts included, so anyone can build real research instincts at no cost. If you want to learn to tell a genuine edge from a coin flip, that's what we're here to help with. <a href="../july-backtester/" style="color:#fff;text-decoration:underline;text-underline-offset:3px;">July is free to download and use &rarr;</a></p>
+        </div>
+
+        <!-- TEARSHEET DOWNLOADS -->
+        <div style="margin:44px 0 8px;padding:32px 34px;background:#f7f5f0;border:1px solid var(--lt-gray,#e5e2dc);border-left:3px solid var(--navy,#1E3A5F);border-radius:8px;">
+          <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--navy,#1E3A5F);font-family:'DM Sans',sans-serif;margin-bottom:6px;">Download the full tearsheets</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.6;color:var(--mid-gray,#5c5c5c);margin:0 0 22px;">Every round from the session, exported as a full PDF report — complete result grids, equity curves, expectancy charts and significance tests. Every configuration we ran is in here, including the ones that lost 99%.</p>
+
+          <a href="../../assets/pdf/forex-breakout-1-filter-grid.pdf" download style="display:flex;align-items:center;gap:16px;padding:14px 16px;text-decoration:none;border-top:1px solid var(--lt-gray,#e5e2dc);transition:background 0.15s;" onmouseover="this.style.background='rgba(30,58,95,0.04)'" onmouseout="this.style.background='transparent'">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="#1E3A5F" stroke-width="1.4"/><path d="M14 2v6h6" stroke="#1E3A5F" stroke-width="1.4"/></svg>
+            <span style="flex:1;"><span style="display:block;font-family:'DM Sans',sans-serif;font-size:15px;color:var(--navy,#1E3A5F);font-weight:500;">Round 2 &mdash; trend &amp; volume filter grid <span style="color:#b23a3a;">(0 of 12 profitable)</span></span><span style="display:block;font-family:'DM Sans',sans-serif;font-size:12.5px;color:var(--mid-gray,#6b6b6b);margin-top:2px;">The 50-EMA baseline plus every higher-timeframe and volume combination.</span></span>
+            <span style="font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:#1E3A5F;padding:6px 12px;border-radius:5px;">PDF</span>
+          </a>
+
+          <a href="../../assets/pdf/forex-breakout-2-candle-strength.pdf" download style="display:flex;align-items:center;gap:16px;padding:14px 16px;text-decoration:none;border-top:1px solid var(--lt-gray,#e5e2dc);transition:background 0.15s;" onmouseover="this.style.background='rgba(30,58,95,0.04)'" onmouseout="this.style.background='transparent'">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="#1E3A5F" stroke-width="1.4"/><path d="M14 2v6h6" stroke="#1E3A5F" stroke-width="1.4"/></svg>
+            <span style="flex:1;"><span style="display:block;font-family:'DM Sans',sans-serif;font-size:15px;color:var(--navy,#1E3A5F);font-weight:500;">Round 3 &mdash; candle strength, 1H and 4H (24 cells)</span><span style="display:block;font-family:'DM Sans',sans-serif;font-size:12.5px;color:var(--mid-gray,#6b6b6b);margin-top:2px;">The EMA removed entirely — and the leverage bug that drove equity negative.</span></span>
+            <span style="font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:#1E3A5F;padding:6px 12px;border-radius:5px;">PDF</span>
+          </a>
+
+          <a href="../../assets/pdf/forex-breakout-3-risk-reward-sweep.pdf" download style="display:flex;align-items:center;gap:16px;padding:14px 16px;text-decoration:none;border-top:1px solid var(--lt-gray,#e5e2dc);border-bottom:1px solid var(--lt-gray,#e5e2dc);transition:background 0.15s;" onmouseover="this.style.background='rgba(30,58,95,0.04)'" onmouseout="this.style.background='transparent'">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="#1E3A5F" stroke-width="1.4"/><path d="M14 2v6h6" stroke="#1E3A5F" stroke-width="1.4"/></svg>
+            <span style="flex:1;"><span style="display:block;font-family:'DM Sans',sans-serif;font-size:15px;color:var(--navy,#1E3A5F);font-weight:500;">Round 4 &mdash; the risk-reward sweep <span class="lw-muted">(the decisive test)</span></span><span style="display:block;font-family:'DM Sans',sans-serif;font-size:12.5px;color:var(--mid-gray,#6b6b6b);margin-top:2px;">Win rate against theoretical breakeven at six ratios — every series lands on the line.</span></span>
+            <span style="font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#fff;background:#1E3A5F;padding:6px 12px;border-radius:5px;">PDF</span>
+          </a>
+        </div>
+
+        <div class="article-end">
+          <div class="article-end-mark"></div>
+          <span class="article-end-text">Light Water Capital &nbsp;·&nbsp; July 2026</span>
+        </div>
+
+      </article>
+    </div>
+
+    <!-- SHARE SECTION -->
+    <div class="article-body-wrap">
+      <div style="max-width: 75vw; margin: 0 auto; padding: 32px 60px 48px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--lt-gray);">
+        <span style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-gray);">Share this article</span>
+        <a href="https://twitter.com/intent/tweet?text=We%20Ran%2060%20Backtests%20on%20One%20Strategy.%20The%20Win%20Rate%20Never%20Beat%20a%20Coin%20Flip.&url=https://lightwaterdispatch.com/dispatch/forex-ema-breakout-strategy-teardown/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: var(--navy); color: #fff; text-decoration: none; border-radius: 6px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-top: -1px;">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+          Share on X
+        </a>
+      </div>
+    </div>
+
+    <!-- AUTHOR CARDS -->
+    <div class="author-card-wrap">
+      <div class="author-card" role="complementary" aria-label="About the author">
+        <div class="author-card-avatar" aria-hidden="true">
+          <img src="../../assets/zach-smith-avatar.jpg" alt="Zach Smith" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="author-card-body">
+          <span class="author-card-label">About the author</span>
+          <div class="author-card-name">Zach Smith</div>
+          <div class="author-card-title">Director of Engineering, Light Water Capital</div>
+          <p class="author-card-bio">Zach is Director of Engineering at Light Water Capital and the lead author of July, the firm's open-source backtesting engine. He writes about systematic strategy development and the engineering behind quantitative research.</p>
+          <a href="https://www.linkedin.com/in/zachisit/" target="_blank" rel="noopener noreferrer" class="author-card-linkedin" aria-label="View Zach Smith on LinkedIn">
+            LinkedIn
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 4h10M7.5 1l3 3-3 3" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="author-card" role="complementary" aria-label="About the author" style="margin-top:24px;">
+        <div class="author-card-avatar" aria-hidden="true">
+          <img src="../../assets/shardul-mehetar-avatar.jpg" alt="Shardul Mehetar" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="author-card-body">
+          <span class="author-card-label">About the author</span>
+          <div class="author-card-name">Shardul Mehetar</div>
+          <div class="author-card-title">Quantitative Strategy Intern, Light Water</div>
+          <p class="author-card-bio">Shardul is a Quantitative Strategy Intern on Light Water's Systematic Strategies team and an MS Data Science candidate at the University of Delaware. He focuses on strategy validation and a healthy suspicion of backtests that look too good to be true.</p>
+          <a href="https://www.linkedin.com/in/shardul-mehetar-a4764a193/" target="_blank" rel="noopener noreferrer" class="author-card-linkedin" aria-label="View Shardul Mehetar on LinkedIn">
+            LinkedIn
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 4h10M7.5 1l3 3-3 3" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMMENT CTA -->
+    <div class="comment-cta-wrap">
+      <div class="comment-cta">
+        <div class="comment-cta-eyebrow">Join the discussion</div>
+        <h2 class="comment-cta-title">Leave a comment - join the conversation</h2>
+        <p class="comment-cta-text">Have you compared a strategy's win rate to its breakeven and watched the edge disappear? Tell us which setup you'd put through the risk-reward sweep next.</p>
+        <a href="https://www.linkedin.com/company/light-water" class="comment-cta-button" target="_blank" rel="noopener noreferrer">
+          Comment on LinkedIn
+          <svg width="14" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
+            <path d="M1 4.5h12M8.5 1l3.5 3.5L8.5 8" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- BACK LINK -->
+    <div class="article-back-wrap">
+      <a href="../index.html" class="article-back" aria-label="Back to The Dispatch">
+        <svg width="14" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
+          <path d="M13 4.5H1M5.5 1L2 4.5 5.5 8" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back to the Dispatch
+      </a>
+    </div>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-top">
+      <img class="footer-logo" src="../../assets/light-water-transparent-cropped-logo-dark-bg.png" alt="Light Water Capital">
+      <ul class="footer-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../index.html">Dispatch</a></li>
+        <li><a href="https://www.linkedin.com/company/light-water" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">
+        &copy; 2026 Light Water Capital. All rights reserved. This website is for informational purposes only and does not constitute investment advice or an offer to buy or sell any security. Past performance is not indicative of future results.
+      </p>
+      <span class="footer-location">Corydon, Indiana</span>
+    </div>
+  </footer>
+
+  <script src="../article.js"></script>
+</body>
+</html>
