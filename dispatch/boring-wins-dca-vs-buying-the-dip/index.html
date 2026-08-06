@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZTK7L0CNSR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZTK7L0CNSR');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boring Wins: DCA vs. Buying the Dip | Light Water Capital</title>
+  <meta name="description" content="A popular rule says buy your favorite stocks when the Nasdaq drops 10%. We backtested 27 years — a standing weekly buy that never looks beat it by roughly two to one.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://lightwaterdispatch.com/dispatch/boring-wins-dca-vs-buying-the-dip/">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://lightwaterdispatch.com/dispatch/boring-wins-dca-vs-buying-the-dip/">
+  <meta property="og:title" content="Boring Wins: DCA vs. Buying the Dip | Light Water Capital">
+  <meta property="og:description" content="A popular rule says buy the 10% dip. Backtested over 27 years, a standing weekly buy that never looks beat it ~2 to 1.">
+  <meta property="og:site_name" content="Light Water Capital">
+  <meta property="og:image" content="https://lightwaterdispatch.com/assets/og-boring-wins-dca-vs-buying-the-dip.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Boring Wins — DCA vs. Buying the Dip, Light Water Capital">
+  <meta property="article:published_time" content="2026-08-06">
+  <meta property="article:author" content="Light Water Capital">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="Dollar-Cost Averaging">
+  <meta property="article:tag" content="Buying the Dip">
+  <meta property="article:tag" content="Backtesting">
+  <meta property="article:tag" content="Behavioral Finance">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Boring Wins: DCA vs. Buying the Dip">
+  <meta name="twitter:description" content="A popular rule says buy the 10% dip. Backtested 27 years, a standing weekly buy that never looks beat it ~2 to 1.">
+  <meta name="twitter:image" content="https://lightwaterdispatch.com/assets/og-boring-wins-dca-vs-buying-the-dip.png">
+  <meta name="keywords" content="dollar cost averaging, DCA, buying the dip, market timing, QQQ, Nasdaq, backtest, survivorship bias, behavioral finance, Light Water Capital">
+  <meta name="theme-color" content="#1E3A5F">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <link rel="manifest" href="/site.webmanifest">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Boring Wins: DCA vs. Buying the Dip",
+    "description": "A popular rule says buy your favorite stocks when the Nasdaq drops 10%. We backtested 27 years — a standing weekly buy that never looks beat it by roughly two to one.",
+    "image": "https://lightwaterdispatch.com/assets/og-boring-wins-dca-vs-buying-the-dip.png",
+    "datePublished": "2026-08-06",
+    "dateModified": "2026-08-06",
+    "author": { "@type": "Organization", "name": "Light Water Capital", "url": "https://lightwaterdispatch.com" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Light Water Capital",
+      "logo": { "@type": "ImageObject", "url": "https://lightwaterdispatch.com/assets/light-water-transparent-cropped-logo.PNG" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://lightwaterdispatch.com/dispatch/boring-wins-dca-vs-buying-the-dip/" },
+    "articleSection": "Research",
+    "keywords": ["dollar cost averaging", "buying the dip", "market timing", "QQQ", "backtest", "survivorship bias", "behavioral finance"],
+    "wordCount": 1200
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lightwaterdispatch.com/" },
+      { "@type": "ListItem", "position": 2, "name": "The Dispatch", "item": "https://lightwaterdispatch.com/dispatch/" },
+      { "@type": "ListItem", "position": 3, "name": "Boring Wins: DCA vs. Buying the Dip", "item": "https://lightwaterdispatch.com/dispatch/boring-wins-dca-vs-buying-the-dip/" }
+    ]
+  }
+  </script>
+  <style>
+    /* Mirrors the dispatch template (Cormorant Garamond + DM Sans, navy header, warm-white card). */
+    :root{
+      --navy:#1E3A5F; --navy-deep:#16293f; --steel:#2F5D8A;
+      --ink:#22303c; --ink-soft:#3a4654; --muted:#6f7a87;
+      --line:#e6e2d8; --card:#fdfbf7; --page:#efeae0; --wash:#f4f7fb;
+      --clay:#B23A1E; --green:#2f7d5b;
+      --serif:'Cormorant Garamond',Georgia,serif;
+      --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%}
+    body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);
+      font-size:18px;line-height:1.75;-webkit-font-smoothing:antialiased;}
+    a{color:var(--steel)}
+    .skip-link{position:absolute;left:-9999px}
+    .skip-link:focus{left:16px;top:12px;background:#fff;padding:8px 14px;border-radius:6px;z-index:20}
+    #nav{display:flex;justify-content:space-between;align-items:center;max-width:1080px;margin:0 auto;padding:18px 28px;}
+    .nav-logo{height:34px;width:auto}
+    .nav-links{list-style:none;display:flex;gap:26px;margin:0;padding:0}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:14px;letter-spacing:.02em}
+    .nav-links a.active,.nav-links a:hover{color:var(--navy)}
+    .article-header{background:var(--navy);color:#fff}
+    .article-header-inner{max-width:760px;margin:0 auto;padding:52px 28px 60px}
+    .article-breadcrumb{font-size:13px;color:#9db2ca;margin-bottom:26px;letter-spacing:.02em}
+    .article-breadcrumb a{color:#9db2ca;text-decoration:none}
+    .article-breadcrumb a:hover{color:#fff}
+    .article-breadcrumb span{margin:0 8px}
+    .crumb-current{color:#c9d6e4}
+    .article-meta{display:flex;align-items:center;gap:12px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:#9db2ca;margin-bottom:22px}
+    .article-tag{color:#d7e2ee;font-weight:600}
+    .article-meta-dot{width:3px;height:3px;border-radius:50%;background:#5f7d9c}
+    .article-title{font-family:var(--serif);font-weight:600;font-size:52px;line-height:1.08;letter-spacing:-.005em;margin:0 0 20px}
+    .article-dek{font-family:var(--serif);font-style:italic;font-weight:400;font-size:23px;line-height:1.4;color:#cdd9e6;margin:0 0 34px;max-width:34em}
+    .byline{display:flex;align-items:center;gap:13px}
+    .byline-avatar{width:48px;height:48px;border-radius:50%;overflow:hidden;background:#2c496b;flex:none;display:flex;align-items:center;justify-content:center}
+    .byline-avatar-initials{font-family:var(--serif);font-weight:600;font-size:15px;color:#fff;letter-spacing:.04em}
+    .byline-name{font-weight:600;font-size:15.5px;color:#fff}
+    .byline-role{font-size:13.5px;color:#9db2ca}
+    .article-body-wrap{background:var(--page);padding:0 20px}
+    .article-body{max-width:760px;margin:-28px auto 0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:52px 60px 40px;box-shadow:0 24px 60px -40px rgba(30,58,95,.4)}
+    .article-body p{margin:0 0 20px}
+    .article-body h2{font-family:var(--serif);font-weight:600;color:var(--navy);font-size:31px;line-height:1.15;margin:44px 0 14px;letter-spacing:-.005em}
+    .mm-summary{background:var(--wash);border-left:3px solid var(--navy);padding:20px 22px;margin:0 0 32px;border-radius:0 6px 6px 0}
+    .mm-summary-label{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:8px}
+    .mm-summary p{margin:0;font-size:16px;line-height:1.68;color:var(--ink-soft)}
+    .divergences{list-style:none;padding:0;margin:0 0 20px}
+    .divergences li{padding:0 0 0 18px;margin:0 0 16px;border-left:2px solid var(--line)}
+    .divergences li strong{color:var(--navy)}
+    .mm-figure{margin:34px 0}
+    .mm-figure svg{width:100%;height:auto;display:block}
+    .mm-figcap{font-size:13.5px;line-height:1.5;color:var(--muted);font-style:italic;margin-top:12px}
+    table{width:100%;border-collapse:collapse;margin:22px 0 6px;font-size:15.5px}
+    thead th{background:var(--navy);color:#fff;text-align:left;padding:11px 14px;font-weight:600;font-size:14px}
+    tbody td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-soft)}
+    tbody tr:nth-child(even){background:#faf8f2}
+    tbody td:first-child{font-weight:600;color:var(--ink)}
+    .mm-tag{border-left:3px solid var(--steel);padding:2px 0 2px 16px;margin:0 0 16px}
+    .mm-tag.warn{border-color:var(--clay)}
+    .mm-tag.good{border-color:var(--green)}
+    .mm-tag strong{color:var(--navy)}
+    .disclaimer{font-size:13px;line-height:1.6;color:var(--muted);border-top:1px solid var(--line);margin-top:40px;padding-top:20px}
+    .mm-author{display:flex;gap:16px;align-items:flex-start;background:var(--wash);border-radius:8px;padding:22px;margin:34px 0 6px}
+    .mm-author-avatar{width:56px;height:56px;flex:none;border-radius:50%;overflow:hidden;background:var(--navy);display:flex;align-items:center;justify-content:center}
+    .mm-author-initials{font-family:var(--serif);font-weight:600;font-size:18px;color:#fff;letter-spacing:.04em}
+    .mm-author-name{font-weight:600;color:var(--navy);font-size:16px}
+    .mm-author-role{color:var(--muted);font-size:13.5px;margin-bottom:7px}
+    .mm-author-bio{margin:0 0 9px;font-size:14.5px;line-height:1.6;color:var(--ink-soft)}
+    .draft-banner{max-width:760px;margin:16px auto 0;padding:10px 18px;background:#fff4e5;border:1px solid #e6b877;border-radius:8px;color:#8a5a12;font-size:13.5px;font-weight:600}
+    footer.site-footer{max-width:1080px;margin:44px auto 0;padding:26px 28px 48px;color:var(--muted);font-size:13px;line-height:1.6}
+    footer.site-footer .footer-location{color:var(--navy);font-weight:600}
+    @media(max-width:640px){
+      body{font-size:16.5px}
+      .article-header-inner{padding:38px 20px 44px}
+      .article-title{font-size:36px}
+      .article-dek{font-size:20px}
+      .article-body{padding:34px 22px 30px}
+      .article-body h2{font-size:26px}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="draft-banner">DRAFT — not published. Backtested/hypothetical results; pending review, an author byline, and an OG image.</div>
+
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <img class="nav-logo" src="https://lightwaterdispatch.com/assets/light-water-transparent-cropped-logo.PNG" alt="Light Water Capital">
+    <ul class="nav-links">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/dispatch/index.html" class="active">Dispatch</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+    <header class="article-header">
+      <div class="article-header-inner">
+        <nav class="article-breadcrumb" aria-label="Breadcrumb">
+          <a href="/dispatch/index.html">The Dispatch</a><span aria-hidden="true">→</span><span class="crumb-current">Research</span>
+        </nav>
+        <div class="article-meta">
+          <span class="article-tag">Research</span>
+          <span class="article-meta-dot" aria-hidden="true"></span>
+          <time datetime="2026-08-06">August 2026</time>
+          <span class="article-meta-dot" aria-hidden="true"></span>
+          <span class="article-meta-read">6 min read</span>
+        </div>
+        <h1 class="article-title">Boring Wins</h1>
+        <p class="article-dek">A rule that makes the rounds every drawdown says buy your favorite stocks when the Nasdaq drops 10%. We backtested 27 years. A standing order every Friday morning — and never looking — beat it by roughly two to one.</p>
+        <div class="byline">
+          <div class="byline-avatar"><span class="byline-avatar-initials">LW</span></div>
+          <div class="byline-text">
+            <div class="byline-name">Light Water Capital</div>
+            <div class="byline-role">Research Desk</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="article-body-wrap">
+      <article class="article-body" aria-label="Article content">
+
+        <div class="mm-summary">
+          <span class="mm-summary-label">The finding, up front</span>
+          <p>A popular market rule: keep cash, and buy your favorite technology names whenever the Nasdaq falls 10% — do it every year and you get rich. We tested it on QQQ over 27 years. The kernel is real: buying a 10% panic beats the average day at three to six months. But as a wealth strategy it loses badly to the most boring alternative on earth — a fixed weekly buy, made every Friday morning, that ignores the news entirely. Same money invested, the weekly buyer finished with roughly <strong>twice</strong> the dip-timer's wealth. The reason is unglamorous: waiting for dips leaves you in cash 96% of the time, and time in the market is the whole game.</p>
+        </div>
+
+        <h2>The Rule Everyone Retweets</h2>
+        <p>It reappears on schedule, every time the tape gets ugly: <em>hold cash, wait for the Nasdaq or your favorite tech names to drop about 10%, back up the truck, and repeat once a year — that is how you become a multi-millionaire.</em> It is appealing because it sounds disciplined, it sounds contrarian, and it comes wrapped in the survivor's confidence of someone who owned the names that went up. It is worth taking seriously enough to test — which is different from taking it on faith.</p>
+        <p>Three claims are buried in it, and each one is checkable. That a 10% dip &ldquo;happens about once a year.&rdquo; That buying it works. And that doing so, year after year, is the path to wealth. We ran all three against QQQ from its 1999 inception through today.</p>
+
+        <h2>Claim One and Two: Roughly True, and Real — For a Quarter</h2>
+        <p>The frequency claim holds up as an average: there were 24 to 25 distinct 10%-from-high selloffs in 27 years, about 0.9 per year. But &ldquo;once a year&rdquo; hides the clustering — four in 2000, three in 2018 and again in 2020, and long calm stretches with none. Dips do not arrive on a schedule; they arrive in crises, several at a time.</p>
+        <p>The second claim — that buying the dip works — is genuinely true on a short horizon, and this is the part the rule gets right. Buying a 10% drop and measuring the bounce, QQQ beat the average day handily at three and six months. Buying fear pays, because a 10% flush is usually an emotional overshoot that mean-reverts. But push the horizon out to a year and the edge quietly evaporates.</p>
+
+        <figure class="mm-figure">
+          <svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Average forward return after a 10% dip versus the average day, at 3, 6 and 12 months">
+            <text x="360" y="28" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#1E3A5F">The dip edge is a three-month bounce, not a year</text>
+            <text x="360" y="47" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6B7683">Average QQQ forward return, 1999&ndash;2026</text>
+            <g stroke="#EDF0F3" stroke-width="1">
+              <line x1="70" y1="270" x2="690" y2="270"/><line x1="70" y1="210" x2="690" y2="210"/><line x1="70" y1="150" x2="690" y2="150"/><line x1="70" y1="90" x2="690" y2="90"/>
+            </g>
+            <g font-family="Arial, sans-serif" font-size="11" fill="#8A94A0" text-anchor="end">
+              <text x="62" y="274">0%</text><text x="62" y="214">6%</text><text x="62" y="154">12%</text><text x="62" y="94">18%</text>
+            </g>
+            <!-- groups: 3mo, 6mo, 1yr; dip (steel) vs baseline (muted). scale: 10px per % -> y=270 - val*10 -->
+            <g>
+              <!-- 3mo: dip 10.6, base 3.2 -->
+              <rect x="150" y="164" width="46" height="106" fill="#2F5D8A"/><rect x="200" y="238" width="46" height="32" fill="#B9C2CC"/>
+              <text x="173" y="156" text-anchor="middle" font-family="Arial" font-size="12" font-weight="700" fill="#1E3A5F">+10.6%</text>
+              <text x="223" y="230" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7683">+3.2%</text>
+              <text x="198" y="290" text-anchor="middle" font-family="Arial" font-size="12" fill="#3a4654">3 months</text>
+              <!-- 6mo: dip 16.8, base 6.4 -->
+              <rect x="330" y="102" width="46" height="168" fill="#2F5D8A"/><rect x="380" y="206" width="46" height="64" fill="#B9C2CC"/>
+              <text x="353" y="94" text-anchor="middle" font-family="Arial" font-size="12" font-weight="700" fill="#1E3A5F">+16.8%</text>
+              <text x="403" y="198" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7683">+6.4%</text>
+              <text x="378" y="290" text-anchor="middle" font-family="Arial" font-size="12" fill="#3a4654">6 months</text>
+              <!-- 1yr: dip 15.8, base 12.7 -->
+              <rect x="510" y="112" width="46" height="158" fill="#2F5D8A"/><rect x="560" y="143" width="46" height="127" fill="#B9C2CC"/>
+              <text x="533" y="104" text-anchor="middle" font-family="Arial" font-size="12" font-weight="700" fill="#1E3A5F">+15.8%</text>
+              <text x="583" y="135" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7683">+12.7%</text>
+              <text x="558" y="290" text-anchor="middle" font-family="Arial" font-size="12" fill="#3a4654">1 year</text>
+            </g>
+            <g font-family="Arial, sans-serif" font-size="11.5">
+              <rect x="250" y="312" width="12" height="12" fill="#2F5D8A"/><text x="268" y="322" fill="#3a4654">After a 10% dip</text>
+              <rect x="400" y="312" width="12" height="12" fill="#B9C2CC"/><text x="418" y="322" fill="#3a4654">Average day</text>
+            </g>
+          </svg>
+          <figcaption class="mm-figcap">The bounce is real and large at three months (+10.6% vs. +3.2%). By twelve months the dip-buy and the average day converge (+15.8% vs. +12.7%, with essentially the same win rate) — what looked like dip alpha is mostly just the Nasdaq's long-run drift. Hypothetical, price-only, 1999&ndash;2026.</figcaption>
+        </figure>
+
+        <p>And the tail is the part the rule never mentions. A 10% drop is not a floor. After buying one, the average further drawdown within the year was another 13%, and the worst cases ran to roughly minus 64% — because in 2000 and 2022 the 10% dip was the first bite of a bear market, not the bottom of one. A rule with no exit buys every one of those.</p>
+
+        <h2>Claim Three: The Part That Loses to Doing Nothing</h2>
+        <p>Here is the test that matters, and the one the slogan skips. Take two investors with identical cash flows — $1,000 a month of new savings, from 1999 to today. One dollar-cost-averages: buys a fixed amount on a fixed schedule, every time, regardless of the tape. The other runs the rule: holds the cash, and deploys it only when QQQ is 10% off its high. Same money in, same index, 27 years.</p>
+
+        <figure class="mm-figure">
+          <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Terminal wealth: dollar-cost averaging versus buying the dip">
+            <text x="360" y="28" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#1E3A5F">Same $330,000 invested. Very different endings.</text>
+            <text x="360" y="47" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6B7683">Terminal portfolio value, $1,000/month into QQQ, 1999&ndash;2026</text>
+            <line x1="70" y1="275" x2="700" y2="275" stroke="#D3DAE2" stroke-width="1"/>
+            <!-- max 3.98M -> height scale: 200px for 3.98M -> 50.25px per $1M; y=275 - val*50.25 -->
+            <g>
+              <rect x="120" y="75" width="130" height="200" fill="#2f7d5b"/>
+              <text x="185" y="66" text-anchor="middle" font-family="Arial" font-size="15" font-weight="700" fill="#1E3A5F">$3.98M</text>
+              <text x="185" y="296" text-anchor="middle" font-family="Arial" font-size="12.5" font-weight="700" fill="#20364B">DCA every month</text>
+              <text x="185" y="312" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7683">12.1&times; · 0% in cash</text>
+
+              <rect x="300" y="176" width="130" height="99" fill="#2F5D8A"/>
+              <text x="365" y="167" text-anchor="middle" font-family="Arial" font-size="15" font-weight="700" fill="#1E3A5F">$1.97M</text>
+              <text x="365" y="296" text-anchor="middle" font-family="Arial" font-size="12.5" font-weight="700" fill="#20364B">Buy the 10% dip</text>
+              <text x="365" y="312" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7683">6.0&times; · 96% in cash</text>
+
+              <rect x="480" y="182" width="130" height="93" fill="#5f7d9c"/>
+              <text x="545" y="173" text-anchor="middle" font-family="Arial" font-size="15" font-weight="700" fill="#1E3A5F">$1.86M</text>
+              <text x="545" y="296" text-anchor="middle" font-family="Arial" font-size="12.5" font-weight="700" fill="#20364B">Dip + 200-day filter</text>
+              <text x="545" y="312" text-anchor="middle" font-family="Arial" font-size="11" fill="#6B7683">5.7&times; · 96% in cash</text>
+            </g>
+            <line x1="120" y1="75" x2="640" y2="75" stroke="#B23A1E" stroke-width="1.1" stroke-dasharray="4 3"/>
+            <text x="655" y="79" font-family="Arial" font-size="10.5" fill="#B23A1E">+$2M</text>
+          </svg>
+          <figcaption class="mm-figcap">Identical contributions. The monthly (or weekly) DCA finished with roughly twice the dip-timer's wealth — the gap is the cost of sitting in cash 96% of the time, waiting. Hypothetical, no costs or taxes, idle cash earns 0%. 1999&ndash;2026.</figcaption>
+        </figure>
+
+        <p>The dollar-cost-averager finished with about $3.98 million. The dip-buyer, with the same $330,000 of contributions, finished with $1.97 million — a hair under half. Adding a 200-day trend filter to the dip rule (buy the dip only in an uptrend) did not rescue it; it finished at $1.86 million. The dip strategies were not stupid — they had shallower drawdowns, roughly minus 34% against the DCA's minus 51%, because sitting in cash is comfortable when the market falls. But comfort was expensive. Waiting for a 10% discount meant sitting out of a market that spends most of its life quietly rising, and the compounding you forfeit in the calm years dwarfs the discount you capture in the loud ones.</p>
+        <p>And the day you pick barely matters. A fixed weekly buy every Friday finished within a rounding error of the monthly version — 12.1 times contributions either way. Friday morning, near the open, is a fine ritual: it is payday-adjacent, it closes the week, and it takes the decision out of your hands. But the edge is not in the calendar slot. The edge is in the <em>standing order</em> — the part that fires whether or not you feel like buying.</p>
+
+        <h2>The Trap Hiding in &ldquo;Your Favorite Stocks&rdquo;</h2>
+        <p>There is one more sleight of hand, and it is the dangerous one. Every number above is on QQQ — an index. An index is self-cleaning: it quietly drops the losers and lets the winners compound, so it always recovers, because &ldquo;it&rdquo; is never the same basket twice. The rule as stated does not say buy the index. It says buy <em>your favorite speculative stocks</em> — and it lists a microcap lottery ticket in the same breath as a few quality semiconductors.</p>
+        <p>A single speculative name has no self-cleaning mechanism. It can fall 10%, then 90%, then delist — and when it does, it leaves the dataset entirely. That is why the winners feel so obvious in hindsight: the names that came back are the ones still on the screen. The ones that went to zero are not in anyone's backtest, or anyone's memory. That is survivorship bias, and it is precisely what makes &ldquo;buy the dip on your favorites&rdquo; feel like a law when it is really a highlight reel. Applied to an index, the dip rule merely underperforms. Applied to concentrated speculative names with no exit, it is a path to permanent loss.</p>
+
+        <h2>What This Is — And What It Is Not</h2>
+        <p class="mm-tag good"><strong>This is</strong> a defense of the least exciting plan available: pick a broad index, buy a fixed amount on a standing schedule — a weekly Friday order works perfectly well — and let time and compounding do the work. Over 27 years it roughly doubled the wealth of the &ldquo;wait for the dip&rdquo; crowd.</p>
+        <p class="mm-tag"><strong>This is not</strong> a claim that buying dips is worthless. The three-to-six-month bounce is real. If you want to use it, the coherent version is to keep dollar-cost-averaging and <em>add</em> on a 10% dip when price is above the 200-day — a dip in an uptrend, not a falling knife. Just know you are buying lower drawdown, not higher returns.</p>
+        <p class="mm-tag warn"><strong>This is not</strong> a license to run the rule on single speculative stocks. The index recovers because it is not one company. A lottery ticket that falls 10% on its way to zero is not a discount; it is a warning.</p>
+
+        <div class="disclaimer">Methodology: QQQ, 1999&ndash;2026, daily total-return bars via a public data feed. A &ldquo;dip&rdquo; is defined as a 10% decline from the prior all-time high, re-armed after a recovery to within 5% of that high; this definition structurally skips 2001&ndash;2015 (QQQ sat below its 2000 peak for roughly 15 years) including 2008, which would make the tail worse, not better. Contributions modeled at a fixed monthly (or weekly) amount; idle cash earns 0%; no transaction costs, taxes, or slippage. All figures are hypothetical, backtested results and are shown for illustration only. Past performance is not indicative of future results. This is not investment advice.</div>
+
+        <div class="mm-author">
+          <div class="mm-author-avatar"><span class="mm-author-initials">LW</span></div>
+          <div>
+            <div class="mm-author-name">Light Water Capital · Research Desk</div>
+            <div class="mm-author-role">Systematic strategy and cross-asset research</div>
+            <p class="mm-author-bio">Draft byline. Replace with the crediting author before publish.</p>
+          </div>
+        </div>
+
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Light Water Capital · Private Capital Management · <span class="footer-location">Corydon, Indiana</span></p>
+    <p>© 2026 Light Water Capital. All rights reserved. This website is for informational purposes only and does not constitute investment advice or an offer to buy or sell any security. Past performance is not indicative of future results.</p>
+  </footer>
+</body>
+</html>
