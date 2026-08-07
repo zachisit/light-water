@@ -17,7 +17,7 @@
   <link rel="canonical" href="https://lightwaterdispatch.com/dispatch/boring-wins-dca-vs-buying-the-dip/">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://lightwaterdispatch.com/dispatch/boring-wins-dca-vs-buying-the-dip/">
-  <meta property="og:title" content="Boring Wins: DCA vs. Buying the Dip | Light Water Capital">
+  <meta property="og:title" content="Boring Wins: DCA vs. Buying the Dip">
   <meta property="og:description" content="A popular rule says buy the 10% dip. Backtested over 27 years, a standing weekly buy that never looks beat it ~2 to 1.">
   <meta property="og:site_name" content="Light Water Capital">
   <meta property="og:image" content="https://lightwaterdispatch.com/assets/og-boring-wins-dca-vs-buying-the-dip.png">
@@ -36,12 +36,6 @@
   <meta name="twitter:description" content="A popular rule says buy the 10% dip. Backtested 27 years, a standing weekly buy that never looks beat it ~2 to 1.">
   <meta name="twitter:image" content="https://lightwaterdispatch.com/assets/og-boring-wins-dca-vs-buying-the-dip.png">
   <meta name="keywords" content="dollar cost averaging, DCA, buying the dip, market timing, QQQ, Nasdaq, backtest, survivorship bias, behavioral finance, Light Water Capital">
-  <meta name="theme-color" content="#1E3A5F">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
-  <link rel="manifest" href="/site.webmanifest">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -74,114 +68,65 @@
     ]
   }
   </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1E3A5F">
+
+  <link rel="stylesheet" href="../article.css">
   <style>
-    /* Mirrors the dispatch template (Cormorant Garamond + DM Sans, navy header, warm-white card). */
-    :root{
-      --navy:#1E3A5F; --navy-deep:#16293f; --steel:#2F5D8A;
-      --ink:#22303c; --ink-soft:#3a4654; --muted:#6f7a87;
-      --line:#e6e2d8; --card:#fdfbf7; --page:#efeae0; --wash:#f4f7fb;
-      --clay:#B23A1E; --green:#2f7d5b;
-      --serif:'Cormorant Garamond',Georgia,serif;
-      --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-    }
-    *{box-sizing:border-box}
-    html{-webkit-text-size-adjust:100%}
-    body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);
-      font-size:18px;line-height:1.75;-webkit-font-smoothing:antialiased;}
-    a{color:var(--steel)}
-    .skip-link{position:absolute;left:-9999px}
-    .skip-link:focus{left:16px;top:12px;background:#fff;padding:8px 14px;border-radius:6px;z-index:20}
-    #nav{display:flex;justify-content:space-between;align-items:center;max-width:1080px;margin:0 auto;padding:18px 28px;}
-    .nav-logo{height:34px;width:auto}
-    .nav-links{list-style:none;display:flex;gap:26px;margin:0;padding:0}
-    .nav-links a{color:var(--muted);text-decoration:none;font-size:14px;letter-spacing:.02em}
-    .nav-links a.active,.nav-links a:hover{color:var(--navy)}
-    .article-header{background:var(--navy);color:#fff}
-    .article-header-inner{max-width:760px;margin:0 auto;padding:52px 28px 60px}
-    .article-breadcrumb{font-size:13px;color:#9db2ca;margin-bottom:26px;letter-spacing:.02em}
-    .article-breadcrumb a{color:#9db2ca;text-decoration:none}
-    .article-breadcrumb a:hover{color:#fff}
-    .article-breadcrumb span{margin:0 8px}
-    .crumb-current{color:#c9d6e4}
-    .article-meta{display:flex;align-items:center;gap:12px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:#9db2ca;margin-bottom:22px}
-    .article-tag{color:#d7e2ee;font-weight:600}
-    .article-meta-dot{width:3px;height:3px;border-radius:50%;background:#5f7d9c}
-    .article-title{font-family:var(--serif);font-weight:600;font-size:52px;line-height:1.08;letter-spacing:-.005em;margin:0 0 20px}
-    .article-dek{font-family:var(--serif);font-style:italic;font-weight:400;font-size:23px;line-height:1.4;color:#cdd9e6;margin:0 0 34px;max-width:34em}
-    .byline{display:flex;align-items:center;gap:13px}
-    .byline-avatar{width:48px;height:48px;border-radius:50%;overflow:hidden;background:#2c496b;flex:none;display:flex;align-items:center;justify-content:center}
-    .byline-avatar-initials{font-family:var(--serif);font-weight:600;font-size:15px;color:#fff;letter-spacing:.04em}
-    .byline-name{font-weight:600;font-size:15.5px;color:#fff}
-    .byline-role{font-size:13.5px;color:#9db2ca}
-    .article-body-wrap{background:var(--page);padding:0 20px}
-    .article-body{max-width:760px;margin:-28px auto 0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:52px 60px 40px;box-shadow:0 24px 60px -40px rgba(30,58,95,.4)}
-    .article-body p{margin:0 0 20px}
-    .article-body h2{font-family:var(--serif);font-weight:600;color:var(--navy);font-size:31px;line-height:1.15;margin:44px 0 14px;letter-spacing:-.005em}
-    .mm-summary{background:var(--wash);border-left:3px solid var(--navy);padding:20px 22px;margin:0 0 32px;border-radius:0 6px 6px 0}
-    .mm-summary-label{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:8px}
-    .mm-summary p{margin:0;font-size:16px;line-height:1.68;color:var(--ink-soft)}
-    .divergences{list-style:none;padding:0;margin:0 0 20px}
-    .divergences li{padding:0 0 0 18px;margin:0 0 16px;border-left:2px solid var(--line)}
-    .divergences li strong{color:var(--navy)}
-    .mm-figure{margin:34px 0}
-    .mm-figure svg{width:100%;height:auto;display:block}
-    .mm-figcap{font-size:13.5px;line-height:1.5;color:var(--muted);font-style:italic;margin-top:12px}
-    table{width:100%;border-collapse:collapse;margin:22px 0 6px;font-size:15.5px}
-    thead th{background:var(--navy);color:#fff;text-align:left;padding:11px 14px;font-weight:600;font-size:14px}
-    tbody td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-soft)}
-    tbody tr:nth-child(even){background:#faf8f2}
-    tbody td:first-child{font-weight:600;color:var(--ink)}
-    .mm-tag{border-left:3px solid var(--steel);padding:2px 0 2px 16px;margin:0 0 16px}
-    .mm-tag.warn{border-color:var(--clay)}
-    .mm-tag.good{border-color:var(--green)}
-    .mm-tag strong{color:var(--navy)}
-    .disclaimer{font-size:13px;line-height:1.6;color:var(--muted);border-top:1px solid var(--line);margin-top:40px;padding-top:20px}
-    .mm-author{display:flex;gap:16px;align-items:flex-start;background:var(--wash);border-radius:8px;padding:22px;margin:34px 0 6px}
-    .mm-author-avatar{width:56px;height:56px;flex:none;border-radius:50%;overflow:hidden;background:var(--navy);display:flex;align-items:center;justify-content:center}
-    .mm-author-initials{font-family:var(--serif);font-weight:600;font-size:18px;color:#fff;letter-spacing:.04em}
-    .mm-author-name{font-weight:600;color:var(--navy);font-size:16px}
-    .mm-author-role{color:var(--muted);font-size:13.5px;margin-bottom:7px}
-    .mm-author-bio{margin:0 0 9px;font-size:14.5px;line-height:1.6;color:var(--ink-soft)}
-    footer.site-footer{max-width:1080px;margin:44px auto 0;padding:26px 28px 48px;color:var(--muted);font-size:13px;line-height:1.6}
-    footer.site-footer .footer-location{color:var(--navy);font-weight:600}
-    @media(max-width:640px){
-      body{font-size:16.5px}
-      .article-header-inner{padding:38px 20px 44px}
-      .article-title{font-size:36px}
-      .article-dek{font-size:20px}
-      .article-body{padding:34px 22px 30px}
-      .article-body h2{font-size:26px}
-    }
+    /* Scoped extras for this article: SVG figures + good/warn callouts */
+    .article-body figure svg { width:100%; height:auto; display:block; background:var(--warm-white); }
+    .lw-callout { border-left:3px solid var(--teal); padding:2px 0 2px 20px; margin:0 0 20px; }
+    .lw-callout strong { color: var(--navy); }
+    .lw-callout.good { border-color:#1a7a4c; }
+    .lw-callout.warn { border-color:#b23a3a; }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <nav id="nav" role="navigation" aria-label="Main navigation">
-    <img class="nav-logo" src="https://lightwaterdispatch.com/assets/light-water-transparent-cropped-logo.PNG" alt="Light Water Capital">
+    <img class="nav-logo" src="../../assets/light-water-transparent-cropped-logo.PNG" alt="Light Water Capital">
     <ul class="nav-links">
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/dispatch/index.html" class="active">Dispatch</a></li>
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../index.html" class="active">Dispatch</a></li>
     </ul>
   </nav>
 
   <main id="main">
+
+    <!-- NAVY HEADER BAND -->
     <header class="article-header">
       <div class="article-header-inner">
         <nav class="article-breadcrumb" aria-label="Breadcrumb">
-          <a href="/dispatch/index.html">The Dispatch</a><span aria-hidden="true">→</span><span class="crumb-current">Research</span>
+          <a href="../index.html">The Dispatch</a>
+          <span aria-hidden="true">→</span>
+          <span class="crumb-current">Research</span>
         </nav>
         <div class="article-meta">
           <span class="article-tag">Research</span>
           <span class="article-meta-dot" aria-hidden="true"></span>
-          <time datetime="2026-08-07">August 2026</time>
+          <time class="article-meta-date" datetime="2026-08-07">August 2026</time>
           <span class="article-meta-dot" aria-hidden="true"></span>
           <span class="article-meta-read">6 min read</span>
         </div>
-        <h1 class="article-title">Boring Wins</h1>
+        <div class="article-tags" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;">
+          <span style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;">Dollar-Cost Averaging</span>
+          <span style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;">Buying the Dip</span>
+          <span style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;">Backtesting</span>
+          <span style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;">Behavioral Finance</span>
+        </div>
+        <h1 class="article-title">Boring Wins<br>DCA vs. Buying the Dip</h1>
         <p class="article-dek">A rule that makes the rounds every drawdown says buy your favorite stocks when the Nasdaq drops 10%. We backtested 27 years. A standing order every Friday morning — and never looking — beat it by roughly two to one.</p>
+
+        <!-- BYLINE -->
         <div class="byline">
-          <div class="byline-avatar"><img src="../../assets/zach-smith-avatar.jpg" alt="Zach Smith" style="width:100%;height:100%;object-fit:cover;"></div>
+          <div class="byline-avatar" aria-hidden="true">
+            <img src="../../assets/zach-smith-avatar.jpg" alt="Zach Smith" style="width:100%;height:100%;object-fit:cover;">
+          </div>
           <div class="byline-text">
             <div class="byline-name">Zach Smith</div>
             <div class="byline-role">Director of Engineering, Light Water Capital</div>
@@ -190,12 +135,12 @@
       </div>
     </header>
 
+    <!-- BODY ON WARM WHITE CARD -->
     <div class="article-body-wrap">
       <article class="article-body" aria-label="Article content">
 
-        <div class="mm-summary">
-          <span class="mm-summary-label">The finding, up front</span>
-          <p>A popular market rule: keep cash, and buy your favorite technology names whenever the Nasdaq falls 10% — do it every year and you get rich. We tested it on QQQ over 27 years. The kernel is real: buying a 10% panic beats the average day at three to six months. But as a wealth strategy it loses badly to the most boring alternative on earth — a fixed weekly buy, made every Friday morning, that ignores the news entirely. Same money invested, the weekly buyer finished with roughly <strong>twice</strong> the dip-timer's wealth. The reason is unglamorous: waiting for dips leaves you in cash 96% of the time, and time in the market is the whole game.</p>
+        <div class="article-stat-box">
+          <div class="article-stat-label"><strong>Summary:</strong> A popular market rule: keep cash, and buy your favorite technology names whenever the Nasdaq falls 10% — do it every year and you get rich. We tested it on QQQ over 27 years. The kernel is real: buying a 10% panic beats the average day at three to six months. But as a wealth strategy it loses badly to the most boring alternative on earth — a fixed weekly buy, made every Friday morning, that ignores the news entirely. Same money invested, the weekly buyer finished with roughly <strong>twice</strong> the dip-timer's wealth. The reason is unglamorous: waiting for dips leaves you in cash 96% of the time, and time in the market is the whole game.</div>
         </div>
 
         <h2>The Rule Everyone Retweets</h2>
@@ -206,7 +151,7 @@
         <p>The frequency claim holds up as an average: there were 24 to 25 distinct 10%-from-high selloffs in 27 years, about 0.9 per year. But &ldquo;once a year&rdquo; hides the clustering — four in 2000, three in 2018 and again in 2020, and long calm stretches with none. Dips do not arrive on a schedule; they arrive in crises, several at a time.</p>
         <p>The second claim — that buying the dip works — is genuinely true on a short horizon, and this is the part the rule gets right. Buying a 10% drop and measuring the bounce, QQQ beat the average day handily at three and six months. Buying fear pays, because a 10% flush is usually an emotional overshoot that mean-reverts. But push the horizon out to a year and the edge quietly evaporates.</p>
 
-        <figure class="mm-figure">
+        <figure>
           <svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Average forward return after a 10% dip versus the average day, at 3, 6 and 12 months">
             <text x="360" y="28" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#1E3A5F">The dip edge is a three-month bounce, not a year</text>
             <text x="360" y="47" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6B7683">Average QQQ forward return, 1999&ndash;2026</text>
@@ -239,7 +184,7 @@
               <rect x="400" y="312" width="12" height="12" fill="#B9C2CC"/><text x="418" y="322" fill="#3a4654">Average day</text>
             </g>
           </svg>
-          <figcaption class="mm-figcap">The bounce is real and large at three months (+10.6% vs. +3.2%). By twelve months the dip-buy and the average day converge (+15.8% vs. +12.7%, with essentially the same win rate) — what looked like dip alpha is mostly just the Nasdaq's long-run drift. Hypothetical, price-only, 1999&ndash;2026.</figcaption>
+          <figcaption>The bounce is real and large at three months (+10.6% vs. +3.2%). By twelve months the dip-buy and the average day converge (+15.8% vs. +12.7%, with essentially the same win rate) — what looked like dip alpha is mostly just the Nasdaq's long-run drift. Hypothetical, price-only, 1999&ndash;2026.</figcaption>
         </figure>
 
         <p>And the tail is the part the rule never mentions. A 10% drop is not a floor. After buying one, the average further drawdown within the year was another 13%, and the worst cases ran to roughly minus 64% — because in 2000 and 2022 the 10% dip was the first bite of a bear market, not the bottom of one. A rule with no exit buys every one of those.</p>
@@ -247,7 +192,7 @@
         <h2>Claim Three: The Part That Loses to Doing Nothing</h2>
         <p>Here is the test that matters, and the one the slogan skips. Take two investors with identical cash flows — $1,000 a month of new savings, from 1999 to today. One dollar-cost-averages: buys a fixed amount on a fixed schedule, every time, regardless of the tape. The other runs the rule: holds the cash, and deploys it only when QQQ is 10% off its high. Same money in, same index, 27 years.</p>
 
-        <figure class="mm-figure">
+        <figure>
           <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Terminal wealth: dollar-cost averaging versus buying the dip">
             <text x="360" y="28" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#1E3A5F">Same $330,000 invested. Very different endings.</text>
             <text x="360" y="47" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6B7683">Terminal portfolio value, $1,000/month into QQQ, 1999&ndash;2026</text>
@@ -272,7 +217,7 @@
             <line x1="120" y1="75" x2="640" y2="75" stroke="#B23A1E" stroke-width="1.1" stroke-dasharray="4 3"/>
             <text x="655" y="79" font-family="Arial" font-size="10.5" fill="#B23A1E">+$2M</text>
           </svg>
-          <figcaption class="mm-figcap">Identical contributions. The monthly (or weekly) DCA finished with roughly twice the dip-timer's wealth — the gap is the cost of sitting in cash 96% of the time, waiting. Hypothetical, no costs or taxes, idle cash earns 0%. 1999&ndash;2026.</figcaption>
+          <figcaption>Identical contributions. The monthly (or weekly) DCA finished with roughly twice the dip-timer's wealth — the gap is the cost of sitting in cash 96% of the time, waiting. Hypothetical, no costs or taxes, idle cash earns 0%. 1999&ndash;2026.</figcaption>
         </figure>
 
         <p>The dollar-cost-averager finished with about $3.98 million. The dip-buyer, with the same $330,000 of contributions, finished with $1.97 million — a hair under half. Adding a 200-day trend filter to the dip rule (buy the dip only in an uptrend) did not rescue it; it finished at $1.86 million. The dip strategies were not stupid — they had shallower drawdowns, roughly minus 34% against the DCA's minus 51%, because sitting in cash is comfortable when the market falls. But comfort was expensive. Waiting for a 10% discount meant sitting out of a market that spends most of its life quietly rising, and the compounding you forfeit in the calm years dwarfs the discount you capture in the loud ones.</p>
@@ -283,28 +228,98 @@
         <p>A single speculative name has no self-cleaning mechanism. It can fall 10%, then 90%, then delist — and when it does, it leaves the dataset entirely. That is why the winners feel so obvious in hindsight: the names that came back are the ones still on the screen. The ones that went to zero are not in anyone's backtest, or anyone's memory. That is survivorship bias, and it is precisely what makes &ldquo;buy the dip on your favorites&rdquo; feel like a law when it is really a highlight reel. Applied to an index, the dip rule merely underperforms. Applied to concentrated speculative names with no exit, it is a path to permanent loss.</p>
 
         <h2>What This Is — And What It Is Not</h2>
-        <p class="mm-tag good"><strong>This is</strong> a defense of the least exciting plan available: pick a broad index, buy a fixed amount on a standing schedule — a weekly Friday order works perfectly well — and let time and compounding do the work. Over 27 years it roughly doubled the wealth of the &ldquo;wait for the dip&rdquo; crowd.</p>
-        <p class="mm-tag"><strong>This is not</strong> a claim that buying dips is worthless. The three-to-six-month bounce is real. If you want to use it, the coherent version is to keep dollar-cost-averaging and <em>add</em> on a 10% dip when price is above the 200-day — a dip in an uptrend, not a falling knife. Just know you are buying lower drawdown, not higher returns.</p>
-        <p class="mm-tag warn"><strong>This is not</strong> a license to run the rule on single speculative stocks. The index recovers because it is not one company. A lottery ticket that falls 10% on its way to zero is not a discount; it is a warning.</p>
+        <p class="lw-callout good"><strong>This is</strong> a defense of the least exciting plan available: pick a broad index, buy a fixed amount on a standing schedule — a weekly Friday order works perfectly well — and let time and compounding do the work. Over 27 years it roughly doubled the wealth of the &ldquo;wait for the dip&rdquo; crowd.</p>
+        <p class="lw-callout"><strong>This is not</strong> a claim that buying dips is worthless. The three-to-six-month bounce is real. If you want to use it, the coherent version is to keep dollar-cost-averaging and <em>add</em> on a 10% dip when price is above the 200-day — a dip in an uptrend, not a falling knife. Just know you are buying lower drawdown, not higher returns.</p>
+        <p class="lw-callout warn"><strong>This is not</strong> a license to run the rule on single speculative stocks. The index recovers because it is not one company. A lottery ticket that falls 10% on its way to zero is not a discount; it is a warning.</p>
 
-        <div class="disclaimer">Methodology: QQQ, 1999&ndash;2026, daily total-return bars via a public data feed. A &ldquo;dip&rdquo; is defined as a 10% decline from the prior all-time high, re-armed after a recovery to within 5% of that high; this definition structurally skips 2001&ndash;2015 (QQQ sat below its 2000 peak for roughly 15 years) including 2008, which would make the tail worse, not better. Contributions modeled at a fixed monthly (or weekly) amount; idle cash earns 0%; no transaction costs, taxes, or slippage. All figures are hypothetical, backtested results and are shown for illustration only. Past performance is not indicative of future results. This is not investment advice.</div>
+        <p style="margin-top:24px;font-size:12px;color:#888;font-style:italic;">Methodology: QQQ, 1999&ndash;2026, daily total-return bars via a public data feed. A &ldquo;dip&rdquo; is defined as a 10% decline from the prior all-time high, re-armed after a recovery to within 5% of that high; this definition structurally skips 2001&ndash;2015 (QQQ sat below its 2000 peak for roughly 15 years) including 2008, which would make the tail worse, not better. Contributions modeled at a fixed monthly (or weekly) amount; idle cash earns 0%; no transaction costs, taxes, or slippage. All figures are hypothetical, backtested results and are shown for illustration only. Past performance is not indicative of future results. This is not investment advice.</p>
 
-        <div class="mm-author">
-          <div class="mm-author-avatar"><img src="../../assets/zach-smith-avatar.jpg" alt="Zach Smith" style="width:100%;height:100%;object-fit:cover;"></div>
-          <div>
-            <div class="mm-author-name">Zach Smith</div>
-            <div class="mm-author-role">Director of Engineering, Light Water Capital</div>
-            <p class="mm-author-bio">Zach is Director of Engineering at Light Water Capital and the lead author of July, the firm's open-source backtesting engine. He writes about systematic strategy development and the numbers behind the market's favorite folk rules.</p>
-          </div>
+        <div class="article-end">
+          <div class="article-end-mark"></div>
+          <span class="article-end-text">Light Water Capital &nbsp;·&nbsp; August 2026</span>
         </div>
 
       </article>
     </div>
+
+    <!-- SHARE SECTION -->
+    <div class="article-body-wrap">
+      <div style="max-width: 75vw; margin: 0 auto; padding: 32px 60px 48px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--lt-gray);">
+        <span style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-gray);">Share this article</span>
+        <a href="https://twitter.com/intent/tweet?text=Boring%20Wins%3A%20DCA%20vs.%20Buying%20the%20Dip&url=https://lightwaterdispatch.com/dispatch/boring-wins-dca-vs-buying-the-dip/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: var(--navy); color: #fff; text-decoration: none; border-radius: 6px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-top: -1px;">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+          Share on X
+        </a>
+      </div>
+    </div>
+
+    <!-- AUTHOR CARD -->
+    <div class="author-card-wrap">
+      <div class="author-card" role="complementary" aria-label="About the author">
+        <div class="author-card-avatar" aria-hidden="true">
+          <img src="../../assets/zach-smith-avatar.jpg" alt="Zach Smith" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="author-card-body">
+          <span class="author-card-label">About the author</span>
+          <div class="author-card-name">Zach Smith</div>
+          <div class="author-card-title">Director of Engineering, Light Water Capital</div>
+          <p class="author-card-bio">Zach is Director of Engineering at Light Water Capital and the lead author of July, the firm's open-source backtesting engine. He writes about systematic strategy development and the numbers behind the market's favorite folk rules.</p>
+          <a href="https://www.linkedin.com/in/zachisit/" target="_blank" rel="noopener noreferrer" class="author-card-linkedin" aria-label="View Zach Smith on LinkedIn">
+            LinkedIn
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 4h10M7.5 1l3 3-3 3" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMMENT CTA -->
+    <div class="comment-cta-wrap">
+      <div class="comment-cta">
+        <div class="comment-cta-eyebrow">Join the discussion</div>
+        <h2 class="comment-cta-title">Leave a comment - join the conversation</h2>
+        <p class="comment-cta-text">Do you run a standing order, or do you wait for the dip? Tell us how you'd stress-test this — different index, different contribution size, a real cost-of-cash assumption.</p>
+        <a href="https://www.linkedin.com/company/light-water" class="comment-cta-button" target="_blank" rel="noopener noreferrer">
+          Comment on LinkedIn
+          <svg width="14" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
+            <path d="M1 4.5h12M8.5 1l3.5 3.5L8.5 8" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- BACK LINK -->
+    <div class="article-back-wrap">
+      <a href="../index.html" class="article-back" aria-label="Back to The Dispatch">
+        <svg width="14" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
+          <path d="M13 4.5H1M5.5 1L2 4.5 5.5 8" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back to the Dispatch
+      </a>
+    </div>
+
   </main>
 
-  <footer class="site-footer">
-    <p>Light Water Capital · Private Capital Management · <span class="footer-location">Corydon, Indiana</span></p>
-    <p>© 2026 Light Water Capital. All rights reserved. This website is for informational purposes only and does not constitute investment advice or an offer to buy or sell any security. Past performance is not indicative of future results.</p>
+  <footer role="contentinfo">
+    <div class="footer-top">
+      <img class="footer-logo" src="../../assets/light-water-transparent-cropped-logo-dark-bg.png" alt="Light Water Capital">
+      <ul class="footer-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../index.html">Dispatch</a></li>
+        <li><a href="https://www.linkedin.com/company/light-water" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">
+        &copy; 2026 Light Water Capital. All rights reserved. This website is for informational purposes only and does not constitute investment advice or an offer to buy or sell any security. Past performance is not indicative of future results.
+      </p>
+      <span class="footer-location">Corydon, Indiana</span>
+    </div>
   </footer>
+
+  <script src="../article.js"></script>
 </body>
 </html>
