@@ -12,13 +12,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Why We Open-Sourced Our Trading Backtester | Light Water Capital</title>
-  <meta name="description" content="From internal tool to open-source project - the story behind July, our Python backtesting engine with Monte Carlo and walk-forward analysis.">
+  <meta name="description" content="From internal tool to open-source project - the story behind July Backtester, our Python backtesting engine with Monte Carlo and walk-forward analysis.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://lightwaterdispatch.com/dispatch/july-backtester/">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://lightwaterdispatch.com/dispatch/july-backtester/">
   <meta property="og:title" content="Why We Open-Sourced Our Trading Backtester | Light Water Capital">
-  <meta property="og:description" content="From internal research tool to open-source project - the story behind July, our professional-grade Python backtesting engine.">
+  <meta property="og:description" content="From internal research tool to open-source project - the story behind July Backtester, our professional-grade Python backtesting engine.">
   <meta property="og:site_name" content="Light Water Capital">
   <meta property="og:image" content="https://lightwaterdispatch.com/assets/og-july-backtester.svg">
   <meta property="og:image:width" content="1200">
@@ -33,7 +33,7 @@
   <meta property="article:tag" content="Quantitative Research">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Why We Open-Sourced Our Trading Backtester">
-  <meta name="twitter:description" content="From internal research tool to open-source project - the story behind July, our professional-grade Python backtesting engine.">
+  <meta name="twitter:description" content="From internal research tool to open-source project - the story behind July Backtester, our professional-grade Python backtesting engine.">
   <meta name="twitter:image" content="https://lightwaterdispatch.com/assets/og-july-backtester.svg">
   <meta name="keywords" content="backtesting, open source, Python, quantitative trading, Monte Carlo simulation, walk-forward analysis, trading strategies, July backtester">
   <script type="application/ld+json">
@@ -41,7 +41,7 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Why We Open-Sourced Our Trading Backtester",
-    "description": "From internal research tool to open-source project - the story behind July, our professional-grade Python backtesting engine with Monte Carlo, walk-forward analysis, and regime detection.",
+    "description": "From internal research tool to open-source project - the story behind July Backtester, our professional-grade Python backtesting engine with Monte Carlo, walk-forward analysis, and regime detection.",
     "image": "https://lightwaterdispatch.com/assets/og-july-backtester.svg",
     "datePublished": "2026-03-24",
     "dateModified": "2026-03-24",
@@ -132,7 +132,7 @@
           <span style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;">Monte Carlo</span>
         </div>
         <h1 class="article-title">Why We Open-Sourced<br>Our Trading Backtester</h1>
-        <p class="article-dek">From internal research tool to open-source project - the story behind July, our professional-grade Python backtesting engine.</p>
+        <p class="article-dek">From internal research tool to open-source project - the story behind July Backtester, our professional-grade Python backtesting engine.</p>
 
         <!-- BYLINE -->
         <div class="byline">
@@ -172,35 +172,35 @@
           <div class="article-stat-label">Licensed under MIT. Use it commercially, modify it freely, build products on top of it. We benefit more from having a shared standard than from keeping this proprietary.</div>
         </div>
 
-        <h2>What Makes July Different</h2>
+        <h2>What Makes July Backtester Different</h2>
 
         <h3>Monte Carlo with Block Bootstrap</h3>
 
         <p>Traditional Monte Carlo shuffles trade outcomes randomly, which destroys autocorrelation structure. If your strategy has streaky win/loss patterns, random shuffling will underestimate tail risk. Block bootstrap solves this by sampling trades in sequences, preserving the clustering behavior of real performance.</p>
 
-        <p>July runs Monte Carlo by default on every backtest. You get a distribution of outcomes, not just a single equity curve. This makes it trivial to answer questions like: "What's the 5th percentile return over the test period?" or "How often does this strategy experience a 20% drawdown?"</p>
+        <p>July Backtester runs Monte Carlo by default on every backtest. You get a distribution of outcomes, not just a single equity curve. This makes it trivial to answer questions like: "What's the 5th percentile return over the test period?" or "How often does this strategy experience a 20% drawdown?"</p>
 
         <h3>Walk-Forward Analysis</h3>
 
         <p>Overfitting is the silent killer of quantitative strategies. A backtest that looks phenomenal in-sample often collapses out-of-sample because the parameters were tuned to historical noise, not signal.</p>
 
-        <p>Walk-forward analysis splits your data into training and testing windows, optimizes parameters on the training set, tests them on the hold-out set, and rolls forward through time. If performance degrades significantly out-of-sample, you know the strategy won't generalize. July automates this entire process and visualizes the degradation across periods.</p>
+        <p>Walk-forward analysis splits your data into training and testing windows, optimizes parameters on the training set, tests them on the hold-out set, and rolls forward through time. If performance degrades significantly out-of-sample, you know the strategy won't generalize. July Backtester automates this entire process and visualizes the degradation across periods.</p>
 
         <h3>Parameter Sensitivity Sweeps</h3>
 
         <p>A robust strategy should have a flat region around its optimal parameters. If changing an EMA period from 50 to 51 tanks your Sharpe ratio, you don't have an edge - you have a curve-fitted accident.</p>
 
-        <p>July's sensitivity sweep runs a grid search across parameter ranges and plots performance as a heatmap. You can visually identify whether your strategy has a stable region or a single lucky peak surrounded by cliffs.</p>
+        <p>July Backtester's sensitivity sweep runs a grid search across parameter ranges and plots performance as a heatmap. You can visually identify whether your strategy has a stable region or a single lucky peak surrounded by cliffs.</p>
 
         <h3>Regime Heatmaps</h3>
 
         <p>Different market conditions favor different strategies. A momentum strategy that works in low-volatility trending markets may bleed capital during high-VIX whipsaw periods.</p>
 
-        <p>July bins your backtest results by VIX regime and shows performance across each bucket. You can see at a glance whether your strategy works everywhere or only in specific conditions - and whether those conditions are common enough to justify the strategy's use.</p>
+        <p>July Backtester bins your backtest results by VIX regime and shows performance across each bucket. You can see at a glance whether your strategy works everywhere or only in specific conditions - and whether those conditions are common enough to justify the strategy's use.</p>
 
         <h3>ML-Ready Trade Export</h3>
 
-        <p>Modern quantitative research often involves feeding backtest features into machine learning models. July exports every trade with entry/exit timestamps, holding periods, P&L, market conditions at entry, and custom strategy-specific features you define.</p>
+        <p>Modern quantitative research often involves feeding backtest features into machine learning models. July Backtester exports every trade with entry/exit timestamps, holding periods, P&L, market conditions at entry, and custom strategy-specific features you define.</p>
 
         <p>This makes it trivial to build downstream models that predict trade outcomes, optimize position sizing dynamically, or filter trades based on learned patterns.</p>
 
@@ -220,7 +220,7 @@
 
         <p>We could have kept this internal. Most trading firms guard their infrastructure like nuclear launch codes. But backtesting engines aren't a source of edge - the strategies you run on them are.</p>
 
-        <p>By open-sourcing July, we gain more than we lose. We get external contributions that improve the engine for everyone. We establish a shared standard that makes it easier to reproduce research and validate findings. We reduce the friction for talented researchers who want to contribute to Light Water's work but don't want to rebuild infrastructure from scratch.</p>
+        <p>By open-sourcing July Backtester, we gain more than we lose. We get external contributions that improve the engine for everyone. We establish a shared standard that makes it easier to reproduce research and validate findings. We reduce the friction for talented researchers who want to contribute to Light Water's work but don't want to rebuild infrastructure from scratch.</p>
 
         <p>Most importantly, we believe transparency in research tooling builds trust. If someone wants to validate our published results, they can use the exact same backtesting engine we used, with the same cost models, the same data handling, and the same statistical tests. Reproducibility is a feature, not a liability.</p>
 
@@ -231,11 +231,11 @@
 
         <h2>What's Next</h2>
 
-        <p>July is actively maintained. We're using it daily for internal research, which means bugs get found and fixed quickly. The roadmap includes options backtesting support, intraday data handling for higher-frequency strategies, and tighter integration with ML pipelines for automated feature engineering.</p>
+        <p>July Backtester is actively maintained. We're using it daily for internal research, which means bugs get found and fixed quickly. The roadmap includes options backtesting support, intraday data handling for higher-frequency strategies, and tighter integration with ML pipelines for automated feature engineering.</p>
 
-        <p>Community contributions are welcome. Star the repo, fork it, open a PR. If you build something useful on top of July, we'd love to see it. The more people use this tool, the better it becomes for everyone.</p>
+        <p>Community contributions are welcome. Star the repo, fork it, open a PR. If you build something useful on top of July Backtester, we'd love to see it. The more people use this tool, the better it becomes for everyone.</p>
 
-        <p>Quantitative trading has too many barriers to entry already. July is our attempt to lower one of them.</p>
+        <p>Quantitative trading has too many barriers to entry already. July Backtester is our attempt to lower one of them.</p>
         <div class="article-end">
           <div class="article-end-mark"></div>
           <span class="article-end-text">Light Water Capital &nbsp;·&nbsp; March 2026</span>
