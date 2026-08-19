@@ -1,0 +1,118 @@
+FOUNDER ACCOUNT — X / TWITTER
+Article: https://lightwaterdispatch.com/dispatch/thirty-year-treasury-2007-high-august-2026/
+
+================================================================
+OPTION 1 — SINGLE TWEET  (247 chars)
+================================================================
+
+The 30-year Treasury hit 5.33% this week. Highest since 2007.
+
+The part nobody's saying: the 2-year went DOWN.
+
+Long end up, short end down, Fed didn't move.
+
+That combination rules out "the market repriced the Fed."
+
+This is a fiscal price, not a Fed price.
+
+
+================================================================
+OPTION 2 — SINGLE TWEET, DURATION ANGLE  (255 chars)
+================================================================
+
+A 30-year Treasury has a modified duration near 15.
+
+One point of adverse rate movement = -13.4% of principal.
+
+That's two and a half years of coupon, gone.
+
+The thing people buy when they want to be "conservative" is one of the most volatile lines on the statement.
+
+
+================================================================
+OPTION 3 — THREAD (9 tweets)
+================================================================
+
+1/
+The 30-year Treasury hit 5.33% this week — highest since 2007.
+
+Everyone's blaming the Fed.
+
+The Fed didn't move. And the 2-year yield went the other way.
+
+That one detail changes the entire read. 🧵
+
+2/
+Any long yield is two things stacked:
+
+→ the average short rate you expect over 30 years
+→ the term premium — what you demand for eating 30 years of uncertainty
+
+The 2-year is almost purely the first piece.
+
+3/
+In August: the 2-year fell ~12bp. The 30-year rose ~13bp. Fed funds unchanged at 3.50–3.75%.
+
+If this were a Fed repricing, both ends move together.
+
+They didn't. So the move came from the term premium.
+
+This is a fiscal price, not a Fed price.
+
+4/
+The supply math isn't subtle:
+
+• ~$2.1T projected FY26 deficit
+• $857B interest expense in 9 months, +13% y/y
+• The Aug 13 auction cleared at 5.216% — priciest long-bond sale in ~25 years
+
+More paper. Same buyers. Someone has to be paid to hold it.
+
+5/
+And there's a second borrower that didn't exist in this form last cycle.
+
+Hyperscalers issued ~$121B of corporate bonds in 2025.
+Projected near $230B net this year.
+
+The AI buildout is being financed in the bond market — competing for the same finite appetite for duration.
+
+6/
+Now the part most bondholders have never actually calculated.
+
+A 30-year Treasury has a modified duration near 15.
+
+One percentage point against you = about -13.4% of principal.
+
+Two and a half years of coupon. Gone.
+
+7/
+Which means the "safe" sleeve of the portfolio is, in price terms, one of the most volatile things on a brokerage statement.
+
+TLT's equity-like drawdowns since 2020 weren't a malfunction.
+
+That's the math working exactly as designed.
+
+8/
+The encouraging half of the same math:
+
+A one-point rally is worth ~+16.8%. Gains beat losses — that gap is convexity, and it grows with duration.
+
+You're paid 5.3% to wait.
+
+The question was never whether the long bond is attractive. It's whether you're sized for the path.
+
+9/
+Full breakdown — the bear steepener, the supply arithmetic, the AI bid, and what a ±100bp move does across the curve:
+
+https://lightwaterdispatch.com/dispatch/thirty-year-treasury-2007-high-august-2026/
+
+
+================================================================
+NOTES
+================================================================
+• Attach the "same one-point move, three very different bills" chart to
+  tweet 6 and the yield-curve chart to tweet 3 — both are in the article
+  and both carry the point without needing the copy.
+• Above us is 5.44%, the 2007 peak. Good reply-tweet if it trades higher.
+• If the 2-year ever starts falling hard AND drags the 30-year with it,
+  the read flips from fiscal repricing to growth scare. Worth a follow-up.
