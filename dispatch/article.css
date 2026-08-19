@@ -392,8 +392,8 @@
     .article-stat-box {
       margin: 40px 0;
       padding: 28px 32px;
-      background: linear-gradient(135deg, var(--sky-pale) 0%, var(--warm-white) 100%);
-      border-left: 3px solid var(--teal);
+      background: var(--sky-pale);
+      border-left: 3px solid var(--navy);
       border-radius: 8px;
     }
     .article-stat-number {
@@ -405,10 +405,12 @@
       margin-bottom: 8px;
     }
     .article-stat-label {
-      font-size: 13px;
-      color: var(--mid-gray);
-      letter-spacing: 0.04em;
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--body-text);
+      letter-spacing: 0.01em;
     }
+    .article-stat-label strong { color: var(--navy); font-weight: 500; }
 
     /* END MARK */
     .article-end {
