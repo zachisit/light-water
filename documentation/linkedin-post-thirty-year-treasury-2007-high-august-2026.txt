@@ -1,18 +1,10 @@
 Nineteen Years
 
-The 30-year Treasury topped 5.33% this week — the highest since 2007.
+The 30-year Treasury topped 5.33% this week — the highest since 2007. The detail almost nobody is saying out loud: the two-year yield went the other way. It fell about 12 basis points in August while the long bond rose 13, and the Fed never moved from 3.50–3.75%. That combination rules out the easy explanation. A long yield is two things — the average short rate you expect over thirty years, and the term premium you demand for accepting thirty years of uncertainty. The two-year is almost entirely the first piece, and it went down. So the move came from the second. This is a fiscal price, not a Fed price.
 
-The part almost nobody is saying out loud: the two-year yield went the other way. It fell about 12 basis points in August while the long bond rose 13, and the Fed never moved from 3.50–3.75%.
+The arithmetic behind it isn't subtle: a projected $2.1 trillion deficit for fiscal 2026, $857 billion of interest expense in nine months, and a 13 August auction that cleared at 5.216% — the most expensive long-bond sale in about twenty-five years. There is also a second borrower that did not exist in this form last cycle. Hyperscalers issued roughly $121 billion of corporate bonds in 2025 and are projected near $230 billion net this year, competing for the same finite appetite for duration.
 
-That combination rules out the easy explanation. A long yield is two things: the average short rate you expect over thirty years, and the term premium — the extra compensation for accepting thirty years of uncertainty. The two-year is almost entirely the first piece, and it went down. So the move came from the second piece.
-
-This is a fiscal price, not a Fed price.
-
-The arithmetic behind it isn't subtle. A projected $2.1 trillion deficit for fiscal 2026. Interest expense of $857 billion in nine months, up 13%. Treasury's 13 August 30-year auction clearing at 5.216% — the most expensive long-bond sale in about twenty-five years. And a second borrower that didn't exist in this form last cycle: hyperscalers issued roughly $121 billion of corporate bonds in 2025 and are projected near $230 billion net this year, competing for the same finite appetite for duration.
-
-Which brings up the number most people holding bonds have never run. A thirty-year Treasury has a modified duration near 15. One percentage point of adverse rate movement costs about 13.4% of principal — roughly two and a half years of coupon, gone. The instrument most investors reach for when they want to be conservative is one of the most volatile things on a brokerage statement.
-
-The encouraging half of that same math: a one-point rally is worth about 16.8%. You are being paid 5.3% to wait, with convexity working in your favor. The question was never whether the long bond is attractive. It's whether you're sized for the path.
+Which brings up the number most bondholders have never run. A thirty-year Treasury has a modified duration near 15 — one percentage point against you costs about 13.4% of principal, roughly two and a half years of coupon. The instrument people reach for when they want to be conservative is one of the most volatile things on a brokerage statement. The encouraging half of that same math: a one-point rally is worth about 16.8%, and you are being paid 5.3% to wait. The question was never whether the long bond is attractive. It is whether you are sized for the path.
 
 Read it here: https://lightwaterdispatch.com/dispatch/thirty-year-treasury-2007-high-august-2026/
 
