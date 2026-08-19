@@ -1,0 +1,15 @@
+Boring Wins: DCA vs. Buying the Dip
+
+There's a rule that makes the rounds every time the market gets ugly: hold cash, wait for the Nasdaq to drop 10%, back up the truck on your favorite names, repeat once a year — that's how you get rich.
+
+We backtested it. On QQQ, 1999 to today.
+
+The bounce is real — buying a 10% dip beats the average day handily at three and six months. But the rule skips the part that matters: a standing weekly buy that never looks, no timing, no cash sitting on the sidelines, finished with roughly twice the wealth of the dip-timer. Same contributions, same 27 years. The dip-buyer sat in cash 96% of the time, and time in the market was the whole game.
+
+There's also a trap hiding in "your favorite stocks" — the index self-cleans and recovers; a single speculative name that falls 10% on its way to zero does not.
+
+Written by Director of Engineering Zach Smith.
+
+Read it here: https://lightwaterdispatch.com/dispatch/boring-wins-dca-vs-buying-the-dip/
+
+#DollarCostAveraging #BehavioralFinance #Backtesting #MarketTiming #LightWaterCapital
