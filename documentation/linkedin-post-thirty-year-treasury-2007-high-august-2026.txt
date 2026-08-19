@@ -1,6 +1,6 @@
 Nineteen Years
 
-The 30-year Treasury topped 5.33% this week, the highest since 2007 — and the two-year yield went the other way, falling about 12 basis points while the long bond rose 13 and the Fed never moved. When the front end falls and the back end rises, the move is not a repricing of the Fed but of term premium, which makes this a fiscal price rather than a Fed price. The arithmetic is not subtle: a projected $2.1 trillion deficit for fiscal 2026, $857 billion of interest expense in nine months, a 13 August auction that cleared at 5.216% — the priciest long-bond sale in about twenty-five years — and hyperscalers issuing hundreds of billions more into the same finite appetite for duration. Which raises the number most bondholders have never run: a thirty-year Treasury carries a modified duration near 15, so one percentage point against you costs roughly 13.4% of principal, and the question was never whether the long bond is attractive but whether you are sized for the path.
+The 30-year Treasury hit its highest level since 2007 this week while the two-year fell — the market repricing not the Fed but the term premium on a $2.1 trillion deficit and an AI buildout whose hyperscalers are borrowing hundreds of billions into the same finite appetite for duration.
 
 Read it here: https://lightwaterdispatch.com/dispatch/thirty-year-treasury-2007-high-august-2026/
 
