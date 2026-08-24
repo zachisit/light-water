@@ -10,9 +10,23 @@
 
   <url>
     <loc>https://lightwaterdispatch.com/dispatch/</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lightwaterdispatch.com/dispatch/before-a-single-bond-august-2026/</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://lightwaterdispatch.com/dispatch/the-commodity-breakout-that-isnt-yet/</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
