@@ -1,3 +1,7 @@
 .claude/settings.local.json
 .tokensave
 .DS_Store
+
+
+# Local social-copy drafts (never publish to the site)
+*-social-copy.txt
