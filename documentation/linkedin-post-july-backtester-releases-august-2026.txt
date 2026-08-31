@@ -1,8 +1,8 @@
 A Month of Improvements to July Backtester
 
-Three releases went out in August, and the direction across all of them was the same — make it easier to ask a question of the data, and easier to trust the answer.
+Three releases went out in August, and the direction across all of them was the same - make it easier to ask a question of the data, and easier to trust the answer.
 
-Universes are now survivorship-free. You can build one from rules — liquidity, price, listing status — rather than from index membership, which most corpora simply do not carry. That clears a long-standing blocker on point-in-time work.
+Universes are now survivorship-free. You can build one from rules - liquidity, price, listing status - rather than from index membership, which most corpora simply do not carry. That clears a long-standing blocker on point-in-time work.
 
 Cross-sectional rotation is a first-class strategy type now, with a rotation-aware engine path and a worked example, rather than something each researcher assembles themselves.
 
