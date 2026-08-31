@@ -1,18 +1,24 @@
-Twelve Bugs We Found in Our Own Engine
+A Month of Improvements to July Backtester
 
-July Backtester shipped three releases this month. The newest is a correctness release, and it is not a comfortable one to publish: twelve verified bugs in our own engine, each fixed on its own branch with its own tests.
+Three releases went out in August, and the direction across all of them was the same — make it easier to ask a question of the data, and easier to trust the answer.
 
-The through-line is that most of them were found by checking a claim rather than by reading code — several were hiding behind a check that already reported clean. Our data-quality validator matched column names literally, so against a lowercase corpus it skipped instead of failing: a frame carrying a High-below-Low violation, a 400% price jump and thirty zero-volume bars scored 100 out of 100. The same validator scored a newest-first frame 100.0 and the identical data in ascending order 55.0.
+Universes are now survivorship-free. You can build one from rules — liquidity, price, listing status — rather than from index membership, which most corpora simply do not carry. That clears a long-standing blocker on point-in-time work.
 
-August also brought survivorship-free point-in-time universes built from rules rather than index membership, cross-sectional rotation as a first-class strategy type, and stops that anchor to the signal bar rather than to the fill.
+Cross-sectional rotation is a first-class strategy type now, with a rotation-aware engine path and a worked example, rather than something each researcher assembles themselves.
 
-Two people did a great deal of that work.
+Stops can anchor to the structure of the signal bar instead of a fixed distance from the fill, which is far closer to how the levels are actually chosen.
 
-Shardul Mehetar, our Quantitative Strategy Intern on the Systematic Strategies team, made the universe liquidity and history screens genuinely point-in-time, taught the price-jump check to weigh magnitude instead of counting occurrences, and built the tooling that reads a posted comment back and diffs it against what was sent.
+Norgate and Polygon can be read through a single merged provider. And a new research index collapses an entire run history into one sortable table, so "which experiment actually worked" becomes a sort rather than an archaeology exercise.
+
+We also put real time into correctness this month: an audit of the engine, stricter data-quality validation, and tighter checks around risk sizing.
+
+Two people did a great deal of this work, and they deserve the credit publicly.
+
+Shardul Mehetar, our Quantitative Strategy Intern on the Systematic Strategies team, made the universe liquidity and history screens genuinely point-in-time, taught the price-jump check to weigh magnitude rather than count occurrences, and built the tooling that verifies what it posted actually landed.
 
 Suriya Narayanan Rajavel, an open-source contributor to Light Water, built the parquet data layer and the Norgate and Polygon pipelines that the whole survivorship-free effort runs on top of.
 
-An engine you can check is worth more than an engine you have to trust.
+July Backtester is open source, and free to run on Yahoo Finance data with no API key.
 
 Releases: https://github.com/zachisit/july-backtester/releases
 
