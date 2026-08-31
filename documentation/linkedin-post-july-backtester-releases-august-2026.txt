@@ -1,0 +1,19 @@
+Twelve Bugs We Found in Our Own Engine
+
+July Backtester shipped three releases this month. The newest is a correctness release, and it is not a comfortable one to publish: twelve verified bugs in our own engine, each fixed on its own branch with its own tests.
+
+The through-line is that most of them were found by checking a claim rather than by reading code — several were hiding behind a check that already reported clean. Our data-quality validator matched column names literally, so against a lowercase corpus it skipped instead of failing: a frame carrying a High-below-Low violation, a 400% price jump and thirty zero-volume bars scored 100 out of 100. The same validator scored a newest-first frame 100.0 and the identical data in ascending order 55.0.
+
+August also brought survivorship-free point-in-time universes built from rules rather than index membership, cross-sectional rotation as a first-class strategy type, and stops that anchor to the signal bar rather than to the fill.
+
+Two people did a great deal of that work.
+
+Shardul Mehetar, our Quantitative Strategy Intern on the Systematic Strategies team, made the universe liquidity and history screens genuinely point-in-time, taught the price-jump check to weigh magnitude instead of counting occurrences, and built the tooling that reads a posted comment back and diffs it against what was sent.
+
+Suriya Narayanan Rajavel, an open-source contributor to Light Water, built the parquet data layer and the Norgate and Polygon pipelines that the whole survivorship-free effort runs on top of.
+
+An engine you can check is worth more than an engine you have to trust.
+
+Releases: https://github.com/zachisit/july-backtester/releases
+
+#Backtesting #OpenSource #QuantResearch #Python #SystematicTrading #LightWaterCapital
