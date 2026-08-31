@@ -23,3 +23,15 @@ July Backtester is open source, and free to run on Yahoo Finance data with no AP
 Releases: https://github.com/zachisit/july-backtester/releases
 
 #Backtesting #OpenSource #QuantResearch #Python #SystematicTrading #LightWaterCapital
+
+
+================================================================
+FOUNDER ACCOUNT - REPOST COMMENTARY (2 sentences)
+================================================================
+
+The best part of this month's July Backtester releases is how little of it was me. Shardul and Suriya did the work that actually mattered - universe screens that are genuinely point-in-time, and the data layer the whole thing runs on.
+
+
+-- ALT (more direct) --
+
+Two of our Systematic Strategies interns shipped most of what went into July Backtester this month: survivorship-free universes, cross-sectional rotation, and the data pipelines underneath both. If you do quant research, the releases are public and the code is open.
