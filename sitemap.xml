@@ -10,9 +10,16 @@
 
   <url>
     <loc>https://lightwaterdispatch.com/dispatch/</loc>
-    <lastmod>2026-08-24</lastmod>
+    <lastmod>2026-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://lightwaterdispatch.com/dispatch/before-the-strategy-market-phenomena/</loc>
+    <lastmod>2026-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
