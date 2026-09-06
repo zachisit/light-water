@@ -288,15 +288,6 @@
       font-size: 17px; line-height: 1.9;
       margin-bottom: 8px;
     }
-    .article-body .article-disclaimer {
-      margin-top: 52px;
-      padding: 20px 24px;
-      border-left: 2px solid var(--teal);
-      background: var(--off-white);
-      font-size: 12px;
-      line-height: 1.75;
-      color: var(--mid-gray);
-    }
     .article-body blockquote {
       border-left: 2px solid var(--teal);
       margin: 48px 0; padding: 4px 0 4px 32px;

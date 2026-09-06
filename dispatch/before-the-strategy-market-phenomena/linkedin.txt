@@ -1,0 +1,50 @@
+WE TESTED SEVEN THINGS EVERY STRATEGY ASSUMES - LinkedIn copy
+Article: https://lightwaterdispatch.com/dispatch/before-the-strategy-market-phenomena/
+
+========================================================================
+COMPANY ACCOUNT - Light Water Capital
+========================================================================
+Before testing a strategy, we spent six days testing the seven market behaviours strategies are built on top of.
+
+Momentum. Volatility clustering. Shocks. Volume. Resiliency. Commonality. Correlation. US equities back to 2004, each one tested against its own null hypothesis rather than against a backtest.
+
+Two corrections did most of the damage.
+
+Shuffle each stock's history within that stock - keep every observation, destroy the order. Anything that survives cannot be about timing. Run that against volatility clustering and 70% of it at twenty days, and 87% at one year, turns out to be a permanent roster of jumpy names rather than a forecast.
+
+Then correct for overlapping windows. A 120-day rolling correlation today shares 119 of its 120 days with yesterday's. We tested 155 claims that correlation and dispersion persist. Zero survived. One p-value went from 0.000 to 0.888 on the same statistic, same window.
+
+What did hold up: variance is between 23 and 354 times more predictable than direction. That asymmetry is why volatility targeting works and why direction filters mostly do not.
+
+We also broke our own measuring tools eighteen times. Ten of those would have produced a confident wrong answer with no error at all.
+
+Written by Shardul Mehetar, Quantitative Strategy Intern.
+
+https://lightwaterdispatch.com/dispatch/before-the-strategy-market-phenomena/
+
+#QuantitativeResearch #Volatility #Backtesting #Markets #DataScience
+
+
+========================================================================
+PERSONAL REPOST CAPTION
+========================================================================
+I spent six days not testing a single strategy.
+
+Instead I tested the seven market behaviours that strategies assume are true - and ran each one against its own null hypothesis.
+
+The result that changed how I work: shuffle a stock's history within that stock, so every observation survives but the order is destroyed. Whatever predictive power is left cannot be about timing. Do that to volatility clustering and roughly 70% of it at twenty days is not a forecast at all - it is a permanent list of names that are always jumpy.
+
+Zero of 155 correlation-persistence claims survived once we corrected for overlapping windows. And we logged eighteen defects in our own tooling, ten of which would have shipped a confident wrong answer.
+
+Writing this up honestly - including the results we withdrew - was the most useful thing I did all week.
+
+https://lightwaterdispatch.com/dispatch/before-the-strategy-market-phenomena/
+
+
+========================================================================
+POSTING NOTES
+========================================================================
+- Not time-sensitive. Best window is Tue-Thu, 8:00-10:00am ET.
+- Reach tip: LinkedIn throttles posts with an external link in the body. Put the article link in the FIRST COMMENT instead and lead with the text plus OG image.
+- No figure in this piece is a return, a Sharpe, or a tradeable claim. Do not let a comment thread turn a rank correlation into a performance number.
+- Module 7 (correlation and dispersion) is still held at an external review gate with no causal claim attached. Say "held", never "proven".
