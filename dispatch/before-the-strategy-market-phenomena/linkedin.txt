@@ -48,3 +48,19 @@ POSTING NOTES
 - Reach tip: LinkedIn throttles posts with an external link in the body. Put the article link in the FIRST COMMENT instead and lead with the text plus OG image.
 - No figure in this piece is a return, a Sharpe, or a tradeable claim. Do not let a comment thread turn a rank correlation into a performance number.
 - Module 7 (correlation and dispersion) is still held at an external review gate with no causal claim attached. Say "held", never "proven".
+
+
+========================================================================
+FOUNDER ACCOUNT - REPOST COMMENTARY (2 sentences)
+========================================================================
+Shardul spent six days testing the seven behaviours our strategies sit on top of, and came back with a longer list of things we can no longer say than things we can. That is harder and more useful than another backtest that looks good.
+
+
+-- ALT (more direct) --
+
+We handed an intern the assumptions underneath our research stack and asked him to try to break them. He returned zero of 155 correlation-persistence claims intact, eighteen defects in our own tooling, and a method for telling a genuine effect from a roster of jumpy names - published in full, including the findings we withdrew.
+
+
+-- NOTE --
+
+Keep the founder caption free of any number that could be read as performance. The strongest figure in this piece is a rank correlation of 0.62, and 0.62 is not 62% of anything.
