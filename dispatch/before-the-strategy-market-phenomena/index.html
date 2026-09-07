@@ -45,7 +45,7 @@
     "description": "Seven foundational market phenomena, tested against their own null hypotheses across US equities from 2004. Zero of 155 persistence claims survived overlap-aware inference.",
     "image": "https://lightwaterdispatch.com/assets/og-image.svg",
     "datePublished": "2026-09-05",
-    "dateModified": "2026-09-05",
+    "dateModified": "2026-09-06",
     "author": [
       { "@type": "Person", "name": "Shardul Mehetar", "url": "https://www.linkedin.com/in/shardul-mehetar-a4764a193/" }
     ],
@@ -90,6 +90,59 @@
     .lw-pos { color: #1a7a4c; }
     .lw-neg { color: #b23a3a; }
     .lw-muted { color: var(--mid-gray, #6b6b6b); }
+
+    /* Scoped numbered-rule list for the "How I Test Anything" section */
+    ol.lw-rules { list-style: none; counter-reset: lw-rule; margin: 32px 0 36px; padding: 0; }
+    .lw-rules li {
+      counter-increment: lw-rule;
+      position: relative;
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 0 20px;
+      align-items: start;
+      padding: 22px 24px 22px 20px;
+      margin: 0 0 12px;
+      background: rgba(255,255,255,0.55);
+      border-left: 2px solid var(--teal, #6BBFB5);
+      border-radius: 0 8px 8px 0;
+    }
+    .lw-rules li::before {
+      content: counter(lw-rule, decimal-leading-zero);
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 34px;
+      line-height: 1;
+      color: var(--navy, #1E3A5F);
+      opacity: 0.42;
+      text-align: right;
+      padding-top: 2px;
+    }
+    .lw-rules .lw-rule-title {
+      grid-column: 2;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.45;
+      letter-spacing: -0.005em;
+      color: var(--navy, #1E3A5F);
+      margin: 0 0 6px;
+    }
+    .lw-rules .lw-rule-body {
+      grid-column: 2;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--body-text, #3A3A38);
+      margin: 0;
+    }
+    @media (max-width: 640px) {
+      .lw-rules li { grid-template-columns: 1fr; gap: 0; padding: 20px 18px; }
+      .lw-rules li::before { grid-row: auto; grid-column: 1; text-align: left; font-size: 28px; margin-bottom: 8px; }
+      .lw-rules .lw-rule-title, .lw-rules .lw-rule-body { grid-column: 1; }
+    }
   </style>
 </head>
 <body>
@@ -351,15 +404,28 @@
 
         <p>Five rules came out of this that I now apply before I look at a single performance number.</p>
 
-        <p><strong>Shuffle within the name before you believe a cross-sectional signal.</strong> If the effect survives having time deleted, it is a roster, not a forecast. This one test would have killed several ideas I was previously fond of, in about ten minutes each.</p>
-
-        <p><strong>Count your independent observations, not your rows.</strong> Overlapping windows are the most common way a research process convinces itself. If consecutive observations share most of their input, your sample is a fraction of what your spreadsheet says, and every t-statistic is inflated by roughly the square root of the overlap.</p>
-
-        <p><strong>Forecast size, not sign, wherever you have the choice.</strong> The evidence for variance is between one and two orders of magnitude stronger than the evidence for direction. Build the parts of the system that can run on that.</p>
-
-        <p><strong>Test on a universe that includes the dead.</strong> If your symbol list came from today's index, your backtest has already been told which companies survived.</p>
-
-        <p><strong>Write down every defect, especially the silent ones.</strong> Ten of our eighteen would have shipped a confident wrong answer. The ledger is the only reason we know that.</p>
+        <ol class="lw-rules">
+          <li>
+            <p class="lw-rule-title">Shuffle within the name before you believe a cross-sectional signal.</p>
+            <p class="lw-rule-body">If the effect survives having time deleted, it is a roster, not a forecast. This one test would have killed several ideas I was previously fond of, in about ten minutes each.</p>
+          </li>
+          <li>
+            <p class="lw-rule-title">Count your independent observations, not your rows.</p>
+            <p class="lw-rule-body">Overlapping windows are the most common way a research process convinces itself. If consecutive observations share most of their input, your sample is a fraction of what your spreadsheet says, and every t-statistic is inflated by roughly the square root of the overlap.</p>
+          </li>
+          <li>
+            <p class="lw-rule-title">Forecast size, not sign, wherever you have the choice.</p>
+            <p class="lw-rule-body">The evidence for variance is between one and two orders of magnitude stronger than the evidence for direction. Build the parts of the system that can run on that.</p>
+          </li>
+          <li>
+            <p class="lw-rule-title">Test on a universe that includes the dead.</p>
+            <p class="lw-rule-body">If your symbol list came from today's index, your backtest has already been told which companies survived.</p>
+          </li>
+          <li>
+            <p class="lw-rule-title">Write down every defect, especially the silent ones.</p>
+            <p class="lw-rule-body">Ten of our eighteen would have shipped a confident wrong answer. The ledger is the only reason we know that.</p>
+          </li>
+        </ol>
 
         <h2>Where This Goes Next</h2>
 
