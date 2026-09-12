@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZTK7L0CNSR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZTK7L0CNSR');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="darkreader-lock">
+  <title>We Tested Seven Things Every Strategy Assumes. Most of the Signal Was the Stock's Personality. | Light Water Capital</title>
+  <meta name="description" content="Six days, seven foundational market phenomena, US equities back to 2004 - and the two statistical corrections that turned our best-looking results into nothing.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://lightwaterdispatch.com/dispatch/before-the-strategy-market-phenomena/">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://lightwaterdispatch.com/dispatch/before-the-strategy-market-phenomena/">
+  <meta property="og:title" content="We Tested Seven Things Every Strategy Assumes. Most of the Signal Was the Stock's Personality.">
+  <meta property="og:description" content="Seven market phenomena, tested against their own null hypotheses. Zero of 155 persistence claims survived. Here is what did.">
+  <meta property="og:site_name" content="Light Water Capital">
+  <meta property="og:image" content="https://lightwaterdispatch.com/assets/og-before-the-strategy-market-phenomena.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Before the Strategy - Seven Foundational Market Phenomena">
+  <meta property="article:published_time" content="2026-09-05">
+  <meta property="article:author" content="Shardul Mehetar">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="Quantitative Research">
+  <meta property="article:tag" content="Market Microstructure">
+  <meta property="article:tag" content="Volatility">
+  <meta property="article:tag" content="Statistical Inference">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="We Tested Seven Things Every Strategy Assumes. Most of the Signal Was the Stock's Personality.">
+  <meta name="twitter:description" content="Seven market phenomena, tested against their own null hypotheses. Zero of 155 persistence claims survived. Here is what did.">
+  <meta name="twitter:image" content="https://lightwaterdispatch.com/assets/og-before-the-strategy-market-phenomena.png">
+  <meta name="keywords" content="quantitative research, volatility clustering, momentum reversal, survivorship bias, overlapping windows, statistical inference, market phenomena, backtesting, Light Water Capital, Shardul Mehetar">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "We Tested Seven Things Every Strategy Assumes. Most of the Signal Was the Stock's Personality.",
+    "description": "Seven foundational market phenomena, tested against their own null hypotheses across US equities from 2004. Zero of 155 persistence claims survived overlap-aware inference.",
+    "image": "https://lightwaterdispatch.com/assets/og-before-the-strategy-market-phenomena.png",
+    "datePublished": "2026-09-05",
+    "dateModified": "2026-09-06",
+    "author": [
+      { "@type": "Person", "name": "Shardul Mehetar", "url": "https://www.linkedin.com/in/shardul-mehetar-a4764a193/" }
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "Light Water Capital",
+      "logo": { "@type": "ImageObject", "url": "https://lightwaterdispatch.com/assets/light-water-transparent-cropped-logo.PNG" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://lightwaterdispatch.com/dispatch/before-the-strategy-market-phenomena/" },
+    "articleSection": "Research",
+    "keywords": ["volatility clustering", "personality floor", "overlapping windows", "survivorship bias", "idiosyncratic risk", "market resiliency"],
+    "wordCount": 2650
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://lightwaterdispatch.com/" },
+      { "@type": "ListItem", "position": 2, "name": "The Dispatch", "item": "https://lightwaterdispatch.com/dispatch/" },
+      { "@type": "ListItem", "position": 3, "name": "Before the Strategy", "item": "https://lightwaterdispatch.com/dispatch/before-the-strategy-market-phenomena/" }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1E3A5F">
+
+  <link rel="stylesheet" href="../article.css">
+  <style>
+    /* Scoped table styling for the result grids in this article */
+    .lw-table-wrap { overflow-x: auto; margin: 32px 0; }
+    .lw-table { width: 100%; border-collapse: collapse; font-family: 'DM Sans', sans-serif; font-size: 14px; }
+    .lw-table th, .lw-table td { padding: 10px 14px; text-align: right; border-bottom: 1px solid var(--lt-gray, #e5e2dc); }
+    .lw-table th:first-child, .lw-table td:first-child { text-align: left; }
+    .lw-table thead th { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mid-gray, #6b6b6b); border-bottom: 2px solid var(--navy, #1E3A5F); }
+    .lw-table tbody tr:hover { background: rgba(30,58,95,0.03); }
+    .lw-pos { color: #1a7a4c; }
+    .lw-neg { color: #b23a3a; }
+    .lw-muted { color: var(--mid-gray, #6b6b6b); }
+
+    /* Scoped numbered-rule list for the "How I Test Anything" section */
+    ol.lw-rules { list-style: none; counter-reset: lw-rule; margin: 32px 0 36px; padding: 0; }
+    .lw-rules li {
+      counter-increment: lw-rule;
+      position: relative;
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 0 20px;
+      align-items: start;
+      padding: 22px 24px 22px 20px;
+      margin: 0 0 12px;
+      background: rgba(255,255,255,0.55);
+      border-left: 2px solid var(--teal, #6BBFB5);
+      border-radius: 0 8px 8px 0;
+    }
+    .lw-rules li::before {
+      content: counter(lw-rule, decimal-leading-zero);
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 34px;
+      line-height: 1;
+      color: var(--navy, #1E3A5F);
+      opacity: 0.42;
+      text-align: right;
+      padding-top: 2px;
+    }
+    .lw-rules .lw-rule-title {
+      grid-column: 2;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.45;
+      letter-spacing: -0.005em;
+      color: var(--navy, #1E3A5F);
+      margin: 0 0 6px;
+    }
+    .lw-rules .lw-rule-body {
+      grid-column: 2;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--body-text, #3A3A38);
+      margin: 0;
+    }
+    @media (max-width: 640px) {
+      .lw-rules li { grid-template-columns: 1fr; gap: 0; padding: 20px 18px; }
+      .lw-rules li::before { grid-row: auto; grid-column: 1; text-align: left; font-size: 28px; margin-bottom: 8px; }
+      .lw-rules .lw-rule-title, .lw-rules .lw-rule-body { grid-column: 1; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <img class="nav-logo" src="../../assets/light-water-transparent-cropped-logo.PNG" alt="Light Water Capital">
+    <ul class="nav-links">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../index.html" class="active">Dispatch</a></li>
+    </ul>
+  </nav>
+
+  <main id="main">
+
+    <!-- NAVY HEADER BAND -->
+    <header class="article-header">
+      <div class="article-header-inner">
+        <nav class="article-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">The Dispatch</a>
+          <span aria-hidden="true">&rarr;</span>
+          <span class="crumb-current">Research</span>
+        </nav>
+        <div class="article-meta">
+          <span class="article-tag">Research</span>
+          <span class="article-meta-dot" aria-hidden="true"></span>
+          <time class="article-meta-date" datetime="2026-09-05">September 2026</time>
+          <span class="article-meta-dot" aria-hidden="true"></span>
+          <span class="article-meta-read">11 min read</span>
+        </div>
+        <div class="article-tags" style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;">
+          <span style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;">Volatility</span>
+          <span style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;">Inference</span>
+          <span style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;">Survivorship</span>
+          <span style="font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); padding: 4px 10px; border: 1px solid rgba(255,255,255,0.15); border-radius: 12px;">Negative Results</span>
+        </div>
+        <h1 class="article-title">We Tested Seven Things Every Strategy Assumes.<br>Most of the &ldquo;Signal&rdquo; Was the Stock's Personality.</h1>
+        <p class="article-dek">Six days, seven foundational market phenomena, US equities back to 2004 - and the two corrections that turned our best-looking results into nothing.</p>
+
+        <!-- BYLINE -->
+        <div class="byline">
+          <div class="byline-avatar" aria-hidden="true">
+            <img src="../../assets/shardul-mehetar-avatar.jpg" alt="Shardul Mehetar" style="width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="byline-text">
+            <div class="byline-name">Shardul Mehetar</div>
+            <div class="byline-role">Quantitative Strategy Intern, Light Water</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- BODY ON WARM WHITE CARD -->
+    <div class="article-body-wrap">
+      <article class="article-body" aria-label="Article content">
+
+        <div class="article-stat-box">
+          <div class="article-stat-label"><strong>Summary:</strong> Instead of testing strategies, we spent six days testing the seven market behaviours that strategies are built on top of - momentum, volatility clustering, shocks, volume, resiliency, commonality and correlation - across US equities back to 2004. Two corrections did most of the damage. Subtracting each stock's permanent character removed <strong>70% to 87%</strong> of what looked like volatility memory. Correcting for overlapping windows took <strong>155 correlation-persistence results down to zero</strong>. Along the way we broke our own measuring tools <strong>eighteen times</strong>, ten of them silently. This is what was left standing.</div>
+        </div>
+
+        <p>Here is a trade I would have taken a year ago without thinking about it.</p>
+
+        <p>A stock has a violent week. Realised volatility triples. The obvious inference is that the next few weeks will also be wild, so you widen the stop, cut the size, maybe sell some premium into it. Volatility clusters. Everybody knows this. It is one of the oldest documented facts in finance.</p>
+
+        <p>The question I could not answer was a narrower one: <em>how much of that is the moment, and how much of it is just this stock?</em> Some names are permanently jumpy. If you rank a thousand stocks by trailing volatility and the same names sit near the top every month for twenty years, then your &ldquo;volatility forecast&rdquo; is not forecasting anything. It is a roster.</p>
+
+        <p>That distinction turned out to matter far more than I expected, and it is the reason this project exists. Before testing whether a strategy works, we wanted to know whether the market behaviour underneath it is real, and what specifically it is made of.</p>
+
+        <p>Seven modules have now run. Six are closed. The seventh is deliberately held behind an external review gate, and the eighth is blocked behind it until that clears.</p>
+
+        <h2>The Test That Broke Almost Everything</h2>
+
+        <p>The device that did the most damage is embarrassingly simple, and I would recommend it to anyone testing a cross-sectional signal.</p>
+
+        <p>Take your panel. Shuffle each stock's history <em>within that stock</em> - keep every observation the name ever produced, destroy the order they arrived in. Now re-run the exact same test. Any predictive power that survives cannot be about timing, because you deleted time. It can only be the fact that some names are permanently different from other names.</p>
+
+        <p>We call that the personality floor. Whatever your signal scores above it is the part that is genuinely about <em>now</em>.</p>
+
+        <p>The results were not close.</p>
+
+        <figure>
+        <svg viewBox="0 0 720 348" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart. Share of measured persistence that is permanent per-name personality versus genuine state. Twenty-day volatility persistence is 70 percent personality and 30 percent state. One-year volatility persistence is 87 percent personality and 13 percent state. Post-shock underperformance is 63 percent personality and 37 percent state.">
+          <rect width="720" height="348" fill="#F4F2EE"/>
+          <text x="42" y="40" font-family="Georgia, serif" font-size="21" font-weight="600" fill="#1E3A5F">What is left after you subtract the stock itself</text>
+          <text x="42" y="63" font-family="Arial, sans-serif" font-size="12.5" fill="#7B7B78">Share of measured persistence that survives a within-name shuffle. US equities, 2004-2026.</text>
+
+          <rect x="262" y="96" width="266" height="28" rx="2" fill="#B9B4AD"/>
+          <rect x="528" y="96" width="114" height="28" rx="2" fill="#3D8A80"/>
+          <text x="250" y="115" font-family="Arial, sans-serif" font-size="13" fill="#1E3A5F" text-anchor="end">Volatility persistence, 20 days</text>
+          <text x="516" y="115" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="end">70%</text>
+          <text x="652" y="115" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#3D8A80" text-anchor="start">30%</text>
+
+          <rect x="262" y="142" width="331" height="28" rx="2" fill="#B9B4AD"/>
+          <rect x="593" y="142" width="49" height="28" rx="2" fill="#3D8A80"/>
+          <text x="250" y="161" font-family="Arial, sans-serif" font-size="13" fill="#1E3A5F" text-anchor="end">Volatility persistence, one year</text>
+          <text x="581" y="161" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="end">87%</text>
+          <text x="652" y="161" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#3D8A80" text-anchor="start">13%</text>
+
+          <rect x="262" y="188" width="239" height="28" rx="2" fill="#B9B4AD"/>
+          <rect x="501" y="188" width="141" height="28" rx="2" fill="#3D8A80"/>
+          <text x="250" y="207" font-family="Arial, sans-serif" font-size="13" fill="#1E3A5F" text-anchor="end">Underperformance after a shock</text>
+          <text x="489" y="207" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="end">63%</text>
+          <text x="652" y="207" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#3D8A80" text-anchor="start">37%</text>
+
+          <rect x="262" y="246" width="12" height="12" rx="2" fill="#B9B4AD"/>
+          <text x="280" y="256" font-family="Arial, sans-serif" font-size="12" fill="#6B6B68">The stock's permanent character</text>
+          <rect x="470" y="246" width="12" height="12" rx="2" fill="#3D8A80"/>
+          <text x="488" y="256" font-family="Arial, sans-serif" font-size="12" fill="#6B6B68">Genuine state - the part about now</text>
+
+          <text x="42" y="286" font-family="Arial, sans-serif" font-size="12.5" font-style="italic" fill="#6B6B68">The exception: liquidity state clears the same floor comfortably. That one really does move.</text>
+          <line x1="42" y1="304" x2="678" y2="304" stroke="#DEDAD4"/>
+          <text x="42" y="326" font-family="Arial, sans-serif" font-size="11" fill="#6B6B68">Source: Light Water Capital research  -  US equity panel, 2004-2026 (modules V03, V04, S01)</text>
+        </svg>
+        <figcaption>Rank a thousand stocks on trailing volatility and hold the list for a year, and roughly seven-eighths of what you have measured is a permanent roster rather than a forecast.</figcaption>
+        </figure>
+
+        <p>Read the top bar as a practical instruction. A twenty-day volatility screen is roughly <strong>70% a list of names that are always volatile</strong> and 30% a statement about current conditions. Hold it out to a year and the state component nearly disappears.</p>
+
+        <p>This does not make volatility clustering false. It survived every null we threw at it. What it changes is what you should <em>do</em> with it. Sizing a position off a stock's own volatility level is sound, because the level is stable and that stability is the whole point. Rotating capital between stocks on trailing volatility is a much weaker idea than the raw statistic suggests, because you are mostly re-buying the same roster and paying spread to do it.</p>
+
+        <p>There was one clean exception, and it is the reason I trust the method rather than suspecting it just destroys everything. <strong>Liquidity state genuinely persists.</strong> When a name gets harder to trade, it stays harder to trade, and that survives the shuffle with room to spare. The tool is capable of returning a positive answer. It just did not return many.</p>
+
+        <p>The most unsettling result in the whole module was a time-series one. Between 2005-2009 and 2023-2026, the genuine state component of volatility clustering <strong>collapsed by roughly four times</strong>, while the headline statistic everybody quotes went slightly <em>up</em>. Twenty years of structural change in how volatility behaves, completely invisible in the number on the dashboard.</p>
+
+        <h2>Variance Is Predictable. Direction Is Not.</h2>
+
+        <p>If you take one thing away, take this one. It is the most replicated finding in the program - three modules, built by different people at different times, sharing nothing but the underlying panel.</p>
+
+        <figure>
+        <svg viewBox="0 0 720 386" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart comparing rank correlation between past and future. Forecasting future variance scores 0.77 at five days and 0.62 at twenty days. Forecasting future direction scores plus 0.034 at five days and minus 0.016 at twenty days.">
+          <rect width="720" height="386" fill="#F4F2EE"/>
+          <text x="42" y="40" font-family="Georgia, serif" font-size="21" font-weight="600" fill="#1E3A5F">The market tells you how much, not which way</text>
+          <text x="42" y="63" font-family="Arial, sans-serif" font-size="12.5" fill="#7B7B78">Rank correlation between a stock's past and its future. Same panel, same windows, same test.</text>
+
+          <line x1="244" y1="92" x2="244" y2="288" stroke="#B9B4AD" stroke-width="1.4"/>
+
+          <rect x="244" y="100" width="385" height="28" rx="2" fill="#3D8A80"/>
+          <text x="228" y="119" font-family="Arial, sans-serif" font-size="13" fill="#1E3A5F" text-anchor="end">Future variance, 5 days</text>
+          <text x="639" y="119" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1E3A5F" text-anchor="start">0.77</text>
+
+          <rect x="244" y="146" width="310" height="28" rx="2" fill="#3D8A80"/>
+          <text x="228" y="165" font-family="Arial, sans-serif" font-size="13" fill="#1E3A5F" text-anchor="end">Future variance, 20 days</text>
+          <text x="564" y="165" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1E3A5F" text-anchor="start">0.62</text>
+
+          <rect x="244" y="192" width="17" height="28" rx="2" fill="#B9B4AD"/>
+          <text x="228" y="211" font-family="Arial, sans-serif" font-size="13" fill="#1E3A5F" text-anchor="end">Future direction, 5 days</text>
+          <text x="271" y="211" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#6B6B68" text-anchor="start">+0.034</text>
+
+          <rect x="236" y="238" width="8" height="28" rx="2" fill="#B4553F"/>
+          <text x="220" y="257" font-family="Arial, sans-serif" font-size="13" fill="#1E3A5F" text-anchor="end">Future direction, 20 days</text>
+          <text x="254" y="257" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#B4553F" text-anchor="start">&minus;0.016</text>
+
+          <text x="42" y="310" font-family="Arial, sans-serif" font-size="12.5" font-style="italic" fill="#6B6B68">Sorted into buckets, variance ranked in the right order 9 times out of 9. Direction managed 4 of 9 - a coin.</text>
+          <line x1="42" y1="342" x2="678" y2="342" stroke="#DEDAD4"/>
+          <text x="42" y="364" font-family="Arial, sans-serif" font-size="11" fill="#6B6B68">Source: Light Water Capital research  -  US equity panel, 2004-2026 (module V02, corroborated by S16 and L01/L03)</text>
+        </svg>
+        <figcaption>Depending on the horizon, variance is between 23 and 354 times more predictable than direction. The bars for direction are not small because the effect is subtle. They are small because there is almost nothing there.</figcaption>
+        </figure>
+
+        <p>Look at those two grey slivers next to the teal bars. That gap is why the parts of trading that work tend to be the parts that do not require you to be right about direction.</p>
+
+        <p>Concretely, this is the difference between two things that look superficially similar on a chart:</p>
+
+        <ul>
+          <li><strong>Sizing off a 20-day ATR.</strong> You are forecasting something with a rank correlation around 0.62. That is a real, usable, stable relationship, and it is why volatility targeting and risk parity survive contact with live markets.</li>
+          <li><strong>Filtering entries on 20-day momentum.</strong> You are forecasting something with a rank correlation of roughly <em>negative</em> 0.016. That is not a weak edge. That is the absence of one.</li>
+        </ul>
+
+        <p>The same asymmetry showed up in the shock module and the volume module independently. Unusual volume predicts future <em>volatility</em> with overwhelming statistical strength. The same variable predicts the future <em>sign</em> with something roughly an order of magnitude weaker - real, but nothing you would build on alone.</p>
+
+        <p>Most retail strategy design spends its effort on the half of the problem where there is nothing to find.</p>
+
+        <h2>The Same Test, Two Answers: p = 0.000 and p = 0.888</h2>
+
+        <p>The seventh module went after the statistic the industry quotes more than any other regime variable: average pairwise correlation, and the share of market variance explained by its first principal component. When correlation rises, the story goes, diversification stops working and the regime has changed.</p>
+
+        <p>We tested 155 separate claims that these measures persist - that a high reading today tells you something about the reading tomorrow. Under conventional inference, they sail through.</p>
+
+        <p>Then we corrected for one thing. These measures are computed on rolling windows. A 120-day rolling correlation observed today and the same measure observed tomorrow share <strong>119 of their 120 days</strong>. They are not two observations. They are one observation, reported twice, with a rounding error between them. Do that across a decade and your five thousand data points carry roughly the information content of forty.</p>
+
+        <div class="article-stat-box">
+          <div class="article-stat-number">0.000 &rarr; 0.888</div>
+          <div class="article-stat-label">The same p-value, on the same statistic, on the same window - computed conventionally, then computed with an overlap-aware standard error. It went from the most significant result in the module to indistinguishable from noise.</div>
+        </div>
+
+        <figure>
+        <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart. Of 155 persistence claims about correlation and dispersion, zero survived overlap-aware inference. Of 975 contrast claims, 925 survived, or 94.9 percent.">
+          <rect width="720" height="320" fill="#F4F2EE"/>
+          <text x="42" y="40" font-family="Georgia, serif" font-size="21" font-weight="600" fill="#1E3A5F">You can describe the regime. You cannot forecast its level.</text>
+          <text x="42" y="63" font-family="Arial, sans-serif" font-size="12.5" fill="#7B7B78">Claims about correlation and dispersion surviving overlap-aware inference, out of 1,130 tested</text>
+
+          <line x1="286" y1="92" x2="286" y2="212" stroke="#B9B4AD" stroke-width="1.4"/>
+
+          <rect x="286" y="108" width="3" height="28" fill="#B4553F"/>
+          <text x="274" y="127" font-family="Arial, sans-serif" font-size="13" fill="#1E3A5F" text-anchor="end">Does the level persist?</text>
+          <text x="299" y="127" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#B4553F" text-anchor="start">0 of 155 survived</text>
+
+          <rect x="286" y="160" width="356" height="28" rx="2" fill="#3D8A80"/>
+          <text x="274" y="179" font-family="Arial, sans-serif" font-size="13" fill="#1E3A5F" text-anchor="end">Does the state differ from other states?</text>
+          <text x="630" y="179" font-family="Arial, sans-serif" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="end">925 of 975</text>
+
+          <text x="42" y="240" font-family="Arial, sans-serif" font-size="12.5" font-style="italic" fill="#6B6B68">The turn: correlation is not meaningless. It is a thermometer, not a forecast.</text>
+          <line x1="42" y1="266" x2="678" y2="266" stroke="#DEDAD4"/>
+          <text x="42" y="288" font-family="Arial, sans-serif" font-size="11" fill="#6B6B68">Source: Light Water Capital research  -  US equity panel, 2004-2026 (module 7, held at external review)</text>
+        </svg>
+        <figcaption>Zero of 155 persistence claims survived. But 925 of 975 contrast claims did - so the finding is not that correlation is useless. It is that the thing it is useful for is not the thing it gets used for.</figcaption>
+        </figure>
+
+        <p>That turn matters, and I want to be careful about it. The failure is specifically about <em>forecasting the level</em>. Testing whether a high-correlation state behaves differently from a low-correlation state is a different question, and those tests overwhelmingly survive. Correlation describes where you are. It does not tell you where the reading goes next.</p>
+
+        <p>Which is a genuinely useful thing to know before you build a regime filter on it. If your model treats a correlation reading as a forecast, the number underneath it is doing far less work than your backtest suggests.</p>
+
+        <p>Module seven is not closed. It sits at an external review gate that returned a hold, and every claim in it carries a flag saying no causal proof was established. I would rather publish it in that state than round it up.</p>
+
+        <h2>Sixty Percent of the Crash Was the Companies That Never Came Back</h2>
+
+        <p>The shock module started with a clean-looking result: after an unusually large negative move, stocks underperform for weeks. A tidy, tradeable-sounding decline.</p>
+
+        <p>Then we rebuilt the universe properly. Our corpus carries <strong>36,684 securities, 20,911 of which are delisted</strong> - the ones that merged, went private, or went to zero, each present with the dates they actually traded and absent afterwards. Most datasets you can buy quietly drop them.</p>
+
+        <div class="article-stat-box">
+          <div class="article-stat-number">60%</div>
+          <div class="article-stat-label">Share of the measured post-shock decline that was not a market effect at all, but the universe changing composition underneath the measurement window as names dropped out.</div>
+        </div>
+
+        <p>Sixty percent of the effect was survivorship, running the other way from how people usually describe it. And a separate headline result in the same module - a &ldquo;structural change in market behaviour since 2005&rdquo; - evaporated completely once the universe was handled correctly. It had never been a change in the market. It was a change in who was in the sample.</p>
+
+        <p>The practical version: if you are testing a buy-the-crash rule against today's index members, the companies that crashed and never recovered are not in your test. You have pre-selected for recovery and then measured recovery.</p>
+
+        <h2>We Broke Our Own Tools Eighteen Times</h2>
+
+        <p>Every module has a ledger of defects we found in our own machinery. It currently holds eighteen entries. <strong>Ten of them would have produced a confident wrong answer rather than a visible error</strong> - no crash, no warning, just a number that looked fine.</p>
+
+        <blockquote>
+          <p>The pattern we learned to fear is not &ldquo;obviously wrong.&rdquo; It is &ldquo;suspiciously clean.&rdquo; A result with no ragged edges, no unexplained outliers and no awkward subperiod is usually not a discovery. It is a leak.</p>
+        </blockquote>
+
+        <p>A few of them are worth naming because they generalise well beyond this project.</p>
+
+        <p><strong>A guard nobody has watched fail is not known to be a guard.</strong> We had a look-ahead check that had passed on every run since it was written. When we finally forced a violation through it deliberately, it did not fire. It had been passing because it was never reachable.</p>
+
+        <p><strong>An exclusion window has to point backwards.</strong> One control excluded the days within a fortnight of an event on both sides. Excluding days <em>after</em> the event means the control set is chosen using information from the future. Subtle, silent, and it inflates the result.</p>
+
+        <p><strong>Two effects that come from the same helper function will always agree.</strong> We had two independent-looking detectors corroborating each other. They shared a routine, so their agreement was arithmetic rather than evidence.</p>
+
+        <p>The self-consistency checker that audits the ledger has itself been rewritten three times, because it kept passing runs it should have failed.</p>
+
+        <h2>What I Am Not Claiming</h2>
+
+        <p>This is the section I would want to read first if someone handed me this article, so it is going here rather than in a footnote.</p>
+
+        <p><strong>None of this is a strategy.</strong> Nothing in the program was backtested with costs, sizing, capacity or execution. No artifact across seven modules carries a return claim, and none of these numbers convert into one. A rank correlation of 0.62 is not 62% of anything.</p>
+
+        <p><strong>One of our strongest findings does not generalise.</strong> The first module found something clean: stock-specific moves reverse hardest in the short run and continue hardest in the medium run, and both effects strengthen when you isolate the most idiosyncratic names. The sixth module was built specifically to test that across a full specification grid, and it survives in 15 of 3,240 specifications. That tension is unresolved, and we are publishing it as unresolved rather than picking the module we prefer.</p>
+
+        <p><strong>Some results were withdrawn.</strong> Findings that had already been written up were pulled after the machinery underneath them turned out to be defective. Those are on the record too. A research programme that only publishes its survivors is exactly the thing this one exists to argue against.</p>
+
+        <h2>What This Changed About How I Test Anything</h2>
+
+        <p>Five rules came out of this that I now apply before I look at a single performance number.</p>
+
+        <ol class="lw-rules">
+          <li>
+            <p class="lw-rule-title">Shuffle within the name before you believe a cross-sectional signal.</p>
+            <p class="lw-rule-body">If the effect survives having time deleted, it is a roster, not a forecast. This one test would have killed several ideas I was previously fond of, in about ten minutes each.</p>
+          </li>
+          <li>
+            <p class="lw-rule-title">Count your independent observations, not your rows.</p>
+            <p class="lw-rule-body">Overlapping windows are the most common way a research process convinces itself. If consecutive observations share most of their input, your sample is a fraction of what your spreadsheet says, and every t-statistic is inflated by roughly the square root of the overlap.</p>
+          </li>
+          <li>
+            <p class="lw-rule-title">Forecast size, not sign, wherever you have the choice.</p>
+            <p class="lw-rule-body">The evidence for variance is between one and two orders of magnitude stronger than the evidence for direction. Build the parts of the system that can run on that.</p>
+          </li>
+          <li>
+            <p class="lw-rule-title">Test on a universe that includes the dead.</p>
+            <p class="lw-rule-body">If your symbol list came from today's index, your backtest has already been told which companies survived.</p>
+          </li>
+          <li>
+            <p class="lw-rule-title">Write down every defect, especially the silent ones.</p>
+            <p class="lw-rule-body">Ten of our eighteen would have shipped a confident wrong answer. The ledger is the only reason we know that.</p>
+          </li>
+        </ol>
+
+        <h2>Where This Goes Next</h2>
+
+        <p>Three phenomena remain unexecuted, and the eighth is blocked until the seventh clears its review gate. That is deliberate. The whole point of the sequence is that a module whose inference is under question cannot be used as a foundation for the next one.</p>
+
+        <p>What we have now is not a strategy and was never meant to be. It is a set of things we can say about US equity behaviour with the corrections applied, a considerably longer set of things we have stopped saying, and a tested toolkit for telling those two apart. When a strategy idea arrives, the first question is no longer whether it backtests well. It is which of these seven behaviours it is claiming to exploit, and whether that behaviour survived its own null.</p>
+
+        <p>Most ideas do not get past that question. That is the point.</p>
+
+        <!-- MISSION CALLOUT -->
+        <div style="margin:44px 0 8px;padding:34px 36px;background:#1E3A5F;border-radius:8px;color:#fff;">
+          <div style="font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);font-family:'DM Sans',sans-serif;margin-bottom:12px;">Why we publish the negatives</div>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:22px;line-height:1.5;color:#fff;margin:0 0 16px;font-weight:400;">The tools that separate a real market effect from a well-dressed artifact - shuffle nulls, overlap-aware standard errors, survivorship-complete universes - have mostly lived inside hedge funds and academic departments. The person trading their own money almost never gets to touch them.</p>
+          <p style="font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.75;color:rgba(255,255,255,0.82);margin:0;">That is who we built July Backtester for, and it is why this write-up leads with what failed. Publishing only the survivors is how a research process fools itself and everyone reading it. If you want to learn to tell a genuine effect from a coin flip, the engine is open-source and free. <a href="../july-backtester/" style="color:#fff;text-decoration:underline;text-underline-offset:3px;">July Backtester is free to download and use &rarr;</a></p>
+        </div>
+
+        <hr>
+        <p style="font-size:0.85em;color:#6B6B68;">Views are my own and those of Light Water Capital, provided for information only; nothing here is investment advice or a recommendation, and no result described above was tested as a tradeable strategy. Figures are from an internal US equity research panel covering 2004-2026, built on a delisting-complete security corpus. Module seven remains under external review and no causal claim is made for it.</p>
+
+        <div class="article-end">
+          <div class="article-end-mark"></div>
+          <span class="article-end-text">Light Water Capital &nbsp;&middot;&nbsp; September 2026</span>
+        </div>
+
+      </article>
+    </div>
+
+    <!-- SHARE SECTION -->
+    <div class="article-body-wrap">
+      <div style="max-width: 75vw; margin: 0 auto; padding: 32px 60px 48px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--lt-gray);">
+        <span style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-gray);">Share this article</span>
+        <a href="https://twitter.com/intent/tweet?text=We%20tested%20seven%20things%20every%20strategy%20assumes.%20Most%20of%20the%20signal%20was%20the%20stock%27s%20personality.&url=https://lightwaterdispatch.com/dispatch/before-the-strategy-market-phenomena/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: var(--navy); color: #fff; text-decoration: none; border-radius: 6px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-top: -1px;">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+          Share on X
+        </a>
+      </div>
+    </div>
+
+    <!-- AUTHOR CARD -->
+    <div class="author-card-wrap">
+      <div class="author-card" role="complementary" aria-label="About the author">
+        <div class="author-card-avatar" aria-hidden="true">
+          <img src="../../assets/shardul-mehetar-avatar.jpg" alt="Shardul Mehetar" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="author-card-body">
+          <span class="author-card-label">About the author</span>
+          <div class="author-card-name">Shardul Mehetar</div>
+          <div class="author-card-title">Quantitative Strategy Intern, Light Water</div>
+          <p class="author-card-bio">Shardul is a Quantitative Strategy Intern on Light Water's Systematic Strategies team and an MS Data Science candidate at the University of Delaware. He focuses on strategy validation and a healthy suspicion of backtests that look too good to be true.</p>
+          <a href="https://www.linkedin.com/in/shardul-mehetar-a4764a193/" target="_blank" rel="noopener noreferrer" class="author-card-linkedin" aria-label="View Shardul Mehetar on LinkedIn">
+            LinkedIn
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 4h10M7.5 1l3 3-3 3" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMMENT CTA -->
+    <div class="comment-cta-wrap">
+      <div class="comment-cta">
+        <div class="comment-cta-eyebrow">Join the discussion</div>
+        <h2 class="comment-cta-title">Leave a comment - join the conversation</h2>
+        <p class="comment-cta-text">Which signal in your own process would survive having time shuffled out of it? Tell us the one you would put through the test first.</p>
+        <a href="https://www.linkedin.com/company/light-water" class="comment-cta-button" target="_blank" rel="noopener noreferrer">
+          Comment on LinkedIn
+          <svg width="14" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
+            <path d="M1 4.5h12M8.5 1l3.5 3.5L8.5 8" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- BACK LINK -->
+    <div class="article-back-wrap">
+      <a href="../index.html" class="article-back" aria-label="Back to The Dispatch">
+        <svg width="14" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
+          <path d="M13 4.5H1M5.5 1L2 4.5 5.5 8" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back to the Dispatch
+      </a>
+    </div>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-top">
+      <img class="footer-logo" src="../../assets/light-water-transparent-cropped-logo-dark-bg.png" alt="Light Water Capital">
+      <ul class="footer-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../index.html">Dispatch</a></li>
+        <li><a href="https://www.linkedin.com/company/light-water" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-legal">
+        &copy; 2026 Light Water Capital. All rights reserved. This website is for informational purposes only and does not constitute investment advice or an offer to buy or sell any security. Past performance is not indicative of future results.
+      </p>
+      <span class="footer-location">Corydon, Indiana</span>
+    </div>
+  </footer>
+
+  <script src="../article.js"></script>
+</body>
+</html>
