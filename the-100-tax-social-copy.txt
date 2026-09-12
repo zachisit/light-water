@@ -1,0 +1,50 @@
+========================================================================
+LIGHT WATER - "THE $100 TAX" - SOCIAL COPY
+Generated 2026-09-10. Cross-asset figures via Polygon (10 Sept official close). Brent level referenced to the ICE front-month benchmark.
+========================================================================
+
+ARTICLE LINK:
+https://lightwaterdispatch.com/dispatch/2026-09-10-the-100-tax/
+
+
+------------------------------------------------------------------------
+1) BRAND ACCOUNT - Light Water Capital (LinkedIn)
+------------------------------------------------------------------------
+An oil-supply shock is supposed to be the one unambiguously good thing that can happen to an oil stock. This week, that reflex broke.
+
+The Iran war moved from rhetoric to infrastructure: the U.S. destroyed five Iranian tankers, strikes set fires at Saudi energy facilities including a ~400,000 b/d refinery at Jazan, and Iran ran its heaviest day of Hormuz shipping attacks yet. Brent pushed back above $100.
+
+The commodity did exactly what you'd expect - crude, Brent, and gasoline all jumped about 6%. The energy equities did not follow. The sector fund fell, oil services dropped more than 2%, and the majors barely moved. A six-point gap between the barrel and the stocks that own it, in a single session.
+
+That gap is the story. When crude rips 6% and the market marks the producers down, the equity is telling you something the price alone can't: the move isn't being read as good news. Triple-digit oil is two forces at once - a windfall for the barrel, and a tax on the economy that consumes it. Past ~$100, high prices start to destroy demand: people drive less, freight and factories pull back, discretionary spending thins. By refusing to chase the stocks, the market voted for the tax.
+
+Gold confirmed it. A war panic lifts gold; this sold it - down 1.7%, with the miners off 3.5% and long bonds falling too. With a hot producer-price print the same morning (wholesale diesel +24%), the oil shock read as higher-for-longer, not as fear. Real yields up, not a flight to safety.
+
+Our full read - the barrel-vs-stock divergence, what a demand-destruction tax actually is, and why it matters into Friday's CPI and the Fed on the 16th:
+https://lightwaterdispatch.com/dispatch/2026-09-10-the-100-tax/
+
+#Macro #Oil #Energy #Inflation #FederalReserve #Markets #Investing
+
+
+------------------------------------------------------------------------
+2) FOUNDER ACCOUNT - Zach Smith (LinkedIn repost - less text)
+------------------------------------------------------------------------
+Oil cleared $100 this week on the Saudi-refinery and Hormuz strikes - and the energy stocks didn't follow. Crude +6%, the sector fund down. When the barrel rips and the market marks the companies lower, it's pricing triple-digit oil as a tax on growth, not a windfall. And gold fell with it - real yields, not fear. Our read on the divergence, and why it matters into CPI and the Fed:
+
+
+------------------------------------------------------------------------
+3) FOUNDER ACCOUNT - Zach Smith (X / Twitter - fintech)
+------------------------------------------------------------------------
+Oil cleared $100 on the Saudi-refinery + Hormuz strikes - but crude rose ~6% while the energy stocks fell (XLE red, OIH -2%). The market's pricing triple-digit oil as a demand-destruction tax, not a windfall. And gold fell with it = real yields, not fear.
+https://lightwaterdispatch.com/dispatch/2026-09-10-the-100-tax/
+
+
+------------------------------------------------------------------------
+NOTES
+------------------------------------------------------------------------
+- Cross-asset moves (BNO +6.42%, USO +5.61%, UGA +5.36%, XOP +0.24%, EQNR -0.27%, XLE -0.58%, OIH -2.13%, GLD -1.73%, GDX -3.46%, TLT -1.16%) are the 10 Sept OFFICIAL CLOSE via Polygon.
+- Brent ">$100" is referenced to the ICE front-month benchmark (news-sourced direction), corroborated by the Brent/crude fund moves above - do NOT cite a fund NAV as the Brent price.
+- Escalation facts (5 Iranian tankers destroyed; Saudi facility strikes incl. the ~400k b/d Jazan refinery; ~10 vessels struck near Hormuz - Iran's heaviest declared shipping day) are news-sourced; keep them directional/attributed.
+- The "demand-destruction tax" is the thesis - the barrel-vs-equity divergence is the evidence. Keep the two linked; the divergence is what makes the claim more than an assertion.
+- General market commentary; no firm-positioning language, no specific trades or accounts. Consistent with the article's public-thesis voice.
+- Aug PPI +0.4% headline, wholesale diesel +24% - the oil shock in the inflation data; ties the gold/real-yields leg to the Fed. CPI lands Fri 9/11; FOMC 9/16 (hike is the live base case).
