@@ -5,35 +5,27 @@ Article: https://lightwaterdispatch.com/dispatch/2026-09-05-before-the-strategy-
 OPTION 1 - SINGLE TWEET, THE HEADLINE RESULT
 ================================================================
 
-We gave an intern the seven assumptions our research stack sits on and asked him to try to break them.
+We asked our intern to check whether the market behaviours our research sits on are actually there when you test them directly, rather than through a strategy built on them.
 
-155 tests of the claim that correlation persists.
-
-Zero survived once you correct for the fact that a 120-day rolling window shares 119 days with yesterday's.
+Of 155 tests of the claim that correlation persists, none survived a correction for overlapping windows.
 
 
 ================================================================
 OPTION 2 - SINGLE TWEET, THE METHOD
 ================================================================
 
-The most useful test we ran this year:
+A test I've started leaning on: shuffle a stock's history within that stock, so every observation survives but the sequence is gone. Anything predictive after that can't be about timing.
 
-Shuffle a stock's history within that stock. Every observation survives, only the order dies.
-
-Whatever is left cannot be about timing.
-
-Run it on volatility clustering and most of the effect is a roster of permanently jumpy names.
+Run it on volatility clustering and most of the effect survives, which isn't good news.
 
 
 ================================================================
 OPTION 3 - SINGLE TWEET, THE ASYMMETRY
 ================================================================
 
-Variance is between 23 and 354 times more predictable than direction, depending on horizon.
+Across seven phenomena tested on US equities back to 2004, variance came out somewhere between 23 and 354 times more predictable than direction, depending on the horizon.
 
-That is why volatility targeting survives contact with live markets and most direction filters do not.
-
-You can size on what you can forecast. You cannot steer on it.
+Which is a fair part of why volatility targeting holds up in live trading and most direction filters don't.
 
 
 ================================================================
@@ -41,51 +33,33 @@ OPTION 4 - THREAD (7 tweets)
 ================================================================
 
 1/
-Before testing a single strategy, we spent six days testing the seven market behaviours strategies are built on top of.
-
-Momentum. Volatility clustering. Shocks. Volume. Resiliency. Commonality. Correlation.
-
-US equities back to 2004, each against its own null.
+Last week we tested the seven market behaviours that strategies are usually built on top of, instead of testing a strategy: momentum, volatility clustering, shock response, volume, resiliency, commonality and correlation. US equities back to 2004, each against its own null.
 
 2/
-Two corrections did nearly all of the damage.
+Two corrections did most of the work.
 
-The first: shuffle each stock's history within that stock. Keep every observation, destroy the order.
-
-Anything that survives that cannot be about timing. It is just the stock being what it always is.
+The first is to shuffle each stock's history within that stock, keeping every observation but destroying the order. Anything still predictive afterwards can't be about timing, because there's no timing left in the data for it to use.
 
 3/
-Run that against volatility clustering.
+On volatility clustering, between 70% and 87% of the effect came through that shuffle depending on horizon.
 
-Between 70% and 87% of it, depending on horizon, is not a forecast at all.
-
-It is a permanent roster of jumpy names. The effect was real. The interpretation was wrong.
+So most of what looked like memory was really a fairly stable ranking of which names are jumpy, which is a different and much less useful thing to know.
 
 4/
-The second correction: overlapping windows.
-
-A 120-day rolling correlation computed today shares 119 of its 120 days with the one computed yesterday. Those are not independent observations, and most tests treat them as if they were.
+The second correction is for overlapping windows. A 120-day rolling correlation calculated today shares 119 of its 120 days with yesterday's, so consecutive readings aren't close to independent, and treating them as if they are overstates the evidence badly.
 
 5/
-We tested 155 claims that correlation and dispersion persist.
-
-Zero survived.
-
-One p-value moved from 0.000 to 0.888 on the same statistic over the same window. The only thing that changed was counting the sample honestly.
+We ran 155 tests of the claim that correlation and dispersion persist, and none of them survived that correction. In one case the same statistic over the same window went from p = 0.000 to p = 0.888.
 
 6/
-What did hold up is the asymmetry.
+What did hold up was the gap between variance and direction, with variance 23 to 354 times more predictable depending on horizon.
 
-Variance is 23 to 354 times more predictable than direction.
-
-Sizing off a 20-day ATR forecasts a rank correlation near 0.62. Filtering entries on 20-day momentum forecasts negative 0.016.
-
-That is not a weak edge. It is the absence of one.
+Sizing off a 20-day ATR forecasts a rank correlation near 0.62. Filtering entries on 20-day momentum gets you about -0.016.
 
 7/
-We also logged eighteen defects in our own measuring tools. Ten would have returned a confident wrong answer with no error raised at all.
+He also logged eighteen defects in our own tooling, ten of which would have returned a plausible wrong answer without raising an error.
 
-Full write-up, including the results we withdrew:
+Full write-up, including the results that were withdrawn:
 
 https://lightwaterdispatch.com/dispatch/2026-09-05-before-the-strategy-market-phenomena/
 
@@ -103,5 +77,5 @@ NOTES
 - The three figures in the article stand alone as images. Good candidates:
   the personality-vs-state split on tweet 3, the variance-vs-direction bars
   on tweet 6.
-- Option 1 is the strongest cold open. Option 3 travels furthest with
-  practitioners who never click through.
+- Option 1 is the most self-contained. Option 3 is the one practitioners
+  who never click through are most likely to take something from.

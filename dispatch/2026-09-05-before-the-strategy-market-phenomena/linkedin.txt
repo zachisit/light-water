@@ -4,19 +4,19 @@ Article: https://lightwaterdispatch.com/dispatch/2026-09-05-before-the-strategy-
 ========================================================================
 COMPANY ACCOUNT - Light Water Capital
 ========================================================================
-Before testing a strategy, we spent six days testing the seven market behaviours strategies are built on top of.
+Shardul Mehetar, our quantitative strategy intern, spent last week on a question we don't usually ask directly: are the market behaviours our strategies are built on top of actually there when you test them on their own terms, rather than checking whether something built on them happened to make money?
 
-Momentum. Volatility clustering. Shocks. Volume. Resiliency. Commonality. Correlation. US equities back to 2004, each one tested against its own null hypothesis rather than against a backtest.
+He took seven of them across US equities back to 2004 - momentum, volatility clustering, shock response, volume, resiliency, commonality and correlation - and tested each against its own null hypothesis.
 
-Two corrections did most of the damage.
+Two methodological corrections accounted for most of what came back.
 
-Shuffle each stock's history within that stock - keep every observation, destroy the order. Anything that survives cannot be about timing. Run that against volatility clustering and 70% of it at twenty days, and 87% at one year, turns out to be a permanent roster of jumpy names rather than a forecast.
+The first was to shuffle each stock's history within that stock, which keeps every observation but destroys the ordering. If an effect survives that, it can't be about timing, because there is no timing left in the data; it is just a description of what the stock is generally like. Applied to volatility clustering, between 70% and 87% of the effect survived, depending on the horizon, which means most of what looked like memory was really a fairly stable ranking of which names are jumpy.
 
-Then correct for overlapping windows. A 120-day rolling correlation today shares 119 of its 120 days with yesterday's. We tested 155 claims that correlation and dispersion persist. Zero survived. One p-value went from 0.000 to 0.888 on the same statistic, same window.
+The second was to account for overlapping windows. A 120-day rolling correlation calculated today shares 119 of its 120 days with the one calculated yesterday, so consecutive readings are nowhere near independent, and treating them as if they were overstates how much evidence you actually have. Of 155 tests of the claim that correlation and dispersion persist, none survived the correction. In one case the same statistic over the same window moved from p = 0.000 to p = 0.888.
 
-What did hold up: variance is between 23 and 354 times more predictable than direction. That asymmetry is why volatility targeting works and why direction filters mostly do not.
+What did hold up was the gap between variance and direction. Depending on the horizon, variance came out between 23 and 354 times more predictable, which is a large part of why volatility targeting tends to survive contact with live markets while direction filters often don't.
 
-We also broke our own measuring tools eighteen times. Ten of those would have produced a confident wrong answer with no error at all.
+The write-up also includes the eighteen defects he found in our own tooling along the way. Ten of them would have returned a plausible-looking wrong answer without raising an error, and that is the category we find hardest to defend against.
 
 Written by Shardul Mehetar, Quantitative Strategy Intern.
 
@@ -28,15 +28,13 @@ https://lightwaterdispatch.com/dispatch/2026-09-05-before-the-strategy-market-ph
 ========================================================================
 PERSONAL REPOST CAPTION
 ========================================================================
-I spent six days not testing a single strategy.
+I spent last week not testing a single strategy, and instead testing the seven market behaviours that strategies tend to assume are true, each one against its own null hypothesis.
 
-Instead I tested the seven market behaviours that strategies assume are true - and ran each one against its own null hypothesis.
+The piece of method I'll carry forward is the within-stock shuffle: reorder a stock's history at random so that every observation survives but the sequence is gone. Whatever is still predictive afterwards cannot be about timing. When I ran that against volatility clustering, most of the effect came through intact, which sounds like good news until you realise it means the signal was mostly telling me which names are generally jumpy rather than when any of them would be.
 
-The result that changed how I work: shuffle a stock's history within that stock, so every observation survives but the order is destroyed. Whatever predictive power is left cannot be about timing. Do that to volatility clustering and roughly 70% of it at twenty days is not a forecast at all - it is a permanent list of names that are always jumpy.
+The correlation work went the other way. Once I corrected for the fact that consecutive rolling windows share almost all of their data, none of the 155 persistence results held up, and I had to withdraw findings I had already written up.
 
-Zero of 155 correlation-persistence claims survived once we corrected for overlapping windows. And we logged eighteen defects in our own tooling, ten of which would have shipped a confident wrong answer.
-
-Writing this up honestly - including the results we withdrew - was the most useful thing I did all week.
+I also logged eighteen defects in my own tooling, ten of which would have handed me a confident wrong answer with no error raised. Writing all of that up, including the parts that didn't survive, took longer than the analysis did and was probably the more useful half of the week.
 
 https://lightwaterdispatch.com/dispatch/2026-09-05-before-the-strategy-market-phenomena/
 
@@ -53,12 +51,12 @@ POSTING NOTES
 ========================================================================
 FOUNDER ACCOUNT - REPOST COMMENTARY (2 sentences)
 ========================================================================
-Shardul spent six days testing the seven behaviours our strategies sit on top of, and came back with a longer list of things we can no longer say than things we can. That is harder and more useful than another backtest that looks good.
+Shardul spent last week testing the assumptions underneath our research stack rather than testing a strategy, and a good part of what he came back with was negative: 155 correlation-persistence results that didn't survive a correction for overlapping windows, and a large share of volatility clustering that turned out to be a ranking of which names are jumpy rather than a forecast of when. I would much rather find that here than in a live book, and he published the whole thing including the results he withdrew.
 
 
 -- ALT (more direct) --
 
-We handed an intern the assumptions underneath our research stack and asked him to try to break them. He returned zero of 155 correlation-persistence claims intact, eighteen defects in our own tooling, and a method for telling a genuine effect from a roster of jumpy names - published in full, including the findings we withdrew.
+We gave an intern the assumptions our research stack rests on and asked him to try to break them, which he did fairly comprehensively. What I think is worth reading is not the headline result so much as the method: the write-up is explicit about which corrections changed which conclusions, and it keeps the findings that were withdrawn in view rather than quietly dropping them.
 
 
 -- NOTE --
