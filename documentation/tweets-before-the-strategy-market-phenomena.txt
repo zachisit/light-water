@@ -1,0 +1,107 @@
+FOUNDER ACCOUNT - X / TWITTER
+Article: https://lightwaterdispatch.com/dispatch/2026-09-05-before-the-strategy-market-phenomena/
+
+================================================================
+OPTION 1 - SINGLE TWEET, THE HEADLINE RESULT
+================================================================
+
+We gave an intern the seven assumptions our research stack sits on and asked him to try to break them.
+
+155 tests of the claim that correlation persists.
+
+Zero survived once you correct for the fact that a 120-day rolling window shares 119 days with yesterday's.
+
+
+================================================================
+OPTION 2 - SINGLE TWEET, THE METHOD
+================================================================
+
+The most useful test we ran this year:
+
+Shuffle a stock's history within that stock. Every observation survives, only the order dies.
+
+Whatever is left cannot be about timing.
+
+Run it on volatility clustering and most of the effect is a roster of permanently jumpy names.
+
+
+================================================================
+OPTION 3 - SINGLE TWEET, THE ASYMMETRY
+================================================================
+
+Variance is between 23 and 354 times more predictable than direction, depending on horizon.
+
+That is why volatility targeting survives contact with live markets and most direction filters do not.
+
+You can size on what you can forecast. You cannot steer on it.
+
+
+================================================================
+OPTION 4 - THREAD (7 tweets)
+================================================================
+
+1/
+Before testing a single strategy, we spent six days testing the seven market behaviours strategies are built on top of.
+
+Momentum. Volatility clustering. Shocks. Volume. Resiliency. Commonality. Correlation.
+
+US equities back to 2004, each against its own null.
+
+2/
+Two corrections did nearly all of the damage.
+
+The first: shuffle each stock's history within that stock. Keep every observation, destroy the order.
+
+Anything that survives that cannot be about timing. It is just the stock being what it always is.
+
+3/
+Run that against volatility clustering.
+
+Between 70% and 87% of it, depending on horizon, is not a forecast at all.
+
+It is a permanent roster of jumpy names. The effect was real. The interpretation was wrong.
+
+4/
+The second correction: overlapping windows.
+
+A 120-day rolling correlation computed today shares 119 of its 120 days with the one computed yesterday. Those are not independent observations, and most tests treat them as if they were.
+
+5/
+We tested 155 claims that correlation and dispersion persist.
+
+Zero survived.
+
+One p-value moved from 0.000 to 0.888 on the same statistic over the same window. The only thing that changed was counting the sample honestly.
+
+6/
+What did hold up is the asymmetry.
+
+Variance is 23 to 354 times more predictable than direction.
+
+Sizing off a 20-day ATR forecasts a rank correlation near 0.62. Filtering entries on 20-day momentum forecasts negative 0.016.
+
+That is not a weak edge. It is the absence of one.
+
+7/
+We also logged eighteen defects in our own measuring tools. Ten would have returned a confident wrong answer with no error raised at all.
+
+Full write-up, including the results we withdrew:
+
+https://lightwaterdispatch.com/dispatch/2026-09-05-before-the-strategy-market-phenomena/
+
+
+================================================================
+NOTES
+================================================================
+- Hyphens only, no em-dashes, per house style (def155b).
+- Nothing here is a return, a Sharpe, or a tradeable claim. 0.62 is a rank
+  correlation and is not 62% of anything. If a reply tries to turn it into
+  a performance number, correct it in-thread.
+- Module 7 (correlation and dispersion) is still held at an external review
+  gate with no causal claim attached. Say "held", never "proven" or
+  "disproven".
+- The three figures in the article stand alone as images. Good candidates:
+  the personality-vs-state split on tweet 3, the variance-vs-direction bars
+  on tweet 6.
+- Option 1 is the strongest cold open. Option 3 travels furthest with
+  practitioners who never click through.
