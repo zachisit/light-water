@@ -1,5 +1,5 @@
 WE TESTED SEVEN THINGS EVERY STRATEGY ASSUMES - LinkedIn copy
-Article: https://lightwaterdispatch.com/dispatch/before-the-strategy-market-phenomena/
+Article: https://lightwaterdispatch.com/dispatch/2026-09-05-before-the-strategy-market-phenomena/
 
 ========================================================================
 COMPANY ACCOUNT - Light Water Capital
@@ -20,7 +20,7 @@ We also broke our own measuring tools eighteen times. Ten of those would have pr
 
 Written by Shardul Mehetar, Quantitative Strategy Intern.
 
-https://lightwaterdispatch.com/dispatch/before-the-strategy-market-phenomena/
+https://lightwaterdispatch.com/dispatch/2026-09-05-before-the-strategy-market-phenomena/
 
 #QuantitativeResearch #Volatility #Backtesting #Markets #DataScience
 
@@ -38,7 +38,7 @@ Zero of 155 correlation-persistence claims survived once we corrected for overla
 
 Writing this up honestly - including the results we withdrew - was the most useful thing I did all week.
 
-https://lightwaterdispatch.com/dispatch/before-the-strategy-market-phenomena/
+https://lightwaterdispatch.com/dispatch/2026-09-05-before-the-strategy-market-phenomena/
 
 
 ========================================================================
