@@ -1,0 +1,22 @@
+FOUNDER ACCOUNT - X / TWITTER
+Article: https://lightwaterdispatch.com/dispatch/2026-09-16-everything-but-bonds/
+
+================================================================
+OPTION 1 - SINGLE TWEET (shorter)
+================================================================
+
+The Fed hiked for the first time in 3 years and got more hawkish on the dot plot. Dollar up, oil and gold down, stocks lower - exactly what you'd expect. Except long Treasuries, which rallied into the vote, sold off hard during Warsh's press conference, and still closed green.
+
+
+================================================================
+NOTES
+================================================================
+- 277 characters, checked against the 280 limit. No link included, per house
+  pattern for a standalone single tweet - it reads as self-contained.
+- Hyphens only, no em-dashes, pure ASCII, per house style.
+- Figures match the corrected article: gold -0.61% (not the earlier draft's
+  -0.89%), and no reference to "2007" for the 10-year - that precedent
+  belongs to the 30-year from a different post; the 10-year's level was
+  last seen in 2023.
+- If this needs a link for reach, append "Full read: [link]" - that adds
+  the URL's flat 23-character count and still fits under 280.
