@@ -30,8 +30,8 @@
     }
     .skip-link:focus { top: 0; }
 
-    /* NAV */
-    nav {
+    /* NAV - scoped to #nav so in-page <nav> elements (breadcrumbs) are not made fixed */
+    #nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 60px; height: 72px;
@@ -40,7 +40,7 @@
       border-bottom: 1px solid var(--rule);
       transition: box-shadow 0.3s;
     }
-    nav.scrolled { box-shadow: 0 2px 24px rgba(30,58,95,0.07); }
+    #nav.scrolled { box-shadow: 0 2px 24px rgba(30,58,95,0.07); }
     .nav-logo { height: 70px; width: auto; }
     .nav-links { list-style: none; display: flex; gap: 40px; }
     .nav-links a {
@@ -180,15 +180,14 @@
       font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
       margin-bottom: 32px;
     }
-    .article-breadcrumb * {
-      color: #1E3A5F !important;
-    }
+    /* The breadcrumb sits inside the navy .article-header, so it is light-on-navy.
+       (It was previously navy-on-navy, invisible - see the #nav scoping note above.) */
     .article-breadcrumb a {
-      color: #1E3A5F !important; text-decoration: none; transition: color 0.2s;
+      color: var(--teal); text-decoration: none; opacity: 0.85; transition: opacity 0.2s;
     }
-    .article-breadcrumb a:hover { color: #1E3A5F !important; }
-    .article-breadcrumb span { color: #1E3A5F !important; }
-    .article-breadcrumb .crumb-current { color: #1E3A5F !important; }
+    .article-breadcrumb a:hover { opacity: 1; }
+    .article-breadcrumb span { color: rgba(255,255,255,0.3); }
+    .article-breadcrumb .crumb-current { color: rgba(255,255,255,0.45); }
     .article-meta {
       display: flex; align-items: center; gap: 16px;
       font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
@@ -573,7 +572,7 @@
     }
 
     @media (max-width: 768px) {
-      nav { padding: 0 4px; }
+      #nav { padding: 0 4px; }
       .nav-links { display: none; }
       .page-header { padding: 120px 4px 56px; }
       .page-header-inner { max-width: 98%; }
