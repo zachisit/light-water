@@ -8,6 +8,7 @@ Light Water Capital is a private investment firm that manages capital for a sele
 
 - Home: https://lightwaterdispatch.com/
 - The Dispatch (blog): https://lightwaterdispatch.com/dispatch/
+- Careers: https://lightwaterdispatch.com/careers/
 
 ## Recent Articles
 
@@ -44,6 +45,11 @@ Light Water Capital is a private investment firm that manages capital for a sele
 - Type: Private capital management, family office
 - Focus: Long-term investment, quantitative research, portfolio construction, public equities
 
+## Open Roles
+
+- [Quant Research & Strategy Intern](https://lightwaterdispatch.com/careers/quantitative-strategy-associate-internship/) - Remote, 20 hours/week, 3-month term with option to extend. Unpaid mentorship internship on the Systematic Strategies team. Audit the live common stock strategies for performance gaps and mathematical drift, then own new multi-asset strategies from thesis through to live deployment using in-house backtesting infrastructure and paid vendor data. Requires Python or a comparable data language, comfort with expectancy/variance/R-multiple distributions, and an active Claude or Codex subscription at the $20/month tier or above. Apply: https://forms.gle/NcgvN6zNWdA6PMqF9
+
 ## Contact
 
 - LinkedIn: https://www.linkedin.com/company/light-water
+- Careers: https://lightwaterdispatch.com/careers/

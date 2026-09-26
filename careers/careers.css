@@ -1,0 +1,353 @@
+    :root {
+      color-scheme: light;
+      --navy:       #1E3A5F;
+      --navy-mid:   #2E5075;
+      --teal:       #6BBFB5;
+      --teal-lt:    #A2D4CE;
+      --sky-pale:   #D9EDF8;
+      --sun:        #F2D978;
+      --sun-lt:     #F8EBB0;
+      --warm-white: #F4F2EE;
+      --off-white:  #EBE9E5;
+      --mid-gray:   #9A9A96;
+      --lt-gray:    #E8E7E3;
+      --body-text:  #3A3A38;
+      --rule:       rgba(30,58,95,0.10);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      color: var(--body-text);
+      background: #E5E3DF;
+      -webkit-font-smoothing: antialiased;
+    }
+    .skip-link {
+      position: absolute; top: -100px; left: 0;
+      background: var(--navy); color: #fff;
+      padding: 8px 16px; font-size: 13px; z-index: 9999;
+    }
+    .skip-link:focus { top: 0; }
+
+    /* NAV - scoped to #nav so an in-page <nav> (breadcrumb) is not made fixed */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 60px; height: 72px;
+      background: rgba(229, 227, 223, 0.98);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+      transition: box-shadow 0.3s;
+    }
+    #nav.scrolled { box-shadow: 0 2px 24px rgba(30,58,95,0.07); }
+    .nav-logo { height: 70px; width: auto; }
+    .nav-links { list-style: none; display: flex; gap: 40px; }
+    .nav-links a {
+      font-size: 11px; font-weight: 400; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--navy);
+      text-decoration: none; opacity: 0.5; transition: opacity 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { opacity: 1; }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: var(--navy);
+      padding: 148px 60px 72px;
+    }
+    .page-header-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .page-eyebrow {
+      font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 20px; display: block;
+    }
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(40px, 5.6vw, 64px);
+      line-height: 1.05;
+      color: rgba(255,255,255,0.92);
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+    .page-desc {
+      font-size: 15px; line-height: 1.8;
+      color: rgba(255,255,255,0.45);
+      max-width: 520px;
+    }
+    .header-breadcrumb {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .header-breadcrumb a {
+      color: var(--teal); text-decoration: none; opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    .header-breadcrumb a:hover { opacity: 1; }
+    .header-breadcrumb span { color: rgba(255,255,255,0.3); }
+
+    /* ROLE FACTS (header chips) */
+    .role-facts {
+      list-style: none; display: flex; flex-wrap: wrap;
+      gap: 16px 32px; margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.10);
+      padding-top: 22px;
+    }
+    .role-facts li {
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .role-fact-label {
+      font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+    .role-fact-value {
+      font-size: 14px; color: rgba(255,255,255,0.78);
+    }
+
+    /* BODY */
+    .body-wrap {
+      max-width: 760px; margin: 0 auto; padding: 0 60px;
+    }
+    .body-card {
+      background: var(--warm-white);
+      padding: 60px 72px 64px;
+    }
+    .body-card > section + section { margin-top: 52px; }
+    .body-card p {
+      font-size: 16px; line-height: 1.85;
+      color: var(--body-text); margin-bottom: 20px;
+    }
+    .body-card p:last-child { margin-bottom: 0; }
+    .body-card .lead {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300; font-size: clamp(20px, 2.6vw, 25px);
+      line-height: 1.6; color: var(--navy);
+    }
+    .body-card h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400; font-size: 30px; line-height: 1.2;
+      color: var(--navy); letter-spacing: -0.01em;
+      margin-bottom: 22px;
+    }
+    .body-card a, .intro a {
+      color: var(--navy); text-decoration: underline;
+      text-decoration-color: var(--teal); text-underline-offset: 3px;
+      transition: color 0.2s;
+    }
+    .body-card a:hover, .intro a:hover { color: var(--navy-mid); }
+    .body-card .fine-print a { text-decoration-color: var(--lt-gray); }
+    .section-rule { width: 32px; height: 1px; background: var(--teal); margin-bottom: 22px; }
+
+    /* DEFINITION LISTS (the work / who you are / what you get) */
+    .points { list-style: none; }
+    .points li {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .points li:first-child { border-top: 1px solid var(--rule); }
+    .points strong {
+      display: block;
+      font-family: 'DM Sans', sans-serif; font-weight: 500;
+      font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--navy); margin-bottom: 8px;
+    }
+    .points p { font-size: 15px; line-height: 1.8; margin-bottom: 0; opacity: 0.85; }
+
+    /* COMPLIANCE NOTE */
+    .fine-print {
+      background: var(--off-white);
+      border-left: 2px solid var(--lt-gray);
+      padding: 26px 30px;
+    }
+    .fine-print h2 {
+      font-size: 13px; font-family: 'DM Sans', sans-serif; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .fine-print p {
+      font-size: 13px; line-height: 1.75; opacity: 0.7; margin-bottom: 0;
+    }
+
+    /* APPLY CTA */
+    .apply-wrap {
+      max-width: 760px; margin: 0 auto; padding: 40px 60px 0;
+    }
+    .apply {
+      background: var(--teal-lt);
+      border: 1px solid var(--teal);
+      border-radius: 8px;
+      padding: 44px 48px;
+      text-align: center;
+    }
+    .apply-eyebrow {
+      font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--navy); margin-bottom: 12px; font-weight: 500;
+    }
+    .apply-title {
+      font-family: 'Cormorant Garamond', serif; font-weight: 400;
+      font-size: 30px; line-height: 1.2;
+      color: var(--navy); margin-bottom: 14px; letter-spacing: -0.01em;
+    }
+    .apply-text {
+      font-size: 14px; line-height: 1.7;
+      color: var(--body-text); opacity: 0.7;
+      margin: 0 auto 26px; max-width: 460px;
+    }
+    .apply-button {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 13px 30px;
+      background: var(--sun);
+      color: var(--navy);
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 11px; font-weight: 500; letter-spacing: 0.16em;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .apply-button:hover { background: #F0D05A; transform: translateY(-1px); }
+    .apply-button svg { transition: transform 0.2s; }
+    .apply-button:hover svg { transform: translateX(2px); }
+
+    /* ROLE LIST (careers index) */
+    .roles-wrap {
+      max-width: 760px; margin: 0 auto; padding: 0 60px 24px;
+    }
+    .intro {
+      background: var(--warm-white);
+      padding: 52px 40px;
+    }
+    .intro p {
+      font-size: 16px; line-height: 1.85; margin-bottom: 20px;
+    }
+    .intro p:last-child { margin-bottom: 0; }
+    .intro .lead {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300; font-size: clamp(20px, 2.6vw, 25px);
+      line-height: 1.6; color: var(--navy);
+    }
+    .roles-list { padding-top: 48px; }
+    .roles-heading {
+      font-family: 'Cormorant Garamond', serif; font-weight: 400;
+      font-size: 30px; color: var(--navy); letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+    .roles-count {
+      font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--mid-gray);
+    }
+    .role-card {
+      display: block; text-decoration: none;
+      background: var(--warm-white);
+      padding: 36px 40px;
+      margin-top: 20px;
+      border-left: 2px solid var(--teal);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .role-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(30,58,95,0.09);
+    }
+    .role-card-meta {
+      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--mid-gray); margin-bottom: 14px;
+    }
+    .role-card-meta .team { color: var(--teal); }
+    .role-card-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--lt-gray); }
+    .role-card-title {
+      font-family: 'Cormorant Garamond', serif; font-weight: 300;
+      font-size: clamp(26px, 3.4vw, 34px); line-height: 1.15;
+      letter-spacing: -0.01em; color: var(--navy);
+      margin-bottom: 12px; transition: color 0.2s;
+    }
+    .role-card:hover .role-card-title { color: var(--navy-mid); }
+    .role-card-dek {
+      font-size: 15px; line-height: 1.8; color: var(--body-text);
+      opacity: 0.75; margin-bottom: 18px;
+    }
+    .role-card-more {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--navy); opacity: 0.5; transition: opacity 0.2s;
+    }
+    .role-card:hover .role-card-more { opacity: 1; }
+    .role-card-more svg { transition: transform 0.2s; }
+    .role-card:hover .role-card-more svg { transform: translateX(3px); }
+
+    /* SPECULATIVE / NO-ROLE NOTE */
+    .aside-note {
+      background: var(--off-white);
+      padding: 32px 40px;
+      margin-top: 24px;
+    }
+    .aside-note h2 {
+      font-family: 'DM Sans', sans-serif; font-weight: 500;
+      font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--navy); margin-bottom: 12px;
+    }
+    .aside-note p { font-size: 14px; line-height: 1.8; opacity: 0.75; }
+    .aside-note a { color: var(--navy); text-decoration: underline; text-decoration-color: var(--teal); }
+
+    /* BACK LINK */
+    .back-wrap {
+      max-width: 760px; margin: 0 auto; padding: 40px 60px 56px;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--navy); text-decoration: none; opacity: 0.4;
+      border-bottom: 1px solid var(--rule); padding-bottom: 4px;
+      transition: opacity 0.2s;
+    }
+    .back-link:hover { opacity: 1; }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy);
+      padding: 56px 60px 44px;
+    }
+    .footer-top {
+      display: flex; align-items: flex-start;
+      justify-content: space-between; gap: 40px; margin-bottom: 48px;
+    }
+    .footer-logo { height: 90px; width: auto; opacity: 0.8; }
+    .footer-links { list-style: none; display: flex; gap: 32px; }
+    .footer-links a {
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: #F2D978; text-decoration: none; transition: opacity 0.2s; opacity: 0.8;
+    }
+    .footer-links a:hover { opacity: 1; }
+    .footer-bottom {
+      display: flex; align-items: flex-end;
+      justify-content: space-between; gap: 32px;
+      border-top: 1px solid rgba(255,255,255,0.06); padding-top: 28px;
+    }
+    .footer-legal {
+      font-size: 11px; line-height: 1.7;
+      color: rgba(255,255,255,0.5); max-width: 560px;
+    }
+    .footer-location {
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.2); white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+      #nav { padding: 0 16px; }
+      .nav-links { display: none; }
+      .page-header { padding: 116px 16px 52px; }
+      .page-header-inner { max-width: 100%; }
+      .body-wrap, .roles-wrap, .apply-wrap, .back-wrap { max-width: 100%; padding-left: 12px; padding-right: 12px; }
+      .body-card { padding: 40px 22px 48px; }
+      .intro { padding: 40px 22px; }
+      .role-card { padding: 28px 22px; }
+      .apply { padding: 34px 22px; }
+      .fine-print { padding: 22px 20px; }
+      .aside-note { padding: 26px 22px; }
+      .role-facts { gap: 0 22px; }
+      footer { padding: 48px 16px 36px; }
+      .footer-top { flex-direction: column; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
