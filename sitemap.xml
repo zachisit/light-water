@@ -10,7 +10,7 @@
 
   <url>
     <loc>https://lightwaterdispatch.com/dispatch/</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -25,6 +25,13 @@
   <url>
     <loc>https://lightwaterdispatch.com/careers/quantitative-strategy-associate-internship/</loc>
     <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://lightwaterdispatch.com/dispatch/2026-09-28-bonds-came-around/</loc>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -151,6 +158,34 @@
   <url>
     <loc>https://lightwaterdispatch.com/dispatch/intern-announcement/</loc>
     <lastmod>2026-03-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://lightwaterdispatch.com/dispatch/2026-08-28-warsh-yawn/</loc>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://lightwaterdispatch.com/dispatch/boring-wins-dca-vs-buying-the-dip/</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://lightwaterdispatch.com/dispatch/alpha-sprint-coverage-update-april/</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://lightwaterdispatch.com/dispatch/alpha-sprint-mentor-call/</loc>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

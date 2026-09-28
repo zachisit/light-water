@@ -1,0 +1,38 @@
+THE BONDS CAME AROUND - social copy
+Article: https://lightwaterdispatch.com/dispatch/2026-09-28-bonds-came-around/
+
+========================================================================
+1. LINKEDIN - COMPANY ACCOUNT (Light Water Capital)
+========================================================================
+On FOMC day we wrote about long Treasuries rallying straight through the Fed's first hike in three years. That didn't last.
+
+Hot September business surveys, a hawkish Governor Barr and stalled US-Iran talks sent the 10-year to a 5.18% close on Thursday, its highest since 2007. The 30-year closed Friday at 5.49%.
+
+Stocks mostly shrugged. The S&P 500 is still above its FOMC-day close, carried by semis, while utilities, real estate and small caps took the hit. Our take on why the bond market is the better read on the regime right now, and what we're watching this week:
+
+https://lightwaterdispatch.com/dispatch/2026-09-28-bonds-came-around/
+
+#Macro #Treasuries #InterestRates #FederalReserve #Oil
+
+
+========================================================================
+2. LINKEDIN - FOUNDER REPOST CAPTION
+========================================================================
+A follow-up to our FOMC note. On hike day, long bonds looked like they were fighting the Fed. Eight days later the 10-year closed at its highest since 2007. The S&P is still above where it closed on FOMC day, which tells you how much of the move stocks have ignored. When the two disagree this much, I'd rather listen to the bond market.
+
+
+========================================================================
+3. X - FOUNDER ACCOUNT (single post, 268 characters, checked in code)
+========================================================================
+On FOMC day long bonds rallied right through the hike. Eight days later the 10-year closed at 5.18%, its highest since 2007, and the 30-year hit 5.49%. The S&P is still above its FOMC close though. Stocks piled into semis and let utilities and small caps take the hit.
+
+
+========================================================================
+NOTES
+========================================================================
+- Figures are official closes through Friday 25 September 2026 (U.S. Treasury par yields; Polygon.io for ETFs), fact-checked before publication. The 10-year's 5.18% close was Thursday 24 September; the 30-year's 5.49% close was Friday 25 September.
+- Don't cite "30-year highest since 2004." It shows up in press coverage, but Treasury's own 30-year series has a gap from 2002 to 2006, so we can't verify it. Say "above its 2006-07 peak" instead.
+- Manufacturing flash PMI was 57.0 (a 52-month high), not 56.7. Use that in comment replies.
+- X post: no link, per house pattern. Adding "Full read: <link>" still fits (the URL counts as 23 characters).
+- LinkedIn reach tip: put the article link in the first comment and lead the post with the OG image.
+- Hyphens only, no em dashes, plain ASCII.
