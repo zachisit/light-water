@@ -1,0 +1,47 @@
+SHARDUL MEHETAR - LEAD QUANTITATIVE RESEARCH INTERN - LinkedIn copy
+Article: https://lightwaterdispatch.com/dispatch/2026-10-06-shardul-mehetar-lead-quantitative-research-intern/
+
+========================================================================
+COMPANY ACCOUNT - Light Water Capital
+========================================================================
+Light Water Capital is pleased to announce that Shardul Mehetar has been named Lead Quantitative Research Intern within our Systematic Strategies group, effective October 1.
+
+Since joining the firm in July, Shardul has:
+
+- Co-authored two strategy evaluations, including a live RSI-divergence build in which an initial +444% result was traced to two stock-split data artifacts, and an EMA breakout study in which 60 backtests did not produce a win rate better than chance.
+- Improved July Backtester, our open-source research engine, by implementing point-in-time universe screens and refining its price-jump validation.
+- Published a seven-part empirical review of the assumptions underlying our research process, withdrawing 155 correlation-persistence results that did not survive a correction for overlapping windows, and identifying eighteen defects in our own tooling.
+
+The designation reflects the rigor and transparency of this work, including his willingness to report findings that did not hold. These are the standards our research group aims to uphold.
+
+Congratulations, Shardul.
+
+Read the full announcement: https://lightwaterdispatch.com/dispatch/2026-10-06-shardul-mehetar-lead-quantitative-research-intern/
+
+#QuantitativeResearch #SystematicStrategies #Backtesting #LightWaterCapital
+
+
+========================================================================
+PERSONAL REPOST CAPTION (Shardul)
+========================================================================
+I am grateful to Zach and the team at Light Water Capital for the opportunity to serve as Lead Quantitative Research Intern.
+
+The work behind this has centered on validation: tracing a +444% backtest result to data artifacts, withdrawing correlation findings once overlapping windows were accounted for, and identifying defects in the tooling our research depends on. Documenting what did not hold has been as valuable as documenting what did, and I look forward to continuing this work with the Systematic Strategies team.
+
+https://lightwaterdispatch.com/dispatch/2026-10-06-shardul-mehetar-lead-quantitative-research-intern/
+
+
+========================================================================
+FOUNDER ACCOUNT - REPOST COMMENTARY (2 sentences)
+========================================================================
+Shardul's work since July has been notable for its rigor and its transparency: strategy evaluations that reached negative conclusions, an audit of our research tooling that identified eighteen defects, and findings he withdrew himself once they failed a stricter test. This designation recognizes that standard, and we are pleased to have him leading our research effort.
+
+
+========================================================================
+POSTING NOTES
+========================================================================
+- Best window is Tue-Thu, 8:00-10:00am ET. Tag Shardul; consider asking him to repost first.
+- Reach tip: LinkedIn throttles posts with an external link in the body. Put the article link in the FIRST COMMENT and lead with text plus the OG image (og-preview.png in this folder).
+- No figure here is a return or a performance claim. The +444% is the result that was debunked; make sure nobody quotes it as a performance number.
+- Personal repost caption is a draft in Shardul's voice. He should edit and approve it before it goes under his name.
+- "Effective October 1" and "leading our research effort" are assumptions. Confirm the effective date and whether "Lead" includes leading other interns.
