@@ -6,7 +6,7 @@ COMPANY ACCOUNT - Light Water Capital
 ========================================================================
 Light Water Capital is pleased to announce that Shardul Mehetar has been named Lead Quantitative Research Intern within our Systematic Strategies group, effective October 1.
 
-Since joining the firm in July, Shardul has:
+Since joining the firm in March, Shardul has:
 
 - Co-authored two strategy evaluations, including a live RSI-divergence build in which an initial +444% result was traced to two stock-split data artifacts, and an EMA breakout study in which 60 backtests did not produce a win rate better than chance.
 - Improved July Backtester, our open-source research engine, by implementing point-in-time universe screens and refining its price-jump validation.
@@ -34,7 +34,7 @@ https://lightwaterdispatch.com/dispatch/2026-10-06-shardul-mehetar-lead-quantita
 ========================================================================
 FOUNDER ACCOUNT - REPOST COMMENTARY (2 sentences)
 ========================================================================
-Shardul's work since July has been notable for its rigor and its transparency: strategy evaluations that reached negative conclusions, an audit of our research tooling that identified eighteen defects, and findings he withdrew himself once they failed a stricter test. This designation recognizes that standard, and we are pleased to have him leading our research effort.
+Shardul's work since March has been notable for its rigor and its transparency: strategy evaluations that reached negative conclusions, an audit of our research tooling that identified eighteen defects, and findings he withdrew himself once they failed a stricter test. This designation recognizes that standard, and we are pleased to have him leading our research effort.
 
 
 ========================================================================
