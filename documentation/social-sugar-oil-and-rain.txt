@@ -1,0 +1,40 @@
+SUGAR RAN ON OIL AND RAIN - social copy
+Article: https://lightwaterdispatch.com/dispatch/2026-10-21-sugar-oil-and-rain/
+
+========================================================================
+1. LINKEDIN - COMPANY ACCOUNT (Light Water Capital)
+========================================================================
+Raw sugar has climbed from a February low near 13.3 cents a pound to about 21.3 cents in mid-October, its highest since early 2025. Hardly anyone saw it coming.
+
+Three things did the work. Expensive oil pulled Brazil's cane toward ethanol early in the season. Bad weather, much of it from a strengthening El Nino, cut crops in Brazil, India, Thailand and Europe in the same year. And hedge funds swung from a net short of about 232,000 contracts in February to a net long of about 260,000.
+
+For two weeks now the market has gone sideways on thinner volume, and the March-May premium has narrowed from 0.81 cents to 0.65. We break down which of the three legs still has fuel and what would settle the next move:
+
+https://lightwaterdispatch.com/dispatch/2026-10-21-sugar-oil-and-rain/
+
+#Commodities #Sugar #ElNino #Macro #Futures
+
+
+========================================================================
+2. LINKEDIN - FOUNDER REPOST CAPTION
+========================================================================
+I've been watching sugar curl on the daily as volume dries up, so we dug into what built this rally. The answer is oil, weather and a big fund short that had to be bought back. Most of the short covering is done, and by late September sugar was already paying Brazil's mills more than ethanol. That leaves weather and India's policy as the things to watch. A quiet range near the highs can go either way, and the curve is already starting to lean.
+
+
+========================================================================
+3. X - FOUNDER ACCOUNT (single post, 256 characters, checked in code)
+========================================================================
+Sugar ran from 13.3c in Feb to 21.3c in mid-Oct. Oil pulled Brazil's cane into ethanol, El Nino hit four crops at once, and funds flipped from -232k to +260k contracts. Now it's going sideways on thin volume, and the March-May premium is already narrowing.
+
+
+========================================================================
+NOTES
+========================================================================
+- Prices are ICE Sugar No. 11. The 13.3c-to-21.3c move compares the continuous benchmark across successive contracts, so don't call it a "return." The highs were 21.24 (Oct 7) and 21.29 intraday (Oct 14), both on the March 2027 contract.
+- Positioning is the CFTC futures-only managed-money series: -231,762 on Feb 17, +259,549 on Oct 13. Don't quote Barchart's ~265k "record" next to these numbers; that figure covers futures and options combined.
+- March-May spread: 0.81 (Oct 15) to 0.65 (Oct 20), from Czarnikow settlements.
+- El Nino: the CPC gives an 83% chance of a historic Oct-Dec event. That is a forecast, so never write "record El Nino" as a fact in replies.
+- Brent did NOT stay above $100 continuously since September; it dipped below in late September. Use "five-month high near $112 on Oct 20."
+- X post: no link, per house pattern. Adding "Full read: <link>" still fits (the URL counts as 23 characters).
+- LinkedIn reach tip: put the article link in the first comment and lead the post with the OG image (og-preview.png).
+- Hyphens only, no em dashes, plain ASCII.
