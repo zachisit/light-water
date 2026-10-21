@@ -22,9 +22,9 @@ I've been watching sugar curl on the daily as volume dries up, so we dug into wh
 
 
 ========================================================================
-3. X - FOUNDER ACCOUNT (single post, 256 characters, checked in code)
+3. X - FOUNDER ACCOUNT (single post, 258 characters, checked in code)
 ========================================================================
-Sugar ran from 13.3c in Feb to 21.3c in mid-Oct. Oil pulled Brazil's cane into ethanol, El Nino hit four crops at once, and funds flipped from -232k to +260k contracts. Now it's going sideways on thin volume, and the March-May premium is already narrowing.
+Sugar ran from 13.3c in Feb to 21.3c in mid-Oct. Oil pulled Brazil's cane into ethanol, bad weather hit four crops at once, and funds flipped from -232k to +260k contracts. Now it's going sideways on thin volume, and the March-May premium is already narrowing.
 
 
 ========================================================================
