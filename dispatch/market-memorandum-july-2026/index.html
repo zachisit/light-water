@@ -41,7 +41,7 @@
   <meta name="theme-color" content="#1E3A5F">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
   <link rel="manifest" href="/site.webmanifest">
   <script type="application/ld+json">
@@ -95,117 +95,58 @@
     ]
   }
   </script>
+  <link rel="stylesheet" href="../../assets/site.css">
+  <link rel="stylesheet" href="../article.css">
   <style>
-    /* Self-contained styling that mirrors the dispatch template (Cormorant Garamond + DM Sans,
-       navy header band, warm-white body card). Real class names retained so this can be
-       dropped onto article.css later by stripping this block. */
-    :root{
-      color-scheme: light;
-      --navy:#1E3A5F; --navy-deep:#16293f; --steel:#2F5D8A;
-      --ink:#22303c; --ink-soft:#3a4654; --muted:#6f7a87;
-      --line:#e6e2d8; --card:#fdfbf7; --page:#efeae0; --wash:#f4f7fb;
-      --clay:#B23A1E;
-      --serif:'Cormorant Garamond',Georgia,serif;
-      --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-    }
-    *{box-sizing:border-box}
-    html{-webkit-text-size-adjust:100%}
-    body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);
-      font-size:18px;line-height:1.75;-webkit-font-smoothing:antialiased;}
-    a{color:var(--steel)}
-    .skip-link{position:absolute;left:-9999px}
-    .skip-link:focus{left:16px;top:12px;background:#fff;padding:8px 14px;border-radius:6px;z-index:20}
-    #nav{display:flex;justify-content:space-between;align-items:center;
-      max-width:1080px;margin:0 auto;padding:18px 28px;}
-    .nav-logo{height:34px;width:auto}
-    .nav-links{list-style:none;display:flex;gap:26px;margin:0;padding:0}
-    .nav-links a{color:var(--muted);text-decoration:none;font-size:14px;letter-spacing:.02em}
-    .nav-links a.active,.nav-links a:hover{color:var(--navy)}
-
-    .article-header{background:var(--navy);color:#fff}
-    .article-header-inner{max-width:760px;margin:0 auto;padding:52px 28px 60px}
-    .article-breadcrumb{font-size:13px;color:#9db2ca;margin-bottom:26px;letter-spacing:.02em}
-    .article-breadcrumb a{color:#9db2ca;text-decoration:none}
-    .article-breadcrumb a:hover{color:#fff}
-    .article-breadcrumb span{margin:0 8px}
-    .crumb-current{color:#c9d6e4}
-    .article-meta{display:flex;align-items:center;gap:12px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:#9db2ca;margin-bottom:22px}
-    .article-tag{color:#d7e2ee;font-weight:600}
-    .article-meta-dot{width:3px;height:3px;border-radius:50%;background:#5f7d9c}
-    .article-title{font-family:var(--serif);font-weight:600;font-size:52px;line-height:1.08;letter-spacing:-.005em;margin:0 0 20px}
-    .article-dek{font-family:var(--serif);font-style:italic;font-weight:400;font-size:23px;line-height:1.4;color:#cdd9e6;margin:0 0 34px;max-width:34em}
-    .byline{display:flex;align-items:center;gap:13px}
-    .byline-avatar{width:48px;height:48px;border-radius:50%;overflow:hidden;background:#2c496b;flex:none;display:flex;align-items:center;justify-content:center}
-    .byline-avatar-initials{font-family:var(--serif);font-weight:600;font-size:17px;color:#fff}
-    .byline-avatar .mm-face{width:100%;height:100%;object-fit:cover;display:block}
-    .byline-name{font-weight:600;font-size:15.5px;color:#fff}
-    .byline-role{font-size:13.5px;color:#9db2ca}
-
-    .article-body-wrap{background:var(--page);padding:0 20px}
-    .article-body{max-width:760px;margin:-28px auto 0;background:var(--card);
-      border:1px solid var(--line);border-radius:10px;padding:52px 60px 40px;
-      box-shadow:0 24px 60px -40px rgba(30,58,95,.4)}
-    .article-body p{margin:0 0 20px}
-    .article-body h2{font-family:var(--serif);font-weight:600;color:var(--navy);
-      font-size:31px;line-height:1.15;margin:44px 0 14px;letter-spacing:-.005em}
+    /* Memo-specific components; layout and chrome come from site.css + article.css */
+    :root { --steel:#2F5D8A; --clay:#B23A1E; --wash:#F4F7FB; --line:#E6E2D8; }
 
     .mm-summary{background:var(--wash);border-left:3px solid var(--navy);padding:20px 22px;margin:0 0 32px;border-radius:0 6px 6px 0}
-    .mm-summary-label{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);font-weight:600;margin-bottom:8px}
-    .mm-summary p{margin:0;font-size:16px;line-height:1.68;color:var(--ink-soft)}
+    .mm-summary-label{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);font-weight:500;margin-bottom:8px}
+    .article-body .mm-summary p{margin:0;font-size:16px;line-height:1.7}
 
-    .divergences{list-style:none;padding:0;margin:0 0 20px}
-    .divergences li{padding:0 0 0 18px;margin:0 0 16px;border-left:2px solid var(--line)}
-    .divergences li strong{color:var(--navy)}
+    .divergences{list-style:none;padding:0;margin:0 0 20px !important}
+    .article-body .divergences li{padding:0 0 0 18px;margin:0 0 16px;border-left:2px solid var(--line)}
 
     .mm-figure{margin:34px 0}
+    .article-body .mm-figure{border:0;border-radius:0}
     .mm-figure svg{width:100%;height:auto;display:block}
     .mm-figcap{font-size:13.5px;line-height:1.5;color:var(--muted);font-style:italic;margin-top:12px}
 
-    table{width:100%;border-collapse:collapse;margin:22px 0 6px;font-size:15.5px}
-    thead th{background:var(--navy);color:#fff;text-align:left;padding:11px 14px;font-weight:600;font-size:14px}
-    tbody td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-soft)}
-    tbody tr:nth-child(even){background:#faf8f2}
-    tbody td:first-child{font-weight:600;color:var(--ink)}
+    .article-body thead th{background:var(--navy);color:#fff;font-size:14px}
+    .article-body tbody td{border-bottom:1px solid var(--line);color:var(--body-text)}
+    .article-body tbody tr:nth-child(even){background:#FAF8F2}
+    .article-body tbody td:first-child{font-weight:500;color:var(--navy)}
 
     .mm-tag{border-left:3px solid var(--steel);padding:2px 0 2px 16px;margin:0 0 16px}
     .mm-tag.warn{border-color:var(--clay)}
-    .mm-tag strong{color:var(--navy)}
 
-    .disclaimer{font-size:13px;line-height:1.6;color:var(--muted);border-top:1px solid var(--line);margin-top:40px;padding-top:20px}
+    .article-body .disclaimer{font-size:13px;line-height:1.6;color:var(--muted);border-top:1px solid var(--line);margin-top:40px;padding-top:20px}
 
     .mm-author{display:flex;gap:16px;align-items:flex-start;background:var(--wash);border-radius:8px;padding:22px;margin:34px 0 6px}
     .mm-author-avatar{width:56px;height:56px;flex:none;border-radius:50%;overflow:hidden;background:var(--navy);display:flex;align-items:center;justify-content:center}
-    .mm-author-avatar .mm-face{width:100%;height:100%;object-fit:cover;display:block}
-    .mm-author-initials{font-family:var(--serif);font-weight:600;font-size:20px;color:#fff}
-    .mm-author-name{font-weight:600;color:var(--navy);font-size:16px}
+    .mm-face{width:100%;height:100%;object-fit:cover;display:block}
+    .mm-author-initials{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;color:#fff}
+    .mm-author-name{font-weight:500;color:var(--navy);font-size:16px}
     .mm-author-role{color:var(--muted);font-size:13.5px;margin-bottom:7px}
-    .mm-author-bio{margin:0 0 9px;font-size:14.5px;line-height:1.6;color:var(--ink-soft)}
-    .mm-linkedin{font-size:14px;color:var(--steel);text-decoration:none;font-weight:500}
-    .mm-linkedin:hover{text-decoration:underline}
-
-    footer.site-footer{max-width:1080px;margin:44px auto 0;padding:26px 28px 48px;color:var(--muted);font-size:13px;line-height:1.6}
-    footer.site-footer .footer-location{color:var(--navy);font-weight:600}
-
-    @media(max-width:640px){
-      body{font-size:16.5px}
-      .article-header-inner{padding:38px 20px 44px}
-      .article-title{font-size:36px}
-      .article-dek{font-size:20px}
-      .article-body{padding:34px 22px 30px}
-      .article-body h2{font-size:26px}
-    }
+    .article-body .mm-author-bio{margin:0 0 9px;font-size:14.5px;line-height:1.6}
+    .article-body .mm-linkedin{font-size:14px;text-decoration:none;font-weight:500}
+    @media(max-width:600px){ .mm-author{flex-direction:column} }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <nav id="nav" role="navigation" aria-label="Main navigation">
-    <img class="nav-logo" src="https://lightwaterdispatch.com/assets/light-water-transparent-cropped-logo.PNG" alt="Light Water Capital">
-    <ul class="nav-links">
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/dispatch/index.html" class="active">Dispatch</a></li>
-      <li><a href="/careers/index.html">Careers</a></li>
-    </ul>
+    <div class="container nav-inner">
+      <a class="nav-home" href="../../index.html"><img class="nav-logo" src="../../assets/light-water-transparent-cropped-logo.PNG" alt="Light Water Capital"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu"><span class="bar" aria-hidden="true"></span></button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="../../dispatch/index.html" class="active" aria-current="page">Dispatch</a></li>
+        <li><a href="../../careers/index.html">Careers</a></li>
+      </ul>
+    </div>
   </nav>
 
   <main id="main">
@@ -225,7 +166,7 @@
         <p class="article-dek">The Iran ceasefire collapsed and crude spiked. Equities shrugged - and the demand side explains why.</p>
         <div class="byline">
           <div class="byline-avatar">
-            <img class="mm-face" src="https://media.licdn.com/dms/image/v2/D4E03AQFq0c4d5QVNVw/profile-displayphoto-crop_800_800/B4EZtDJpp3HoAI-/0/1766358163169?e=1785369600&amp;v=beta&amp;t=OpWbaUzTMmHiUx-SVOi8d5nXqXlLbmCZmxiehVKoHZQ" alt="Suriya Narayanan Rajavel" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'byline-avatar-initials',textContent:'SR'}))">
+            <img class="mm-face" src="../../assets/suriya-rajavel-avatar.jpg" alt="Suriya Narayanan Rajavel" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'byline-avatar-initials',textContent:'SR'}))">
           </div>
           <div class="byline-text">
             <div class="byline-name">Suriya Narayanan Rajavel</div>
@@ -416,7 +357,7 @@
 
         <div class="mm-author">
           <div class="mm-author-avatar">
-            <img class="mm-face" src="https://media.licdn.com/dms/image/v2/D4E03AQFq0c4d5QVNVw/profile-displayphoto-crop_800_800/B4EZtDJpp3HoAI-/0/1766358163169?e=1785369600&amp;v=beta&amp;t=OpWbaUzTMmHiUx-SVOi8d5nXqXlLbmCZmxiehVKoHZQ" alt="Suriya Narayanan Rajavel" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'mm-author-initials',textContent:'SR'}))">
+            <img class="mm-face" src="../../assets/suriya-rajavel-avatar.jpg" alt="Suriya Narayanan Rajavel" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'mm-author-initials',textContent:'SR'}))">
           </div>
           <div>
             <div class="mm-author-name">Suriya Narayanan Rajavel</div>
@@ -430,9 +371,25 @@
     </div>
   </main>
 
-  <footer class="site-footer">
-    <p>Light Water Capital · Private Capital Management · <span class="footer-location">Corydon, Indiana</span></p>
-    <p>© 2026 Light Water Capital. All rights reserved. This website is for informational purposes only and does not constitute investment advice or an offer to buy or sell any security. Past performance is not indicative of future results.</p>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <img class="footer-logo" src="../../assets/light-water-transparent-cropped-logo-dark-bg.png" alt="Light Water Capital">
+        <ul class="footer-links">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../dispatch/index.html">Dispatch</a></li>
+          <li><a href="../../careers/index.html">Careers</a></li>
+          <li><a href="https://www.linkedin.com/company/light-water" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-legal">
+          &copy; 2026 Light Water Capital. All rights reserved. This website is for informational purposes only and does not constitute investment advice or an offer to buy or sell any security. Past performance is not indicative of future results.
+        </p>
+        <span class="footer-location">Corydon, Indiana</span>
+      </div>
+    </div>
   </footer>
+  <script src="../../assets/site.js"></script>
 </body>
 </html>
