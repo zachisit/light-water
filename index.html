@@ -93,247 +93,130 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#1E3A5F">
 
+  <link rel="stylesheet" href="assets/site.css">
   <style>
-    :root {
-      color-scheme: light;
-      --navy:       #1E3A5F;
-      --teal:       #6BBFB5;
-      --warm-white: #FAFAF8;
-      --off-white:  #F4F2EE;
-      --mid-gray:   #9A9A96;
-      --lt-gray:    #E8E7E3;
-      --body-text:  #3A3A38;
-      --rule:       rgba(30,58,95,0.10);
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { font-size: 16px; scroll-behavior: smooth; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 300;
-      color: var(--body-text);
-      background: var(--warm-white);
-      -webkit-font-smoothing: antialiased;
-    }
-    .skip-link {
-      position: absolute; top: -100px; left: 0;
-      background: var(--navy); color: #fff;
-      padding: 8px 16px; font-size: 13px; z-index: 9999;
-    }
-    .skip-link:focus { top: 0; }
+    /* Home page sections; tokens, nav and footer come from assets/site.css */
 
-    /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 60px; height: 72px;
-      background: rgba(250,250,248,0.94);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--rule);
-      transition: box-shadow 0.3s;
+    /* Editorial section grid: label rail on the left, content on the right */
+    .section { padding: var(--section-y) 0; border-bottom: 1px solid var(--rule); }
+    .section--tint { background: var(--off-white); }
+    .section-grid {
+      display: grid; grid-template-columns: repeat(12, 1fr);
+      column-gap: clamp(16px, 2.5vw, 32px); row-gap: 20px;
     }
-    nav.scrolled { box-shadow: 0 2px 24px rgba(30,58,95,0.07); }
-    .nav-logo { height: 70px; width: auto; }
-    .nav-links { list-style: none; display: flex; gap: 40px; }
-    .nav-links a {
-      font-size: 11px; font-weight: 400; letter-spacing: 0.16em;
-      text-transform: uppercase; color: var(--navy);
-      text-decoration: none; opacity: 0.5; transition: opacity 0.2s;
-    }
-    .nav-links a:hover { opacity: 1; }
+    .section-rail { grid-column: 1 / span 3; padding-top: 0.6em; }
+    .section-body { grid-column: 4 / span 9; }
 
     /* HERO */
     #hero {
-      min-height: 100vh;
+      min-height: min(100svh, 900px);
+      padding: calc(var(--nav-h) + 48px) 0 clamp(56px, 9vw, 112px);
       background: var(--navy);
-      display: flex; flex-direction: column;
-      justify-content: flex-end; align-items: flex-start;
-      padding: 0 60px 100px;
+      display: flex; align-items: flex-end;
       position: relative; overflow: hidden;
     }
     #hero::after {
       content: '';
       position: absolute; bottom: 0; right: 0;
-      width: 55%; height: 65%;
-      background: radial-gradient(ellipse at bottom right, rgba(107,191,181,0.07) 0%, transparent 65%);
+      width: 70%; height: 80%;
+      background: radial-gradient(ellipse at bottom right, rgba(107,191,181,0.10) 0%, transparent 65%);
       pointer-events: none;
     }
+    .hero-inner { position: relative; z-index: 1; }
     .hero-eyebrow {
-      font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--teal); margin-bottom: 20px;
+      display: block;
+      font-size: var(--fs-label); font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: clamp(16px, 2vw, 24px);
       opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s;
     }
     .hero-headline {
       font-family: 'Cormorant Garamond', serif; font-weight: 300;
-      font-size: clamp(52px, 7.5vw, 96px); line-height: 1.0;
-      color: rgba(255,255,255,0.92); letter-spacing: -0.02em;
-      max-width: 680px; margin-bottom: 40px;
+      font-size: var(--fs-display); line-height: 0.98;
+      color: rgba(255,255,255,0.94); letter-spacing: -0.02em;
+      margin-bottom: clamp(28px, 3.5vw, 44px);
       opacity: 0; animation: fadeUp 0.9s ease forwards 0.35s;
     }
+    .hero-rule {
+      width: 48px; height: 1px; background: var(--teal);
+      margin-bottom: clamp(20px, 2.5vw, 28px);
+      opacity: 0; animation: fadeUp 0.9s ease forwards 0.45s;
+    }
     .hero-cta {
-      display: inline-flex; align-items: center; gap: 12px;
-      font-size: 11px; font-weight: 400; letter-spacing: 0.18em;
-      text-transform: uppercase; color: rgba(255,255,255,0.5);
-      text-decoration: none; padding-bottom: 5px;
-      border-bottom: 1px solid rgba(107,191,181,0.35);
+      color: rgba(255,255,255,0.75); border-color: rgba(107,191,181,0.5);
       transition: color 0.2s, border-color 0.2s;
       opacity: 0; animation: fadeUp 0.9s ease forwards 0.55s;
     }
     .hero-cta:hover { color: var(--teal); border-color: var(--teal); }
-    .hero-cta svg { transition: transform 0.2s; }
-    .hero-cta:hover svg { transform: translateX(4px); }
 
-    /* ABOUT STRIP */
-    #about {
-      padding: 100px 60px;
-      border-bottom: 1px solid var(--rule);
-    }
-    .about-inner {
-      max-width: 640px;
-    }
-    .eyebrow {
-      font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--teal); margin-bottom: 20px; display: block;
-    }
-    .about-text {
+    /* ABOUT */
+    .about-lede {
       font-family: 'Cormorant Garamond', serif; font-weight: 300;
-      font-size: clamp(22px, 3vw, 28px); line-height: 1.55;
-      color: var(--navy);
+      font-size: var(--fs-lede); line-height: 1.38;
+      color: var(--navy); max-width: 820px;
+      text-wrap: pretty;
     }
-    .about-text em { font-style: italic; }
-    .about-detail {
-      font-size: 15px; line-height: 1.8;
-      color: var(--body-text); opacity: 0.65;
-      margin-top: 28px; max-width: 640px;
-    }
+    .about-lede em { font-style: italic; color: var(--navy-mid); }
+    .about-detail { color: var(--muted); max-width: 62ch; margin-top: clamp(24px, 3vw, 36px); }
 
     /* PHILOSOPHY */
-    #philosophy {
-      padding: 100px 60px;
-      background: var(--off-white);
-      border-bottom: 1px solid var(--rule);
-    }
-    .philosophy-inner {
-      max-width: 860px; margin: 0 auto;
-    }
     .philosophy-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 48px; margin-top: 40px;
+      list-style: none;
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      column-gap: clamp(24px, 4vw, 64px); row-gap: clamp(36px, 4vw, 56px);
+      margin-top: clamp(36px, 5vw, 64px);
     }
-    .philosophy-item h3 {
+    .philosophy-item { border-top: 1px solid var(--rule); padding-top: 24px; }
+    .philosophy-num {
+      display: block; margin-bottom: 14px;
+      font-size: var(--fs-label); font-weight: 400; letter-spacing: 0.16em;
+      color: var(--teal-dk);
+    }
+    .philosophy-item h3, .faq-q {
       font-family: 'Cormorant Garamond', serif; font-weight: 400;
-      font-size: 20px; color: var(--navy); margin-bottom: 12px;
+      font-size: var(--fs-h3); line-height: 1.3; color: var(--navy);
     }
-    .philosophy-item p {
-      font-size: 14px; line-height: 1.75;
-      color: var(--body-text); opacity: 0.6;
-    }
+    .philosophy-item h3 { margin-bottom: 10px; }
+    .philosophy-item p { color: var(--muted); max-width: 46ch; }
 
     /* FAQ */
-    #faq {
-      padding: 100px 60px;
-      border-bottom: 1px solid var(--rule);
+    .faq-list { margin-top: clamp(28px, 4vw, 48px); border-top: 1px solid var(--rule); max-width: 820px; }
+    .faq-item { border-bottom: 1px solid var(--rule); }
+    .faq-item summary {
+      list-style: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      padding: 22px 0; min-height: 44px;
     }
-    .faq-inner {
-      max-width: 640px;
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-icon { flex-shrink: 0; width: 14px; height: 14px; position: relative; color: var(--teal-dk); }
+    .faq-icon::before, .faq-icon::after {
+      content: ''; position: absolute; left: 0; top: 50%; width: 14px; height: 1.5px;
+      background: currentColor; transition: transform 0.25s;
     }
-    .faq-item {
-      border-bottom: 1px solid var(--rule);
-      padding: 28px 0;
-    }
-    .faq-item:first-of-type { border-top: 1px solid var(--rule); }
-    .faq-q {
-      font-family: 'Cormorant Garamond', serif; font-weight: 400;
-      font-size: 19px; color: var(--navy); margin-bottom: 12px;
-    }
-    .faq-a {
-      font-size: 14px; line-height: 1.75;
-      color: var(--body-text); opacity: 0.6;
-    }
+    .faq-icon::after { transform: rotate(90deg); }
+    .faq-item[open] .faq-icon::after { transform: rotate(0deg); }
+    .faq-item summary:hover .faq-q { color: var(--navy-mid); }
+    .faq-a { color: var(--muted); max-width: 62ch; padding: 0 38px 26px 0; }
 
-    /* DISPATCH LINK */
-    #dispatch {
-      padding: 100px 60px;
-      background: var(--off-white);
-    }
-    .dispatch-inner {
-      display: flex; align-items: flex-end;
-      justify-content: space-between; gap: 60px;
-      max-width: 1060px; margin: 0 auto;
-      border-top: 1px solid var(--rule); padding-top: 48px;
-    }
-    .dispatch-left { max-width: 480px; }
-    .dispatch-title {
-      font-family: 'Cormorant Garamond', serif; font-weight: 300;
-      font-size: clamp(32px, 4vw, 44px); line-height: 1.1;
-      color: var(--navy); margin-bottom: 16px; letter-spacing: -0.01em;
-    }
-    .dispatch-sub {
-      font-size: 14px; line-height: 1.8;
-      color: var(--body-text); opacity: 0.6;
-    }
+    /* DISPATCH */
+    #dispatch { border-bottom: 0; }
+    .dispatch-card { display: flex; align-items: flex-end; justify-content: space-between; gap: clamp(28px, 5vw, 64px); }
+    .dispatch-sub { color: var(--muted); max-width: 48ch; margin-top: 16px; }
     .dispatch-link {
-      display: inline-flex; align-items: center; gap: 12px; white-space: nowrap;
-      font-size: 11px; font-weight: 400; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--navy);
-      text-decoration: none; padding-bottom: 5px;
-      border-bottom: 1px solid var(--rule);
-      transition: border-color 0.2s, color 0.2s;
-      flex-shrink: 0;
+      color: var(--navy); border-color: rgba(30,58,95,0.3);
+      white-space: nowrap; flex-shrink: 0;
+      transition: color 0.2s, border-color 0.2s;
     }
-    .dispatch-link:hover { color: var(--teal); border-color: var(--teal); }
-    .dispatch-link svg { transition: transform 0.2s; }
-    .dispatch-link:hover svg { transform: translateX(4px); }
+    .dispatch-link:hover { color: var(--teal-dk); border-color: var(--teal-dk); }
 
-    /* FOOTER */
-    footer {
-      background: var(--navy);
-      padding: 56px 60px 44px;
+    @media (max-width: 960px) {
+      .section-rail, .section-body { grid-column: 1 / -1; }
+      .section-rail { padding-top: 0; }
     }
-    .footer-top {
-      display: flex; align-items: flex-start;
-      justify-content: space-between; gap: 40px;
-      margin-bottom: 48px;
-    }
-    .footer-logo { height: 90px; width: auto; opacity: 0.8; }
-    .footer-links { list-style: none; display: flex; gap: 32px; }
-    .footer-links a {
-      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
-      color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s;
-    }
-    .footer-links a:hover { color: rgba(255,255,255,0.8); }
-    .footer-bottom {
-      display: flex; align-items: flex-end;
-      justify-content: space-between; gap: 32px;
-      border-top: 1px solid rgba(255,255,255,0.06); padding-top: 28px;
-    }
-    .footer-legal {
-      font-size: 11px; line-height: 1.7;
-      color: rgba(255,255,255,0.2); max-width: 560px;
-    }
-    .footer-location {
-      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
-      color: rgba(255,255,255,0.2); white-space: nowrap;
-    }
-
-    /* ANIMATIONS */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      nav { padding: 0 24px; }
-      .nav-links { display: none; }
-      #hero { padding: 0 24px 72px; }
-      #about, #dispatch, #philosophy, #faq { padding: 72px 24px; }
-      .philosophy-grid { grid-template-columns: 1fr; gap: 32px; }
-      footer { padding: 48px 24px 36px; }
-      .dispatch-inner { flex-direction: column; align-items: flex-start; gap: 32px; }
-      .footer-top { flex-direction: column; }
-      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    @media (max-width: 720px) {
+      #hero { min-height: min(88svh, 720px); }
+      .philosophy-grid { grid-template-columns: 1fr; }
+      .faq-a { padding-right: 0; }
+      .dispatch-card { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -341,130 +224,147 @@
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <nav id="nav" role="navigation" aria-label="Main navigation">
-    <img class="nav-logo" src="assets/light-water-transparent-cropped-logo.PNG" alt="Light Water Capital">
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="dispatch/index.html">Dispatch</a></li>
-      <li><a href="careers/index.html">Careers</a></li>
-    </ul>
+    <div class="container nav-inner">
+      <a class="nav-home" href="index.html" aria-label="Light Water Capital home">
+        <img class="nav-logo" src="assets/light-water-transparent-cropped-logo.PNG" alt="Light Water Capital">
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+        <span class="bar" aria-hidden="true"></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="dispatch/index.html">Dispatch</a></li>
+        <li><a href="careers/index.html">Careers</a></li>
+      </ul>
+    </div>
   </nav>
 
   <main id="main">
 
     <section id="hero" aria-label="Introduction">
-      <span class="hero-eyebrow">Private Capital Management</span>
-      <h1 class="hero-headline">Patient capital.<br>Clear principles.</h1>
-      <a href="#about" class="hero-cta">
-        Learn more
-        <svg width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
-          <path d="M1 5h14M10 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
-    </section>
-
-    <section id="about" aria-labelledby="about-heading">
-      <div class="about-inner">
-        <span class="eyebrow reveal">The firm</span>
-        <h2 class="about-text reveal" id="about-heading">
-          Light Water Capital is a private investment firm and family office based in Corydon, Indiana. We manage capital for a select number of clients - <em>carefully, deliberately, and with a long horizon.</em>
-        </h2>
-        <p class="about-detail reveal">Private capital management means we invest our own capital alongside our clients. We focus on public equities and quantitative strategies, building concentrated positions where we have high conviction. We don't chase short-term performance or follow consensus. Our edge comes from patience, rigorous research, and a willingness to wait for the right opportunity.</p>
-      </div>
-    </section>
-
-    <section id="philosophy" aria-labelledby="philosophy-heading">
-      <div class="philosophy-inner">
-        <span class="eyebrow reveal">Our approach</span>
-        <h2 class="about-text reveal" id="philosophy-heading" style="max-width:640px;">How we think about capital allocation</h2>
-        <div class="philosophy-grid">
-          <div class="philosophy-item reveal">
-            <h3>Concentration over diversification</h3>
-            <p>We prefer a small number of deeply researched positions over a broad portfolio. When you know what you own and why, less is more.</p>
-          </div>
-          <div class="philosophy-item reveal">
-            <h3>Quantitative rigor</h3>
-            <p>Every investment thesis is tested against data. We build and maintain our own research infrastructure, including open-source tools like our July Backtester.</p>
-          </div>
-          <div class="philosophy-item reveal">
-            <h3>Long time horizons</h3>
-            <p>We underwrite investments over years, not quarters. Patient capital earns the premium that impatient capital leaves on the table.</p>
-          </div>
-          <div class="philosophy-item reveal">
-            <h3>Aligned incentives</h3>
-            <p>We invest our own capital alongside our clients. Our interests are aligned because we bear the same risk and earn the same returns.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="faq" aria-labelledby="faq-heading">
-      <div class="faq-inner">
-        <span class="eyebrow reveal">Common questions</span>
-        <h2 class="about-text reveal" id="faq-heading">Frequently asked questions</h2>
-        <div class="faq-item reveal">
-          <h3 class="faq-q">What does Light Water Capital do?</h3>
-          <p class="faq-a">Light Water Capital is a private investment firm and family office. We manage capital for a select number of clients, focusing on public equities and quantitative strategies with a long-term investment horizon.</p>
-        </div>
-        <div class="faq-item reveal">
-          <h3 class="faq-q">Where is Light Water Capital based?</h3>
-          <p class="faq-a">We are based in Corydon, Indiana. We operate as a private firm and do not maintain public-facing offices.</p>
-        </div>
-        <div class="faq-item reveal">
-          <h3 class="faq-q">What is your investment philosophy?</h3>
-          <p class="faq-a">We build concentrated, high-conviction portfolios backed by quantitative research. We prioritize long time horizons, aligned incentives with our clients, and rigorous data-driven analysis over market consensus or short-term performance chasing.</p>
-        </div>
-        <div class="faq-item reveal">
-          <h3 class="faq-q">What is The Dispatch?</h3>
-          <p class="faq-a">The Dispatch is our publication where we share notes on the strategies we're working on, the tools we're building, and what's happening inside the firm. It's how we think out loud, on our own terms.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="dispatch" aria-labelledby="dispatch-heading">
-      <div class="dispatch-inner">
-        <div class="dispatch-left">
-          <span class="eyebrow reveal">The Dispatch</span>
-          <h2 class="dispatch-title reveal" id="dispatch-heading">Thinking out loud,<br>on our own terms.</h2>
-          <p class="dispatch-sub reveal">Notes on the strategies we're working on, markets we're watching, and what's happening inside the firm.</p>
-        </div>
-        <a href="dispatch/index.html" class="dispatch-link reveal" aria-label="Read The Dispatch">
-          Read the Dispatch
-          <svg width="14" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
-            <path d="M1 4.5h12M8.5 1l3.5 3.5L8.5 8" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <div class="container hero-inner">
+        <span class="hero-eyebrow">Private Capital Management</span>
+        <h1 class="hero-headline">Patient capital.<br>Clear principles.</h1>
+        <div class="hero-rule" aria-hidden="true"></div>
+        <a href="#about" class="label-link hero-cta">
+          <span>Learn more</span>
+          <svg width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
+            <path d="M1 5h14M10 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
       </div>
     </section>
 
+    <section id="about" class="section" aria-labelledby="about-heading">
+      <div class="container section-grid">
+        <div class="section-rail"><span class="eyebrow reveal">The firm</span></div>
+        <div class="section-body">
+          <h2 class="about-lede reveal" id="about-heading">
+            Light Water Capital is a private investment firm and family office based in Corydon, Indiana. We manage capital for a select number of clients - <em>carefully, deliberately, and with a long horizon.</em>
+          </h2>
+          <p class="about-detail reveal">Private capital management means we invest our own capital alongside our clients. We focus on public equities and quantitative strategies, building concentrated positions where we have high conviction. We don't chase short-term performance or follow consensus. Our edge comes from patience, rigorous research, and a willingness to wait for the right opportunity.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="philosophy" class="section section--tint" aria-labelledby="philosophy-heading">
+      <div class="container section-grid">
+        <div class="section-rail"><span class="eyebrow reveal">Our approach</span></div>
+        <div class="section-body">
+          <h2 class="h2 reveal" id="philosophy-heading">How we think about capital allocation</h2>
+          <ol class="philosophy-grid">
+            <li class="philosophy-item reveal">
+              <span class="philosophy-num" aria-hidden="true">01</span>
+              <h3>Concentration over diversification</h3>
+              <p>We prefer a small number of deeply researched positions over a broad portfolio. When you know what you own and why, less is more.</p>
+            </li>
+            <li class="philosophy-item reveal">
+              <span class="philosophy-num" aria-hidden="true">02</span>
+              <h3>Quantitative rigor</h3>
+              <p>Every investment thesis is tested against data. We build and maintain our own research infrastructure, including open-source tools like our July Backtester.</p>
+            </li>
+            <li class="philosophy-item reveal">
+              <span class="philosophy-num" aria-hidden="true">03</span>
+              <h3>Long time horizons</h3>
+              <p>We underwrite investments over years, not quarters. Patient capital earns the premium that impatient capital leaves on the table.</p>
+            </li>
+            <li class="philosophy-item reveal">
+              <span class="philosophy-num" aria-hidden="true">04</span>
+              <h3>Aligned incentives</h3>
+              <p>We invest our own capital alongside our clients. Our interests are aligned because we bear the same risk and earn the same returns.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section" aria-labelledby="faq-heading">
+      <div class="container section-grid">
+        <div class="section-rail"><span class="eyebrow reveal">Common questions</span></div>
+        <div class="section-body">
+          <h2 class="h2 reveal" id="faq-heading">Frequently asked questions</h2>
+          <div class="faq-list">
+            <details class="faq-item reveal" open>
+              <summary><h3 class="faq-q">What does Light Water Capital do?</h3><span class="faq-icon" aria-hidden="true"></span></summary>
+              <p class="faq-a">Light Water Capital is a private investment firm and family office. We manage capital for a select number of clients, focusing on public equities and quantitative strategies with a long-term investment horizon.</p>
+            </details>
+            <details class="faq-item reveal">
+              <summary><h3 class="faq-q">Where is Light Water Capital based?</h3><span class="faq-icon" aria-hidden="true"></span></summary>
+              <p class="faq-a">We are based in Corydon, Indiana. We operate as a private firm and do not maintain public-facing offices.</p>
+            </details>
+            <details class="faq-item reveal">
+              <summary><h3 class="faq-q">What is your investment philosophy?</h3><span class="faq-icon" aria-hidden="true"></span></summary>
+              <p class="faq-a">We build concentrated, high-conviction portfolios backed by quantitative research. We prioritize long time horizons, aligned incentives with our clients, and rigorous data-driven analysis over market consensus or short-term performance chasing.</p>
+            </details>
+            <details class="faq-item reveal">
+              <summary><h3 class="faq-q">What is The Dispatch?</h3><span class="faq-icon" aria-hidden="true"></span></summary>
+              <p class="faq-a">The Dispatch is our publication where we share notes on the strategies we're working on, the tools we're building, and what's happening inside the firm. It's how we think out loud, on our own terms.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dispatch" class="section section--tint" aria-labelledby="dispatch-heading">
+      <div class="container section-grid">
+        <div class="section-rail"><span class="eyebrow reveal">The Dispatch</span></div>
+        <div class="section-body dispatch-card">
+          <div>
+            <h2 class="h2 reveal" id="dispatch-heading">Thinking out loud,<br>on our own terms.</h2>
+            <p class="dispatch-sub reveal">Notes on the strategies we're working on, markets we're watching, and what's happening inside the firm.</p>
+          </div>
+          <a href="dispatch/index.html" class="label-link dispatch-link reveal">
+            <span>Read the Dispatch</span>
+            <svg width="14" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
+              <path d="M1 4.5h12M8.5 1l3.5 3.5L8.5 8" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer role="contentinfo">
-    <div class="footer-top">
-      <img class="footer-logo" src="assets/light-water-transparent-cropped-logo-dark-bg.png" alt="Light Water Capital">
-      <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="dispatch/index.html">Dispatch</a></li>
-        <li><a href="careers/index.html">Careers</a></li>
-        <li><a href="https://www.linkedin.com/company/light-water" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-      </ul>
-    </div>
-    <div class="footer-bottom">
-      <p class="footer-legal">
-        &copy; 2026 Light Water Capital. All rights reserved. This website is for informational purposes only and does not constitute investment advice or an offer to buy or sell any security. Past performance is not indicative of future results.
-      </p>
-      <span class="footer-location">Corydon, Indiana</span>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <img class="footer-logo" src="assets/light-water-transparent-cropped-logo-dark-bg.png" alt="Light Water Capital">
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dispatch/index.html">Dispatch</a></li>
+          <li><a href="careers/index.html">Careers</a></li>
+          <li><a href="https://www.linkedin.com/company/light-water" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-legal">
+          &copy; 2026 Light Water Capital. All rights reserved. This website is for informational purposes only and does not constitute investment advice or an offer to buy or sell any security. Past performance is not indicative of future results.
+        </p>
+        <span class="footer-location">Corydon, Indiana</span>
+      </div>
     </div>
   </footer>
 
-  <script>
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 20);
-    }, { passive: true });
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
+  <script src="assets/site.js"></script>
 </body>
 </html>

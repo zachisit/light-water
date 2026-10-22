@@ -36,17 +36,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <meta name="theme-color" content="#1E3A5F">
 
-  <link rel="stylesheet" href="article.css">
+  <link rel="stylesheet" href="../assets/site.css">
+
+  <link rel="stylesheet" href="../dispatch/article.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <nav id="nav" role="navigation" aria-label="Main navigation">
-    <img class="nav-logo" src="../assets/light-water-transparent-cropped-logo.PNG" alt="Light Water Capital">
-    <ul class="nav-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/dispatch/" class="active">Dispatch</a></li>
-    </ul>
+    <div class="container nav-inner">
+      <a class="nav-home" href="../index.html"><img class="nav-logo" src="../assets/light-water-transparent-cropped-logo.PNG" alt="Light Water Capital"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu"><span class="bar" aria-hidden="true"></span></button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../dispatch/index.html">Dispatch</a></li>
+        <li><a href="../careers/index.html">Careers</a></li>
+      </ul>
+    </div>
   </nav>
 
   <main id="main">
@@ -213,10 +219,10 @@
 
     <!-- SHARE SECTION -->
     <div class="article-body-wrap">
-      <div style="max-width: 75vw; margin: 0 auto; padding: 32px 60px 48px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--lt-gray);">
-        <span style="font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-gray);">Share this article</span>
-        <a href="https://twitter.com/intent/tweet?text=On%20Patience%20in%20Capital%20Allocation&url=https://lightwaterdispatch.com/dispatch/on-patience-in-capital-allocation/" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: var(--navy); color: #fff; text-decoration: none; border-radius: 6px; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-top: -1px;">
+      <div class="article-share">
+        <span class="article-share-label">Share this article</span>
+        <a href="https://twitter.com/intent/tweet?text=On%20Patience%20in%20Capital%20Allocation&url=https://lightwaterdispatch.com/dispatch/on-patience-in-capital-allocation/" target="_blank" rel="noopener noreferrer" class="article-share-button" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
           </svg>
           Share on X
@@ -272,23 +278,25 @@
 
   </main>
 
-  <footer role="contentinfo">
-    <div class="footer-top">
-      <img class="footer-logo" src="../assets/light-water-transparent-cropped-logo-dark-bg.png" alt="Light Water Capital">
-      <ul class="footer-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/dispatch/">Dispatch</a></li>
-        <li><a href="https://www.linkedin.com/company/light-water" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-      </ul>
-    </div>
-    <div class="footer-bottom">
-      <p class="footer-legal">
-        &copy; 2026 Light Water Capital. All rights reserved. This website is for informational purposes only and does not constitute investment advice or an offer to buy or sell any security. Past performance is not indicative of future results.
-      </p>
-      <span class="footer-location">Corydon, Indiana</span>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <img class="footer-logo" src="../assets/light-water-transparent-cropped-logo-dark-bg.png" alt="Light Water Capital">
+        <ul class="footer-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../dispatch/index.html">Dispatch</a></li>
+          <li><a href="../careers/index.html">Careers</a></li>
+          <li><a href="https://www.linkedin.com/company/light-water" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-legal">
+          &copy; 2026 Light Water Capital. All rights reserved. This website is for informational purposes only and does not constitute investment advice or an offer to buy or sell any security. Past performance is not indicative of future results.
+        </p>
+        <span class="footer-location">Corydon, Indiana</span>
+      </div>
     </div>
   </footer>
-
-  <script src="article.js"></script>
+  <script src="../assets/site.js"></script>
 </body>
 </html>
