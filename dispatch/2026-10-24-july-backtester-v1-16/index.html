@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZTK7L0CNSR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZTK7L0CNSR');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="darkreader-lock">
+  <title>July Backtester v1.16: Backtest Integrity Fixes | Light Water Capital</title>
+  <meta name="description" content="An adversarial review of our open-source Python backtester found 17 integrity bugs, five biased in the strategy's favor. July Backtester v1.16 fixes them all.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://lightwaterdispatch.com/dispatch/2026-10-24-july-backtester-v1-16/">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://lightwaterdispatch.com/dispatch/2026-10-24-july-backtester-v1-16/">
+  <meta property="og:title" content="July Backtester v1.16: A Backtest That Is Harder to Flatter | Light Water Capital">
+  <meta property="og:description" content="An adversarial review of our open-source engine found 17 integrity problems, five of them biased in the strategy's favor. v1.16 fixes all of them, and some backtests will look worse for it.">
+  <meta property="og:site_name" content="Light Water Capital">
+  <meta property="og:image" content="https://lightwaterdispatch.com/dispatch/2026-10-24-july-backtester-v1-16/og-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="July Backtester v1.16 - backtest integrity, consistent sizing and research tools. Light Water Capital.">
+  <meta property="article:published_time" content="2026-10-24">
+  <meta property="article:author" content="Zach Smith">
+  <meta property="article:section" content="Engineering">
+  <meta property="article:tag" content="Open Source">
+  <meta property="article:tag" content="Python">
+  <meta property="article:tag" content="Backtesting">
+  <meta property="article:tag" content="Quantitative Research">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="July Backtester v1.16: A Backtest That Is Harder to Flatter">
+  <meta name="twitter:description" content="An adversarial review of our open-source engine found 17 integrity problems, five of them biased in the strategy's favor. v1.16 fixes all of them.">
+  <meta name="twitter:image" content="https://lightwaterdispatch.com/dispatch/2026-10-24-july-backtester-v1-16/og-preview.png">
+  <meta name="keywords" content="July Backtester, backtesting, open source, Python, backtest integrity, walk-forward analysis, Monte Carlo, survivorship bias, point-in-time universes, position sizing">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "July Backtester v1.16: A Backtest That Is Harder to Flatter",
+    "description": "We ran an adversarial review of our open-source backtesting engine and found 17 ways it could mislead a researcher, five of them biased in the strategy's favor. July Backtester v1.16 fixes all of them.",
+    "image": "https://lightwaterdispatch.com/dispatch/2026-10-24-july-backtester-v1-16/og-preview.png",
+    "datePublished": "2026-10-24",
+    "dateModified": "2026-10-24",
+    "author": {
+      "@type": "Person",
+      "name": "Zach Smith",
+      "url": "https://github.com/zachisit"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Light Water Capital",
+      "logo": { "@type": "ImageObject", "url": "https://lightwaterdispatch.com/assets/light-water-transparent-cropped-logo.PNG" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://lightwaterdispatch.com/dispatch/2026-10-24-july-backtester-v1-16/" },
+    "articleSection": "Engineering",
+    "keywords": ["July Backtester", "backtesting", "open source", "Python", "backtest integrity", "walk-forward analysis", "Monte Carlo", "survivorship bias"],
+    "wordCount": 1400
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://lightwaterdispatch.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "The Dispatch",
+        "item": "https://lightwaterdispatch.com/dispatch/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "July Backtester v1.16",
+        "item": "https://lightwaterdispatch.com/dispatch/2026-10-24-july-backtester-v1-16/"
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#1E3A5F">
+
+  <link rel="stylesheet" href="../../assets/site.css">
+
+  <link rel="stylesheet" href="../article.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a class="nav-home" href="../../index.html"><img class="nav-logo" src="../../assets/light-water-transparent-cropped-logo.PNG" alt="Light Water Capital"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu"><span class="bar" aria-hidden="true"></span></button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="../../dispatch/index.html" class="active" aria-current="page">Dispatch</a></li>
+        <li><a href="../../careers/index.html">Careers</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- NAVY HEADER BAND -->
+    <header class="article-header">
+      <div class="article-header-inner">
+        <nav class="article-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">The Dispatch</a>
+          <span aria-hidden="true">→</span>
+          <span class="crumb-current">Engineering</span>
+        </nav>
+        <div class="article-meta">
+          <span class="article-tag">Engineering</span>
+          <span class="article-meta-dot" aria-hidden="true"></span>
+          <time class="article-meta-date" datetime="2026-10-24">October 2026</time>
+          <span class="article-meta-dot" aria-hidden="true"></span>
+          <span class="article-meta-read">6 min read</span>
+        </div>
+        <div class="article-tags">
+          <span class="article-tag-chip">Open Source</span>
+          <span class="article-tag-chip">Python</span>
+          <span class="article-tag-chip">Backtesting</span>
+          <span class="article-tag-chip">Release</span>
+        </div>
+        <h1 class="article-title">July Backtester v1.16:<br>A Backtest That Is Harder to Flatter</h1>
+        <p class="article-dek">We ran an adversarial review of our own engine and found 17 ways it could mislead a researcher, five of them biased in the strategy&rsquo;s favor. Version 1.16 fixes all of them, and some backtests will look worse for it.</p>
+
+        <!-- BYLINE -->
+        <div class="byline">
+          <div class="byline-avatar" aria-hidden="true">
+            <img src="../../assets/zach-smith-avatar.jpg" alt="Zach Smith" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+          </div>
+          <div class="byline-text">
+            <div class="byline-name">Zach Smith</div>
+            <div class="byline-role">Engineering, Light Water Capital</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- BODY ON WARM WHITE CARD -->
+    <div class="article-body-wrap">
+      <article class="article-body" aria-label="Article content">
+
+        <div class="article-stat-box">
+          <div class="article-stat-label"><strong>Summary:</strong> July Backtester v1.16.0, released October 24, 2026, is built around a backtest-integrity review of the open-source engine. The review produced 17 verified findings, 5 rated High because they biased results in the strategy&rsquo;s favor. The release fixes all 17, routes every position-sizing method through one entry point, resolves point-in-time universes to security IDs, and adds reproducible seeds, a worker cap and new research scripts. Several defaults changed, so backtests should be re-run before they are compared with earlier results.</div>
+        </div>
+
+        <figure>
+          <img src="og-preview.png" alt="July Backtester v1.16 - backtest integrity, consistent sizing and research tools" />
+        </figure>
+
+        <p>A bug that crashes a backtest costs you an afternoon. The expensive bugs are the ones that make a strategy look a little better than it is: a stop that fills at a price the market never offered, a validation test that passes by construction. Those runs finish cleanly and nothing looks wrong.</p>
+
+        <p>So for this release we went looking for exactly that. We reviewed <a href="https://github.com/zachisit/july-backtester" target="_blank" rel="noopener noreferrer">July Backtester</a> adversarially: the engine, metrics, Monte Carlo, walk-forward, sizing and reporting, searching for any defect that would change a result or what a researcher concludes from it. Every finding had to come with a synthetic reproduction that we ran against the main branch before it counted.</p>
+
+        <div class="article-stat-box">
+          <div class="article-stat-number">17 findings</div>
+          <div class="article-stat-label">5 High, 6 Medium and 6 Low. All five High findings biased results in the strategy&rsquo;s favor. Every one is fixed in v1.16.0.</div>
+        </div>
+
+        <h2>Where the Engine Was Too Kind</h2>
+
+        <p>The five High findings share a direction. Each one made results look better than they would have been in practice.</p>
+
+        <p><strong>Stops ignored gaps.</strong> If a position had a stop at 95 and the next bar opened at 80, the engine still filled the stop at 95. Gap-through stops now fill at the worse open.</p>
+
+        <p><strong>Stops weren&rsquo;t checked on the fill bar.</strong> Under open execution, a trade could enter, trade down through its stop the same day, and still be booked as a winner. In one reproduction, a fill-bar low of 90 against a 95 stop became a +7% trade. The initial stop is now checked on the fill bar.</p>
+
+        <p><strong>Walk-forward measured the wrong thing.</strong> In-sample and out-of-sample performance was normalized by starting capital and annualized over the span of the trades rather than the window. A real out-of-sample collapse from 10% to 2% could pass. Each window is now measured on its own equity and annualized over its own length. Rolling fold zero, which has no in-sample period, used to pass automatically. Empty or undersized folds are now treated as unavailable.</p>
+
+        <p><strong>The Monte Carlo score mostly passed by construction.</strong> In testing, all 200 of 200 zero-edge strategies passed the performance check, and the drawdown check compared mark-to-market drawdown with closed-trade drawdown. MC Score v2 adds a bootstrap edge test and compares drawdowns under the same definition. The old score stays available as <code>mc_score_legacy</code> for comparison.</p>
+
+        <p><strong>Equity shorts reserved no collateral.</strong> A portfolio set to a 10% allocation per position could end up 300% gross short. Shorts now reserve 50% of their value against buying power until they are covered.</p>
+
+        <h2>The Quieter Problems</h2>
+
+        <p>The Medium and Low findings were less dramatic, but each could still change a result or how it read:</p>
+
+        <ul>
+          <li>Delisted positions stayed open inside the simulation loop, locking up capital and oversizing later entries. They are now closed out inside the simulation, their capital is released and they can&rsquo;t be re-entered.</li>
+          <li>Strategies that produced zero trades, or crashed, disappeared from the results. A parameter sweep could look cleaner than it was. They are now counted and reported.</li>
+          <li>The liquidity cap and market-impact model read the full-day volume of the bar being traded at the open, which is a small look-ahead. They now use the prior bar.</li>
+          <li>The equity curve was recorded before the bar&rsquo;s fills, so exits showed up a bar late.</li>
+          <li>Survivorship-free universes quietly dropped short-lived names for having too little history, which is the very survivorship they exist to avoid.</li>
+          <li>Several stop configurations produced the same strategy name, and the sensitivity report pooled results across portfolios and stop settings.</li>
+          <li>Monte Carlo and noise injection were unseeded, so a run couldn&rsquo;t be reproduced exactly. There is now a <code>--seed</code> option.</li>
+          <li>The Yahoo provider dropped the last requested bar, and the Polygon provider never retried rate limits and could cache a partial download.</li>
+        </ul>
+
+        <h2>Your Results Will Change</h2>
+
+        <p>Entry eligibility, fills, stop exposure, short buying power, equity timing and the walk-forward and Monte Carlo verdicts all behave differently in v1.16. Trade counts, allocations, costs and reported metrics can move either way, though most of the High fixes push results down. <strong>Re-run a backtest before you compare it with an older one.</strong> Where a default changed, the previous behavior is still one setting away:</p>
+
+        <div style="overflow-x:auto">
+          <table>
+            <thead>
+              <tr><th>Behavior</th><th>v1.16 default</th><th>Previous behavior</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Entry triggering</td><td><code>entry_trigger="edge"</code></td><td><code>"level"</code></td></tr>
+              <tr><td>Gap-through stop fills</td><td><code>stop_gap_fill="open"</code></td><td><code>"level"</code></td></tr>
+              <tr><td>Stop check on the fill bar</td><td><code>entry_bar_stop_check=True</code></td><td><code>False</code></td></tr>
+              <tr><td>Equity-short collateral</td><td><code>short_margin_requirement=0.5</code></td><td><code>0.0</code></td></tr>
+              <tr><td>Indicator warm-up history</td><td><code>pit_warmup_days=400</code></td><td><code>0</code></td></tr>
+              <tr><td>Monte Carlo score</td><td>MC Score v2</td><td><code>mc_score_legacy</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>The <code>edge</code> trigger deserves a word. A strategy whose signal stays &ldquo;long&rdquo; for weeks used to re-enter the moment a stop took it out. Now it enters only on a fresh transition into the signal, which matches how most of these rules are meant to trade.</p>
+
+        <h2>Sizing, Universes and Data</h2>
+
+        <p><strong>One sizing path.</strong> Every position-sizing method now runs through a single entry point, and long and short legs on equities and futures all honor the configured method. Kelly sizing no longer sees outcomes from later in the same bar. Futures shorts now get the same liquidity cap and impact costs as longs. When a position is cut down by a cap, missing stop data, a cash or margin limit or the portfolio heat limit, the run reports which condition did it, so a smaller-than-expected position has a reason attached.</p>
+
+        <p><strong>Point-in-time universes resolve to securities, not tickers.</strong> Tickers get reused. If a company is delisted and its symbol is later reissued, a naive lookup quietly swaps the new company into the old one&rsquo;s history. Dated universe members now resolve to security IDs, retired tickers resolve through rename metadata, and an ambiguous mapping stops the run instead of guessing.</p>
+
+        <p><strong>Data quality.</strong> Zero and negative prices are now caught, the missing-bars penalty was recalibrated, and Polygon downloads retry with backoff and log what failed.</p>
+
+        <p>The repository is also now fully separate from our private Norgate dataset. Point it at your own per-symbol Parquet files, or run it on Yahoo Finance data with no API key.</p>
+
+        <h2>New Research Tools</h2>
+
+        <ul>
+          <li><strong>Pattern scanner.</strong> <code>scripts/pattern_scan.py</code> detects triangles, rectangles and inverse head-and-shoulders bases, replays them historically and writes HTML contact sheets with the parameters behind each detection.</li>
+          <li><strong>Universe builder.</strong> <code>scripts/build_us_universe.py</code> generates a dated liquidity cache for the US equity universe.</li>
+          <li><strong>Trade-log diagnostics.</strong> Gap-proximity and dead-money scans, plus annual-return, leverage and volatility diagnostics.</li>
+          <li><strong>Run controls.</strong> <code>--workers</code> caps simulation processes, <code>--seed</code> makes Monte Carlo and bootstrap runs repeatable, and <code>--verbose</code> / <code>--no-verbose</code> now behave consistently.</li>
+        </ul>
+
+        <h2>How It Was Checked</h2>
+
+        <p>The full test suite, slow tests included, passes on the release code: 3,555 passed, 6 skipped and 11 expected failures. Before merging, each recent change got its own adversarial review, a regression fix, a full-suite run and green CI. Mutation checks deliberately break the sizing, stop, heat and data-quality penalty logic to confirm the tests catch it.</p>
+
+        <h2>Who Did the Work</h2>
+
+        <p>Three members of our Systematic Strategies team shipped meaningful parts of this release.</p>
+
+        <p><strong><a href="../2026-10-06-shardul-mehetar-lead-quantitative-research-intern/">Shardul Mehetar</a></strong>, Lead Quantitative Research Intern, built the edge entry trigger, which became the new default. He also fixed point-in-time overrides after ticker renames, added discovery of synced universe rosters alongside the price data and wrote the data-quality cast census.</p>
+
+        <p><strong><a href="../2026-09-30-angad-bhatti-intern-announcement/">Angad Bhatti</a></strong>, Quantitative Strategy Intern, made his first contributions in this release. He made the engine refuse to merge two distinct securities that share a bare ticker, added the <code>--workers</code> cap, made seeded entry priority reshuffle reproducibly on every bar, and gave the price provider and universe reader a single shared data directory.</p>
+
+        <p><strong>Suriya Narayanan Rajavel</strong>, Quantitative Strategy Intern, built the gap-proximity and dead-money scans for trade logs.</p>
+
+        <h2>Get It</h2>
+
+        <p>July Backtester is open source and MIT-licensed. The <a href="https://github.com/zachisit/july-backtester/releases/tag/v1.16.0" target="_blank" rel="noopener noreferrer">v1.16.0 release notes</a> include the full migration table and every merged change. Use the pinned requirements in a fresh Python 3.12 environment. If you want to know where the engine was wrong, all 17 findings and their reproductions are public in the issue tracker.</p>
+
+        <p>A backtest is a claim about the past, and the engine is what that claim rests on. This release makes the engine harder to fool.</p>
+
+        <div class="article-end">
+          <div class="article-end-mark"></div>
+          <span class="article-end-text">Light Water Capital &nbsp;·&nbsp; October 2026</span>
+        </div>
+
+      </article>
+    </div>
+
+    <!-- SHARE SECTION -->
+    <div class="article-body-wrap">
+      <div class="article-share">
+        <span class="article-share-label">Share this article</span>
+        <a href="https://twitter.com/intent/tweet?text=July%20Backtester%20v1.16%3A%20A%20Backtest%20That%20Is%20Harder%20to%20Flatter&url=https://lightwaterdispatch.com/dispatch/2026-10-24-july-backtester-v1-16/" target="_blank" rel="noopener noreferrer" class="article-share-button" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+          Share on X
+        </a>
+      </div>
+    </div>
+
+    <!-- AUTHOR CARD -->
+    <div class="author-card-wrap">
+      <div class="author-card" role="complementary" aria-label="About the author">
+        <div class="author-card-avatar" aria-hidden="true">
+          <img src="../../assets/zach-smith-avatar.jpg" alt="Zach Smith" style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="author-card-body">
+          <span class="author-card-label">About the author</span>
+          <div class="author-card-name">Zach Smith</div>
+          <div class="author-card-title">Engineering, Light Water Capital</div>
+          <p class="author-card-bio">Zach builds quantitative research infrastructure at Light Water. He created July Backtester to solve internal research needs and open-sourced it to lower barriers for the quantitative trading community. He's passionate about making professional-grade trading tools accessible.</p>
+          <a href="https://github.com/zachisit" target="_blank" rel="noopener noreferrer" class="author-card-linkedin" aria-label="View Zach Smith on GitHub">
+            GitHub
+            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+              <path d="M1 4h10M7.5 1l3 3-3 3" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMMENT CTA -->
+    <div class="comment-cta-wrap">
+      <div class="comment-cta">
+        <div class="comment-cta-eyebrow">Also in the Dispatch</div>
+        <h2 class="comment-cta-title">Why We Open-Sourced Our Trading Backtester</h2>
+        <p class="comment-cta-text">The story behind July Backtester: why we built our own engine, what Monte Carlo and walk-forward analysis are for, and why we gave it away.</p>
+        <a href="../july-backtester/" class="comment-cta-button">
+          Read the launch post
+          <svg width="14" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
+            <path d="M1 4.5h12M8.5 1l3.5 3.5L8.5 8" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- BACK LINK -->
+    <div class="article-back-wrap">
+      <a href="../index.html" class="article-back" aria-label="Back to The Dispatch">
+        <svg width="14" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
+          <path d="M13 4.5H1M5.5 1L2 4.5 5.5 8" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back to the Dispatch
+      </a>
+    </div>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <img class="footer-logo" src="../../assets/light-water-transparent-cropped-logo-dark-bg.png" alt="Light Water Capital">
+        <ul class="footer-links">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../dispatch/index.html">Dispatch</a></li>
+          <li><a href="../../careers/index.html">Careers</a></li>
+          <li><a href="https://www.linkedin.com/company/light-water" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-legal">
+          &copy; 2026 Light Water Capital. All rights reserved. This website is for informational purposes only and does not constitute investment advice or an offer to buy or sell any security. Past performance is not indicative of future results.
+        </p>
+        <span class="footer-location">Corydon, Indiana</span>
+      </div>
+    </div>
+  </footer>
+  <script src="../../assets/site.js"></script>
+</body>
+</html>

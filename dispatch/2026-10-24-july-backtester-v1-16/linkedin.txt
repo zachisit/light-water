@@ -1,0 +1,70 @@
+JULY BACKTESTER v1.16 - LinkedIn copy
+Article: https://lightwaterdispatch.com/dispatch/2026-10-24-july-backtester-v1-16/
+Release: https://github.com/zachisit/july-backtester/releases/tag/v1.16.0
+Image:   linkedin-square.png (feed post, 1200x1200). og-preview.png is the 1200x630 link card.
+
+========================================================================
+1. COMPANY ACCOUNT - Light Water Capital
+========================================================================
+The most expensive bug in a backtester is the one that makes a strategy look better than it is.
+
+So before this release, we went looking for those bugs. We ran an adversarial review of July Backtester, our open-source research engine, and every finding had to come with a reproduction we could run. There were 17, and the five rated High all leaned the same way: in the strategy's favor.
+
+- A stop the market gapped through at 80 still filled at 95.
+- Under open execution, stops weren't checked on the fill bar, so a trade that hit its stop on day one could be booked as a winner.
+- Walk-forward measured the wrong window, so a real out-of-sample collapse from 10% to 2% could pass.
+- In testing, all 200 of 200 zero-edge strategies passed the Monte Carlo performance check.
+- Equity shorts reserved no collateral, so a 10%-per-position portfolio could end up 300% gross short.
+
+v1.16 fixes all 17. Sizing now runs through one code path, point-in-time universes resolve to securities rather than reused tickers, and Monte Carlo runs can be seeded so they repeat.
+
+Some backtests will look worse after upgrading. That is the point. Re-run before you compare with older results; every changed default can be switched back with one setting.
+
+Thanks to Shardul Mehetar, Angad Bhatti and Suriya Narayanan Rajavel on our Systematic Strategies team, who shipped real parts of this release. Angad's first contributions are in it.
+
+July Backtester is MIT-licensed and runs free on Yahoo Finance data with no API key. Full write-up in the first comment.
+
+#Backtesting #OpenSource #QuantResearch #Python #SystematicTrading #LightWaterCapital
+
+
+------------------------------------------------------------------------
+FIRST COMMENT
+------------------------------------------------------------------------
+Full write-up, including the migration table: https://lightwaterdispatch.com/dispatch/2026-10-24-july-backtester-v1-16/
+
+Release notes and every merged change: https://github.com/zachisit/july-backtester/releases/tag/v1.16.0
+
+
+========================================================================
+2. FOUNDER ACCOUNT - REPOST COMMENTARY (2 sentences)
+========================================================================
+We spent this release trying to break our own backtester, and we found five ways it was quietly flattering strategies, including ours. Fixing them made some of our own numbers worse, and I'd rather know that now than find out with live money.
+
+
+-- ALT (shorter) --
+
+If your backtester has never told you a strategy got worse after an upgrade, it probably hasn't been audited. This one has, and the 17 findings and their reproductions are public.
+
+
+========================================================================
+3. INTERN REPOST CAPTIONS (drafts - each person edits and approves their own)
+========================================================================
+SHARDUL:
+Glad to have contributed to July Backtester v1.16. My work in this release was the edge entry trigger, which is now the default, along with point-in-time fixes for renamed tickers and roster discovery. The integrity review behind this release is worth reading if you build or rely on backtests.
+
+ANGAD:
+My first contributions to July Backtester went out in v1.16: refusing to merge two different securities that share a ticker, a cap on simulation workers, and reproducible per-bar entry ordering. Grateful to the Systematic Strategies team for the review along the way.
+
+SURIYA:
+v1.16 of July Backtester includes the gap-proximity and dead-money scans I built for trade logs. Proud to be part of a release focused on making results more honest.
+
+
+========================================================================
+NOTES
+========================================================================
+- Every number above is from the v1.16.0 release notes or epic #424 (the adversarial review): 17 findings = 5 High / 6 Medium / 6 Low; gap fill 80 vs 95 stop (#425); 10% -> 2% OOS collapse (#427); 200/200 zero-edge strategies passed (#429); 300% gross short at 0.10 allocation (#430); 3,555 tests passed.
+- These are reproductions on synthetic data, not performance claims about any strategy. If someone asks "how much did results change," don't quote a figure. Say it depends on the strategy and point to the migration table.
+- The founder caption says fixing these "made some of our own numbers worse." Only keep that if it's true for strategies you've re-run. Otherwise use the ALT.
+- Angad's GitHub handle (Abhatti-123123) has no display name set. Confirm it is Angad before tagging.
+- Reach tip: lead with linkedin-square.png, put the link in the first comment, post Tue-Thu 8-10am ET, and tag all three.
+- Hyphens only, no em dashes, plain ASCII.
