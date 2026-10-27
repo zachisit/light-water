@@ -10,7 +10,7 @@
 
   <url>
     <loc>https://lightwaterdispatch.com/dispatch/</loc>
-    <lastmod>2026-10-24</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -43,6 +43,12 @@
     <priority>0.6</priority>
   </url>
 
+  <url>
+    <loc>https://lightwaterdispatch.com/dispatch/2026-10-26-brazil-runoff-repricing/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://lightwaterdispatch.com/dispatch/2026-10-24-july-backtester-v1-16/</loc>
     <lastmod>2026-10-24</lastmod>

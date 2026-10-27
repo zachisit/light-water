@@ -1,0 +1,106 @@
+BRAZIL REPRICED BEFORE THE BELL - SOCIAL COPY
+Article: https://lightwaterdispatch.com/dispatch/2026-10-26-brazil-runoff-repricing/
+Images:  linkedin-square.png (LinkedIn feed post, 1200x1200). og-preview.png is the 1200x630 link card (X and LinkedIn previews).
+Figures: Polygon.io, Oct 23 and Oct 26, 2026 closes unless stated; Ibovespa and circuit breaker from B3; vote totals from TSE. Revised after the Codex audit on morning-macro#60. See NOTES before posting.
+
+========================================================================
+1. BRAND ACCOUNT - Light Water Capital (LinkedIn)
+========================================================================
+U.S.-listed Brazil assets were already sharply lower in New York premarket trading on Monday, hours before Brazil's own stock market opened.
+
+The iShares MSCI Brazil ETF (EWZ) printed 19% below Friday's close at 4:00 a.m. Eastern and was down 31% fifteen minutes later. It opened the regular session 25.5% lower, the largest opening gap in our data, which goes back to 2003. It closed down 19.8% on 299 million shares, the most it has traded in a day in that history. In Sao Paulo, B3 halted trading with a circuit breaker at the open, and the Ibovespa closed down 13.9%.
+
+Three things stood out:
+
+- Brazil was the outlier. The real fell almost 8% against the dollar. The Mexican, Chilean and Colombian pesos moved much less, and so did the Mexico, Chile and Peru country funds.
+
+- The currency mattered. At the close, translating EWZ's dollar loss into reais implies a decline of roughly 13%, so currency translation accounts for roughly a third of the dollar loss. Unhedged Brazil equity funds carry that currency exposure.
+
+- The stocks split broadly by exposure. XP fell 48% and several banks and payment companies lost far more than the exporters: Bradesco -28%, StoneCo -27%, Itau -20%. Vale fell 3% and Suzano rose 2%.
+
+EWZ recovered about a fifth of its opening gap by the close. That is consistent with a liquidity or positioning effect in a thin premarket, but prices alone can't tell us why it rebounded.
+
+Our full read, including what the data can't show yet and what we're watching next, is in the first comment.
+
+#Brazil #EmergingMarkets #Currencies #Markets #Investing #LightWaterCapital
+
+
+------------------------------------------------------------------------
+FIRST COMMENT
+------------------------------------------------------------------------
+Full note, with the intraday chart, the currency table and the breakdown of U.S.-listed Brazil stocks: https://lightwaterdispatch.com/dispatch/2026-10-26-brazil-runoff-repricing/
+
+
+========================================================================
+2. FOUNDER ACCOUNT - Zach Smith (LinkedIn repost commentary)
+========================================================================
+The most useful row in this note is the boring one: the Mexican peso barely moved. The real fell almost 8% and EWZ had its biggest opening gap since at least 2003, but among the markets we tracked, Brazil was the clear outlier.
+
+
+-- ALT (shorter) --
+
+EWZ opened 25.5% lower after Brazil's runoff and closed down 19.8%. At the close, a currency-translation estimate accounts for roughly a third of its dollar decline. Unhedged Brazil equity funds carry currency exposure too.
+
+
+========================================================================
+3. FOUNDER ACCOUNT - Zach Smith (X)
+========================================================================
+-- SINGLE POST (put the link in the reply) --
+
+Brazil repriced before the bell.
+
+$EWZ opened -25.5% after Sunday's runoff, the largest gap since at least 2003, and closed -19.8% on record volume.
+
+The real fell ~8%. MXN, CLP and COP moved far less.
+
+Hit hardest: $XP -48%, $STNE -27%. Held up: $VALE -3%, $SUZ +2%.
+
+REPLY:
+Full note, with the 4am-to-close chart and the currency table:
+https://lightwaterdispatch.com/dispatch/2026-10-26-brazil-runoff-repricing/
+
+
+-- THREAD VERSION (5 posts) --
+
+1/
+Brazil repriced before the bell.
+
+$EWZ printed -19% at 4:00am, hit -31% by 4:14, opened -25.5% (the largest gap since at least 2003) and closed -19.8% on 299M shares, a record in that data.
+
+2/
+In Sao Paulo, B3 hit a circuit breaker at the open and halted for 30 min. Its reopening auction ran 9:30-9:35am ET. EWZ's regular-session low came at 9:32.
+
+The Ibovespa closed -13.9%.
+
+3/
+The real fell 7.7% vs the dollar. The Mexican, Chilean and Colombian pesos moved much less. $EWW +0.1%, $ECH -1.2%.
+
+Among the markets we tracked, Brazil was the clear outlier.
+
+4/
+At the close, translating EWZ's dollar loss into reais implies about -13%, so the currency accounts for roughly a third of the dollar decline.
+
+Unhedged Brazil funds carry the real too.
+
+5/
+$XP -48%, $BBD -28%, $STNE -27%, $ITUB -20%.
+Exporters held: $VALE -3%, $SUZ +2%.
+
+Full note:
+https://lightwaterdispatch.com/dispatch/2026-10-26-brazil-runoff-repricing/
+
+
+========================================================================
+NOTES
+========================================================================
+- Every figure is in the article and was re-derived from Polygon.io data by two independent checks. EWZ open $31.71 (-25.5%), premarket low $29.53 at 4:14am (-30.7%), close $34.15 (-19.8%), 299.2M shares. USD/BRL 4.99 -> 5.40, Friday 4pm to Monday 4pm ET (+8.3%; real -7.7%). B3: Ibovespa -13.88%; commercial dollar R$5.40 (+8.25%); 30-min circuit breaker, reopening auction 10:30-10:35 Brasilia = 9:30-9:35 ET.
+- "Largest since at least 2003" and "record volume" cover Polygon data from Sept 2003. EWZ launched in 2000. Do not say "ever" or "all-time".
+- "Roughly a third" = 36% of the dollar loss on a log basis, a CLOSING currency-translation estimate on EWZ's market price. Never attach it to the opening gap; the opening split can't be measured.
+- Do not say the first print or the premarket "overshot". The first print ($34.58) was above the close. The rebound is consistent with a liquidity/positioning effect but doesn't prove one.
+- Political framing: describe what markets did, never the candidates. Don't call the result a shock or an upset in our own voice. If asked about the legal challenge, attribute it to press reports.
+- "Hit hardest" in the X single post lists two examples, not a ranking; XP was the largest decliner tracked, then Braskem and Azul.
+- No firm-positioning language and no trade calls. Do not imply Light Water was positioned for or against the result.
+- XP, STNE, PAGS and NU are U.S.-listed common shares, not ADRs. Say "U.S.-listed Brazil stocks".
+- Cashtags: max ~4-5 per X post for reach.
+- Reach tip: LinkedIn - lead with linkedin-square.png and put the link in the first comment.
+- Hyphens only, no em dashes, plain ASCII.
