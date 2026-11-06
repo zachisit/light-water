@@ -1,6 +1,6 @@
 CHIPS BROKE FIRST - SOCIAL COPY
 Article: https://lightwaterdispatch.com/dispatch/2026-11-05-ai-chip-selloff/
-Images: none yet (no og-preview.png / linkedin-square.png for this note; LinkedIn will show a text-only link card).
+Images:  linkedin-square.png (LinkedIn feed post, 1200x1200). og-preview.png is the 1200x630 link card (X and LinkedIn previews). HTML sources in assets/og-ai-chip-selloff-november-2026*.html.
 Figures: Polygon.io, Nov 4 and Nov 5, 2026 closes unless stated; index closes as reported by Reuters and AP; Asian moves from Yonhap, Reuters and CNA; VIX futures from Cboe daily settlements. Reviewed by Codex before publication.
 
 ========================================================================
@@ -8,29 +8,14 @@ Figures: Polygon.io, Nov 4 and Nov 5, 2026 closes unless stated; index closes as
 ========================================================================
 Chips broke first. Everything else followed.
 
-On Thursday the Philadelphia Semiconductor Index fell 12.2%, the Nasdaq 5.5% (its biggest one-day drop in 19 months, per Reuters) and the S&P 500 4.4%. The chip fund SMH had its second-worst day in our data back to 2003, behind only March 16, 2020.
+On Thursday the semiconductor index fell 12.2% and the Nasdaq 5.5%, its biggest drop in 19 months. The selling started in Asian chipmakers overnight and reached every U.S. sector after the open. Micron and AMD fell about 17%; the cloud giants that buy their chips fell 2% to 4%.
 
-How the day unfolded:
+What didn't happen matters too: Treasuries rose, the dollar was flat and high-yield bonds dipped just 0.3%. That looks like a repricing of AI chip stocks, not a financial crisis.
 
-- It started overnight, in chips only. Korea's SK hynix fell 9.5% and Japan's Advantest 14.7%. By 9:25 a.m. Eastern, SMH was down almost 4% while the S&P 500 was flat.
+Our full read, and what we're watching before Nvidia reports on November 17:
+https://lightwaterdispatch.com/dispatch/2026-11-05-ai-chip-selloff/
 
-- After the open, it spread to everything. Every S&P 500 sector fell. By late morning, even the defensive staples and utilities funds that had been rising turned lower.
-
-- The makers were the target. Micron and AMD fell about 17% and Lam Research 16%, on roughly three times normal volume. The cloud giants that buy their chips fell 2% to 4%.
-
-What didn't happen matters as much. Long-term Treasuries rose, the dollar was flat, and high-yield bonds fell only 0.3%. That looks like a repricing of AI chip stocks, not a crisis in the financial system.
-
-One more signal: the VIX closed above every VIX futures contract, the deepest such reading since April 2025. Tom McClellan has called this a "bottoming condition," while noting it is not the same as the exact bottom.
-
-Our full read, including what we can't tell yet and what we're watching before Nvidia reports on November 17, is in the first comment.
-
-#Semiconductors #AI #StockMarket #Markets #Investing #LightWaterCapital
-
-
-------------------------------------------------------------------------
-FIRST COMMENT
-------------------------------------------------------------------------
-Full note, with the 4 a.m.-to-close chart, the sector breakdown and the chipmakers-vs-spenders table: https://lightwaterdispatch.com/dispatch/2026-11-05-ai-chip-selloff/
+#Semiconductors #AI #Markets #LightWaterCapital
 
 
 ========================================================================
