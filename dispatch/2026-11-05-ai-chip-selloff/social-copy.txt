@@ -29,14 +29,8 @@ The most telling number from Thursday isn't the 12% drop in chip stocks. It's th
 ========================================================================
 -- SINGLE POST --
 
-Chips broke first.
+Thursday's selloff started with chip stocks in Asia overnight and spread to every corner of the U.S. market by midday. The Nasdaq had its worst day in 19 months.
 
-$SMH -11.2%, its 2nd-worst day since 2003. Nasdaq -5.5%.
-
-$MU -17.5%, $AMD -17.3%, $LRCX -16.4%. Cloud spenders only -2% to -4%.
-
-$HYG -0.3%. $TLT +0.2%. Not a credit event.
-
-VIX closed above every VIX future.
+What stood out to us: bonds and credit barely flinched. This looks like the AI trade getting repriced, not a crisis.
 
 https://lightwaterdispatch.com/dispatch/2026-11-05-ai-chip-selloff/
