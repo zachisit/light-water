@@ -1,0 +1,32 @@
+========================================================================
+LIGHT WATER - QUANT RESEARCH & STRATEGY INTERN - SOCIAL COPY
+Generated 2026-11-09.
+========================================================================
+
+LISTING LINK:
+https://lightwaterdispatch.com/careers/quantitative-strategy-associate-internship/
+
+
+------------------------------------------------------------------------
+1) BRAND ACCOUNT - Light Water (LinkedIn)
+------------------------------------------------------------------------
+We're adding one more person to the Light Water intern cohort.
+
+The role is Quant Research & Strategy Intern on our Systematic Strategies team. The job has two halves. First, audit the common stock models we already run live and find where performance gaps and mathematical drift have crept in. Second, own new strategies end to end, across equities, FX and crypto: thesis, modeling, backtesting, iteration, and deployment against real capital.
+
+You'd work directly with the founder and alongside the current interns, using July Backtester (our open-source Python engine, with Monte Carlo, walk-forward analysis and regime detection) and paid vendor data. The tooling won't be what holds you back.
+
+What we're looking for:
+- Comfortable with expectancy, variance and R-multiple distributions, and you know why the distribution matters more than the average
+- Strong Python or a comparable data language, plus hands-on experience with Claude or Codex
+- You treat an edge as a mathematical property, not a market-specific trick
+- Hand you a high-level thesis and you'll build the proof of concept yourself
+
+Remote, 20 hours a week, 3-month term with the option to extend. This is an unpaid mentorship internship, and interns are recognized publicly and can publish under their own byline in The Dispatch.
+
+Tell us what you've already tested and what it taught you. That says more than a CV.
+
+Full listing and application:
+https://lightwaterdispatch.com/careers/quantitative-strategy-associate-internship/
+
+#Internship #QuantitativeFinance #AlgorithmicTrading #Python #Hiring
